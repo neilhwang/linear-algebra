@@ -1,6 +1,5 @@
 \documentclass[12pt]{article}
 
-\usepackage{booktabs}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{geometry}
@@ -391,15 +390,6 @@ A subset $W \subseteq V$ is called a \emph{subspace} if:
 \end{tikzpicture}
 \end{center}
 
-\subsection*{Linear Transformations}
-
-Let $V,W$ be vector spaces over $F$.
-A function $T: V \to W$ is called a \emph{linear transformation} if
-\[
-T(x+y) = T(x) + T(y), \qquad T(ax) = aT(x)
-\]
-for all $x,y \in V$ and $a \in F$.
-
 \subsection*{Bases and Coordinates}
 
 Let $V$ be an $n$--dimensional vector space over $F$.
@@ -666,33 +656,6 @@ The relation $[T]_{\mathcal{B}} = Q[T]_{\mathcal{B}'}Q^{-1}$ then follows
 by conjugating both sides by $Q$.
 
 
-\subsection*{Vector Spaces and Subspaces}
-\hfill \break  $~\!\!$ \dotfill \medskip \\
-
-\redbox{
-\textbf{Subspace Test.} Let $W \subseteq V$ where $V$ is a vector space over $\mathbb{F}$.
-
-Then $W$ is a subspace iff:
-\begin{align*}
-\text{(i)}\; x,y \in W \Rightarrow x+y \in W, \\
-\text{(ii)}\; a \in \mathbb{F}, x \in W \Rightarrow ax \in W.
-\end{align*}
-}
-
-\medskip
-
-\bluebox{
-This implies automatically:
-\[
-0 \in W,\quad x-y \in W.
-\]
-So closure under addition + scalar multiplication is sufficient.
-}
-
-\medskip
-\hrule
-\medskip
-
 \subsection*{Sum and Direct Sum of Subspaces}
 
 \redbox{
@@ -746,112 +709,6 @@ then
 x_1 - y_1 = y_2 - x_2 \in W_1 \cap W_2,
 \]
 so both sides are $0$, hence uniqueness.
-}
-
-\medskip
-\hrule
-\medskip
-
-\subsection*{Basis and Coordinates}
-
-\redbox{
-A set $B=\{x_1,\dots,x_n\}$ is a basis of $V$ iff:
-\begin{align*}
-\text{(i)}\; \text{span}(B)=V, \\
-\text{(ii)}\; B \text{ is linearly independent}.
-\end{align*}
-
-Then every $x \in V$ can be written uniquely:
-\[
-x = a_1 x_1 + \cdots + a_n x_n.
-\]
-}
-
-\medskip
-
-\bluebox{
-Define coordinate map:
-\[
-[x]_B = (a_1,\dots,a_n) \in \mathbb{F}^n.
-\]
-
-This gives an isomorphism:
-\[
-V \cong \mathbb{F}^n.
-\]
-}
-
-\medskip
-\hrule
-\medskip
-
-\subsection*{Linear Maps}
-
-\redbox{
-A map $T:V \to W$ is linear iff:
-\[
-T(x+y)=T(x)+T(y),\quad T(ax)=aT(x).
-\]
-}
-
-\medskip
-
-\bluebox{
-Then:
-\[
-T(0)=0,\quad T(\text{span}) = \text{span}.
-\]
-
-Also $\text{Im}(T)$ is a subspace.
-}
-
-\medskip
-\hrule
-\medskip
-
-\subsection*{Matrix Representation}
-
-\redbox{
-Given bases $B,C$, there exists a matrix $[T]_{C \leftarrow B}$ such that:
-\[
-[T(x)]_C = [T]_{C \leftarrow B}[x]_B.
-\]
-}
-
-\medskip
-
-\bluebox{
-Columns = images of basis vectors.
-
-This converts linear maps into matrix multiplication.
-}
-
-\medskip
-\hrule
-\medskip
-
-\subsection*{Change of Basis}
-
-\redbox{
-If $B,B'$ are bases, then:
-\[
-[x]_{B'} = Q [x]_B,
-\]
-where $Q$ is invertible.
-}
-
-\medskip
-
-\redbox{
-\[
-[T]_{B'} = Q [T]_B Q^{-1}.
-\]
-}
-
-\medskip
-
-\bluebox{
-This is similarity transformation $\to$ same operator, different matrix.
 }
 
 \medskip
@@ -1034,56 +891,6 @@ $T$ is an isometry iff:
 \medskip
 \hrule
 \medskip
-
-\subsection*{Bounded Linear Operators}
-
-\redbox{
-$T:X\to Y$ is bounded iff:
-\[
-\|T(u)\| \le M\|u\|.
-\]
-
-Operator norm:
-\[
-\|T\| = \sup_{\|u\|=1}\|T(u)\|.
-\]
-}
-
-\medskip
-
-\redbox{
-\textbf{Theorem.} $T$ is continuous iff bounded.
-}
-
-\medskip
-
-\bluebox{
-Finite-dimensional result:
-
-Every linear map is bounded.
-}
-
-\medskip
-\hrule
-\medskip
-
-\subsection*{Space of Operators}
-
-\redbox{
-\[
-\mathcal{L}(X,Y)
-\]
-is a vector space.
-}
-
-\medskip
-
-\bluebox{
-Dimension (finite case):
-\[
-\dim(\mathcal{L}(X,Y)) = \dim(X)\cdot\dim(Y).
-\]
-}
 
 \subsection*{Bounded Linear Operators and Operator Norm}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
@@ -1308,29 +1115,6 @@ Hence $\mathcal{L}(X,Y)$ is a normed vector space.
 
 \subsection*{Properties of the Operator Norm}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
-
-\textbf{Triangle Inequality.}
-
-\redbox{
-For $T,S \in \mathcal{L}(X,Y)$,
-\begin{align*}
-\|T+S\| \le \|T\| + \|S\|.
-\end{align*}
-}
-
-\medskip
-
-\bluebox{
-\textbf{Commentary:} From the estimate
-\[
-\|(T+S)(u)\| \le (\|T\| + \|S\|)\|u\|,
-\]
-the inequality follows by taking the infimum over all admissible constants $M$ in the definition of the operator norm.
-}
-
-\medskip
-\hrule
-\medskip
 
 \textbf{Homogeneity.}
 
