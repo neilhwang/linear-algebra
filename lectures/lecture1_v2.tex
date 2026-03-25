@@ -715,6 +715,230 @@ so both sides are $0$, hence uniqueness.
 \hrule
 \medskip
 
+\subsection*{Rank--Nullity Theorem}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem (Rank--Nullity).} Let $T: V \to W$ be a linear transformation. Then
+\[
+\dim(\ker T) + \dim(\operatorname{Im} T) = \dim(V).
+\]
+Equivalently, $\dim(\text{domain}) = \dim(\text{kernel}) + \dim(\text{image})$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} This is one of the central theorems of linear algebra. It says the dimension of the domain splits into the ``lost'' dimensions (kernel) and the ``surviving'' dimensions (image). Also note:
+\begin{itemize}[leftmargin=1.5em]
+    \item The image of a subspace under a linear map is a subspace of the codomain.
+    \item The preimage of a subspace under a linear map is a subspace of the domain.
+\end{itemize}
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Basis as Direct Sum}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+$\{v_1, \dots, v_n\}$ is a basis for $V$ if and only if
+\[
+V = \operatorname{span}\{v_1\} \oplus \operatorname{span}\{v_2\} \oplus \cdots \oplus \operatorname{span}\{v_n\}.
+\]
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} A basis decomposes $V$ into a direct sum of $1$-dimensional subspaces. Each coordinate $a_i$ in $v = a_1 v_1 + \cdots + a_n v_n$ corresponds to the component in $\operatorname{span}\{v_i\}$, and the direct sum guarantees this decomposition is unique.
+
+\textbf{Example:} In $\mathbb{R}^3$ with the standard basis $\{e_1, e_2, e_3\}$:
+\[
+\mathbb{R}^3 = \operatorname{span}\{e_1\} \oplus \operatorname{span}\{e_2\} \oplus \operatorname{span}\{e_3\}
+\]
+where each summand is one of the coordinate axes.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+%% COMPLEX NUMBERS (Feb 10 lecture)
+%% ============================================================
+
+\subsection*{The Complex Numbers}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} As a set,
+\[
+\mathbb{C} = \{x + iy \mid x, y \in \mathbb{R}\}, \qquad \mathbb{R}^2 = \{(x,y) \mid x, y \in \mathbb{R}\}.
+\]
+As sets, $\mathbb{C}$ is the same as $\mathbb{R}^2$ (there is a bijection), but they have \textbf{different algebraic structures}.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} Addition looks the same:
+\[
+\mathbb{C}: (x_1 + iy_1) + (x_2 + iy_2) = (x_1+x_2) + i(y_1+y_2), \qquad \mathbb{R}^2: (x_1,y_1) + (x_2,y_2) = (x_1+x_2,\; y_1+y_2).
+\]
+But $\mathbb{C}$ has a multiplication that $\mathbb{R}^2$ does not (as a vector space). A field $F$ is an abelian group with scalar multiplication; a vector space over $F$ is built on top of $F$.
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Standard Form and Subfield $\mathbb{R} \subset \mathbb{C}$}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+The \textbf{standard form} of $z \in \mathbb{C}$ is $z = x + iy$, where
+\[
+\operatorname{Re}(z) = x, \qquad \operatorname{Im}(z) = y.
+\]
+
+$\mathbb{R}$ embeds in $\mathbb{C}$ as $\mathbb{R} \cong \{x + 0i : x \in \mathbb{R}\} \subset \mathbb{C}$.
+
+$\mathbb{R}$ is a \textbf{subfield} of $\mathbb{C}$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} Not everything can be easily expressed in standard form (e.g., $i^i$). The identification $\mathbb{R} \hookrightarrow \mathbb{C}$ preserves all field operations, so $\mathbb{R}$ is a subfield.
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Absolute Value (Modulus)}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+The \textbf{absolute value} (modulus, standard norm) is
+\[
+|\cdot|: \mathbb{C} \to \mathbb{R}, \qquad z = x+iy \mapsto |z| = \sqrt{x^2 + y^2}.
+\]
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Complex Conjugate}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\[
+\overline{\phantom{z}}: \mathbb{C} \to \mathbb{C}, \qquad z = x+iy \mapsto \bar{z} = x - iy.
+\]
+This is a reflection about the real axis.
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Standard Inner Product on $\mathbb{C}$}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\[
+\langle \cdot, \cdot \rangle: \mathbb{C} \times \mathbb{C} \to \mathbb{C}, \qquad \langle z_1, z_2 \rangle = z_1 \cdot \overline{z_2}.
+\]
+(The standard inner product on $\mathbb{R}^n$ is the dot product.)
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Polar and Exponential Form}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+Let $z = x + iy \neq 0$. Then
+\[
+z = |z|(\cos\theta + i\sin\theta) = |z|e^{i\theta},
+\]
+where $\theta$ satisfies $\cos\theta = \frac{x}{|z|}$ and $\sin\theta = \frac{y}{|z|}$.
+
+The last equality is \textbf{Euler's formula}: $e^{i\theta} = \cos\theta + i\sin\theta$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The angle $\theta$ is multi-valued (defined up to $2\pi$). The \textbf{principal argument} $\operatorname{Arg}(z)$ is the unique $\theta \in (-\pi, \pi]$. Polar form is especially useful for multiplication: $|z_1 z_2| = |z_1||z_2|$ and arguments add.
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Basic Properties of Modulus and Conjugate}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\begin{align*}
+&\overline{z_1 \pm z_2} = \bar{z}_1 \pm \bar{z}_2, \qquad \overline{z_1 \cdot z_2} = \bar{z}_1 \cdot \bar{z}_2, \qquad \overline{\left(\frac{z_1}{z_2}\right)} = \frac{\bar{z}_1}{\bar{z}_2}, \\[6pt]
+&|z_1 z_2| = |z_1||z_2|, \qquad \left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}, \qquad |z|^2 = z\bar{z}, \\[6pt]
+&\operatorname{Re}(z) = \frac{z + \bar{z}}{2}, \qquad \operatorname{Im}(z) = \frac{z - \bar{z}}{2i}.
+\end{align*}
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Triangle Inequality for $\mathbb{C}$}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\[
+\bigl||z_1| - |z_2|\bigr| \le |z_1 + z_2| \le |z_1| + |z_2|.
+\]
+}
+
+\medskip
+
+\redbox{
+\textbf{Proof of $|z_1 + z_2| \le |z_1| + |z_2|$:}
+
+Both sides are non-negative, so we may square:
+\begin{align*}
+|z_1 + z_2|^2 &= (z_1+z_2)\overline{(z_1+z_2)} = z_1\bar{z}_1 + z_1\bar{z}_2 + z_2\bar{z}_1 + z_2\bar{z}_2 \\
+&= |z_1|^2 + |z_2|^2 + 2\operatorname{Re}(z_1\bar{z}_2).
+\end{align*}
+It suffices to show $|z_1+z_2|^2 - (|z_1|+|z_2|)^2 \le 0$:
+\[
+\text{LHS} = 2\bigl(\operatorname{Re}(z_1\bar{z}_2) - |z_1||z_2|\bigr) \le 0
+\]
+since $\operatorname{Re}(z_1\bar{z}_2) \le |z_1\bar{z}_2| = |z_1||z_2|$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The \textbf{reverse triangle inequality} $\bigl||z_1|-|z_2|\bigr| \le |z_1+z_2|$ follows by writing $z_1 = (z_1+z_2) + (-z_2)$ and applying the triangle inequality, then by symmetry.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+%% Back to Inner Product Spaces (Mar 3 lecture)
+%% ============================================================
+
 \subsection*{Inner Product Spaces}
 
 \redbox{
@@ -724,6 +948,29 @@ An inner product $\langle \cdot,\cdot\rangle$ satisfies:
 \langle u,v\rangle = \overline{\langle v,u\rangle},\\
 \langle ru+sw, v\rangle = r\langle u,v\rangle + s\langle w,v\rangle.
 \end{align*}
+}
+
+\medskip
+
+\redbox{
+\textbf{Definition.} A vector space $V$ with a specific inner product $\langle \cdot,\cdot \rangle$ is called an \textbf{inner product space}, denoted $(V, \langle \cdot, \cdot \rangle)$.
+
+There are many inner products one can define on a given vector space (e.g., the dot product on $\mathbb{C}$ discussed earlier).
+}
+
+\medskip
+
+\bluebox{
+\textbf{Properties of the inner product} (derived from the axioms):
+\begin{enumerate}[leftmargin=1.5em]
+    \item $\langle u, v+w \rangle = \langle v, u \rangle + \langle u, w \rangle$ \quad (additivity in the second variable, via conjugate symmetry)
+    \item $\langle u, rv \rangle = \bar{r}\langle u, v \rangle$ \quad (conjugate-linearity in the second variable)
+    \item $\langle u, 0 \rangle = 0$ \quad (take $r=0$: $\langle u, 0 \rangle = \langle u, 0 \cdot 0 \rangle = \bar{0}\langle u, 0 \rangle = 0$)
+    \item If $\langle u, v \rangle = \langle u, w \rangle$ for all $u \neq 0$, then $v = w$. \\
+    \textit{Proof:} $\langle u, v-w \rangle = 0$ for all $u$. Take $u = v-w$: $\langle v-w, v-w \rangle = 0 \Rightarrow v-w = 0$.
+    \item If $\langle T(v), w \rangle = 0$ for all $v, w \in V$, then $T = 0$. \\
+    \textit{Proof (over $\mathbb{C}$):} Let $v = ru + w$, $u, w \in V$. Then $0 = \langle T(v), w \rangle = \langle T(ru+w), w \rangle = r\langle T(u), w \rangle + \langle T(w), w \rangle$. This holds for all $r, w$, forcing $\langle T(u), w \rangle = 0$ for all $u, w$. Then $T(u) = 0$ for all $u$ by property (4).
+\end{enumerate}
 }
 
 \medskip
@@ -748,6 +995,23 @@ From inner product:
 \[
 \|u\| = \sqrt{\langle u,u\rangle}.
 \]
+This is called the \textbf{induced norm}.
+}
+
+\medskip
+
+\redbox{
+\textbf{Definition.} A vector space $V$ with a specific norm $(V, \|\cdot\|)$ is called a \textbf{normed linear space} (normed vector space).
+
+One can \textbf{induce} a norm from an inner product: $(V, \langle \cdot, \cdot \rangle) \longrightarrow (V, \|\cdot\|, \langle \cdot, \cdot \rangle)$.
+}
+
+\medskip
+
+\redbox{
+\textbf{Theorem.} Let $(V, \langle \cdot, \cdot \rangle)$ be an inner product space. Then $\|u\| := \sqrt{\langle u, u \rangle}$ is a norm.
+
+\textit{Proof:} Non-negativity and definiteness follow from the inner product axiom $\langle v,v \rangle \ge 0$ with equality iff $v=0$. Homogeneity: $\|ru\| = \sqrt{\langle ru, ru \rangle} = \sqrt{r\bar{r}\langle u,u \rangle} = |r|\|u\|$. The triangle inequality is proved below using Cauchy--Schwarz.
 }
 
 \medskip
@@ -834,6 +1098,99 @@ An inner product space is \textbf{Hilbert} if complete under induced norm.
 }
 
 \medskip
+
+\bluebox{
+\textbf{Commentary:} The chain of structures is:
+\[
+\langle \cdot, \cdot \rangle \;\xrightarrow{\text{induces}}\; \|\cdot\| \;\xrightarrow{\text{induces}}\; d \;\xrightarrow{\text{induces}}\; \text{topology (open sets)}.
+\]
+Each arrow loses information: not every norm comes from an inner product, and not every metric comes from a norm. But if we start with an inner product, we get all three for free.
+
+Are all Banach spaces also Hilbert? No---a given norm $\|\cdot\|$ may not have any inner product $\langle \cdot, \cdot \rangle$ that induces it. The parallelogram law (below) characterizes exactly when a norm is induced by an inner product.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+%% Mar 10 lecture content
+%% ============================================================
+
+\subsection*{Pythagorean Theorem}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem.} Let $X$ be an inner product space over $\mathbb{R}$. If $x \perp y$, then
+\[
+\|x + y\|^2 = \|x\|^2 + \|y\|^2.
+\]
+(Here $\|\cdot\|$ is the induced norm.)
+}
+
+\medskip
+
+\redbox{
+\textbf{Proof.} We show $\langle x, y \rangle = \frac{1}{2}\bigl(\|x+y\|^2 - \|x\|^2 - \|y\|^2\bigr)$. Expanding:
+\begin{align*}
+\|x+y\|^2 = \langle x+y, x+y \rangle = \|x\|^2 + 2\langle x,y \rangle + \|y\|^2.
+\end{align*}
+So $\langle x, y \rangle = \frac{1}{2}(\|x+y\|^2 - \|x\|^2 - \|y\|^2)$. If $x \perp y$ then $\langle x,y \rangle = 0$, giving $\|x+y\|^2 = \|x\|^2 + \|y\|^2$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} This is the abstract generalization of the classical Pythagorean theorem. In $\mathbb{R}^2$ with the dot product, it reduces to the usual statement about right triangles.
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Law of Cosines (Expansion Formula)}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Proposition.} For all $x, y$ in an inner product space $X$:
+\[
+\|x+y\|^2 = \|x\|^2 + \|y\|^2 + 2\operatorname{Re}\langle x, y \rangle.
+\]
+}
+
+\medskip
+
+\redbox{
+\textbf{Proof.}
+\begin{align*}
+\|x+y\|^2 &= \langle x+y, x+y \rangle = \langle x,x \rangle + \langle x,y \rangle + \overline{\langle x,y \rangle} + \langle y,y \rangle \\
+&= \|x\|^2 + \|y\|^2 + 2\operatorname{Re}\langle x,y \rangle.
+\end{align*}
+(Since $\langle y,x \rangle + \langle x,y \rangle = \overline{\langle x,y \rangle} + \langle x,y \rangle = 2\operatorname{Re}\langle x,y \rangle$.)
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Angle Between Vectors}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} Let $X = (X, \langle \cdot, \cdot \rangle)$ be an inner product space over $\mathbb{R}$. For non-zero $x, y \in X$, the \textbf{angle} between $x$ and $y$ is the unique $\theta \in [0, \pi]$ satisfying
+\[
+\cos\theta = \frac{\langle x, y \rangle}{\|x\|\|y\|}.
+\]
+(Well-defined by Cauchy--Schwarz: $-1 \le \frac{\langle x,y \rangle}{\|x\|\|y\|} \le 1$, and $\cos$ is bijective on $[0,\pi]$.)
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} In $\mathbb{R}^2$ with the dot product, this recovers the usual geometric angle. The special case $\theta = \pi/2$ gives $\langle x,y \rangle = 0$, i.e., orthogonality.
+}
+
+\medskip
 \hrule
 \medskip
 
@@ -877,15 +1234,63 @@ Over $\mathbb{C}$:
 \hrule
 \medskip
 
-\subsection*{Isometries}
+\subsection*{Jordan--von Neumann Theorem}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
 
 \redbox{
-$T$ is an isometry iff:
+\textbf{Theorem (Jordan--von Neumann).} Let $X$ be a vector space normed by $\|\cdot\|$. Then $\|\cdot\|$ is induced by an inner product if and only if the parallelogram law holds.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} This characterizes which norms come from inner products. The idea of the proof:
+
+$(\Rightarrow)$: Already done---direct computation from the inner product.
+
+$(\Leftarrow)$: Suppose the parallelogram law holds. Define $\langle x, y \rangle := \frac{1}{4}(\|x+y\|^2 - \|x-y\|^2)$ (over $\mathbb{R}$). One must verify this is an inner product: non-negativity and definiteness are easy; Hermitian symmetry follows from the formula; \emph{linearity in the first variable} is the hard part and requires the parallelogram law (many applications of it).
+
+A consequence (``Hilbertability''): every Hilbert space is a Banach space, but not conversely.
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Isometries}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} Let $V, W$ be inner product spaces. A linear map $T: V \to W$ is an \textbf{isometry} (inner-product-preserving) if
 \[
-\|T(v)\| = \|v\|
-\quad \Longleftrightarrow \quad
-\langle T(u),T(v)\rangle = \langle u,v\rangle.
+\langle T(u), T(v) \rangle_W = \langle u, v \rangle_V \quad \text{for all } u, v \in V.
 \]
+
+Note: when discussing linear transformations between inner product spaces, $V$ and $W$ are always over the same field.
+}
+
+\medskip
+
+\redbox{
+\textbf{Proposition.} $T: V \to W$ is an isometry if and only if $\|T(v)\|_W = \|v\|_V$ for all $v$.
+
+\textit{Proof ($\Rightarrow$):} $\|T(v)\|^2 = \langle T(v), T(v) \rangle = \langle v, v \rangle = \|v\|^2$.
+
+\textit{Proof ($\Leftarrow$, over $\mathbb{R}$):} By the polarization identity,
+\begin{align*}
+\langle T(u), T(v) \rangle &= \tfrac{1}{4}(\|T(u)+T(v)\|^2 - \|T(u)-T(v)\|^2) \\
+&= \tfrac{1}{4}(\|T(u+v)\|^2 - \|T(u-v)\|^2) \\
+&= \tfrac{1}{4}(\|u+v\|^2 - \|u-v\|^2) = \langle u, v \rangle.
+\end{align*}
+(The $\mathbb{C}$ case uses the $\mathbb{C}$ polarization identity.)
+}
+
+\medskip
+
+\redbox{
+\textbf{Proposition.} $T: V \to W$ is an isometry if and only if $d(T(u), T(v)) = d(u, v)$ for all $u, v$ (as long as $d$ is the induced metric and $T$ is linear).
+
+\textit{Proof:} $d(T(u), T(v)) = \|T(u) - T(v)\| = \|T(u-v)\| = \|u-v\| = d(u,v)$.
 }
 
 \medskip
