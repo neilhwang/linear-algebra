@@ -881,129 +881,12 @@ Note: the converse (Cauchy $\Rightarrow$ convergent) holds only in \emph{complet
 
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
-Let $X := (X, \|\cdot \|_X$) and $Y= (Y, \|\cdot \|_Y$) be normed spaces, and let $T: X\rightarrow Y$ be a linear operator. Prove that if $dim(X)<\infty$, then $T$ is bounded.
-\noindent\\
-\textbf{Solution.}\\
-\quad\\
-\noindent\fbox{ \parbox{\textwidth}{
-Suppose $\dim(X) = n < \infty$, and let $\{e_1, \dots, e_n\}$ be a basis for $X$. Then for any $x \in X$, there exist unique scalars $a_1, \dots, a_n$ such that
-\[
-x = \sum_{i=1}^n a_i e_i.
-\]
-By linearity of $T$, we have
-\[
-T(x) = \sum_{i=1}^n a_i T(e_i).
-\]
-Using the triangle inequality,
-\[
-\|T(x)\|_Y \le \sum_{i=1}^n |a_i| \, \|T(e_i)\|_Y.
-\]
-Let
-\[
-M := \max_{1 \le i \le n} \|T(e_i)\|_Y.
-\]
-Then
-\[
-\|T(x)\|_Y \le M \sum_{i=1}^n |a_i|.
-\]
-
-Define a new norm on $X$ based on the basis $\{e_1, \dots, e_n\}$ by
-\[
-\|x\|_* := \sum_{i=1}^n |a_i|.
-\]
-Since $X$ is finite-dimensional, all norms on $X$ are equivalent. Hence there exists a constant $C > 0$ such that
-\[
-\|x\|_* \le C \|x\|_X \quad \text{for all } x \in X.
-\]
-Therefore,
-\[
-\|T(x)\|_Y \le M \|x\|_* \le MC \|x\|_X.
-\]
-Let $K := MC$ for some constant $K$. Then for all $x \in X$,
-\[
-\|T(x)\|_Y \le K \|x\|_X.
-\]
-
-Thus $T$ is bounded.
-
-\hfill $\square$
-
-}}
-
-\hfill \break  $~\!\!$ \dotfill \medskip \\
-\textbf{Question.}\\
-Let $T: X\rightarrow Y$ be a linear operator between normed linear spaces. Suppose that $T$ is continuous. Then, show that $T(0)=0$.
-\noindent\\
-\textbf{Solution.}\\
-\quad\\
-\noindent\fbox{ \parbox{\textwidth}{
-Since $T$ is linear, for any $x \in X$ we have
-\[
-T(0) = T(x - x) = T(x) - T(x) = 0.
-\]
-Thus $T(0) = 0$.
-
-\medskip
-
-Alternatively, using continuity: since $T$ is continuous at $0$, for any sequence $\{x_n\}$ in $X$ with $x_n \to 0$, we have $T(x_n) \to T(0)$. Taking $x_n = 0$ for all $n$, we get $T(x_n) = 0$ for all $n$, hence $T(0) = 0$.
-
-\hfill $\square$
-}}
-
-
-\hfill \break  $~\!\!$ \dotfill \medskip \\
-\textbf{Question.}\\
-Let $T: X \to Y$ be a linear operator between normed linear spaces. Suppose that $T$ is continuous. Then, for $\varepsilon = 1$, there exists $\delta > 0$ such that
-\[
-\|u - 0\| < \delta \implies \|T(u) - T(0)\| < 1.
-\]
-Since $T(0) = 0$, this simplifies to
-\[
-\|u\| < \delta \implies \|T(u)\| < 1.
-\]
-
-Show that this implies
-\[
-\|u\| < \delta \implies \|T(u)\| \le 1.
-\]
-\noindent\\
-\textbf{Solution.}\\
-\quad\\
-\noindent\fbox{ \parbox{\textwidth}{
-Let $u \in X$ with $\|u\| < \delta$. For any $0 < t < 1$, we have
-\[
-\|t u\| = t \|u\| < \|u\| < \delta.
-\]
-Hence, by the previous implication,
-\[
-\|T(tu)\| < 1.
-\]
-Using linearity of $T$, we obtain
-\[
-\|t T(u)\| < 1 \quad \Rightarrow \quad t \|T(u)\| < 1.
-\]
-Thus,
-\[
-\|T(u)\| < \frac{1}{t}.
-\]
-Since this holds for all $0 < t < 1$, letting $t \to 1^{-}$ gives
-\[
-\|T(u)\| \le 1.
-\]
-
-\hfill $\square$
-
-}}
-
-\bigskip
-
-\hfill \break  $~\!\!$ \dotfill \medskip \\
-\textbf{Question.}\\
 Let $X = (X, \langle \cdot, \cdot \rangle)$ be an inner product space over $\mathbb{R}$. The Pythagorean theorem states: if $x \perp y$, then $\|x+y\|^2 = \|x\|^2 + \|y\|^2$. Using the identity
 \[
 \langle x,y \rangle = \tfrac{1}{2}\bigl(\|x+y\|^2 - \|x\|^2 - \|y\|^2\bigr),
 \]
 show that this is the law of cosines in $X = \mathbb{R}^2$ with the standard dot product.
+\noindent\\
 
 \noindent\\
 \textbf{Solution.}\\
@@ -1145,6 +1028,133 @@ Hence $f$ is continuous at $x_0$. Since $x_0$ was arbitrary, $f$ is continuous o
 Note: this uses the metric $d$, not the norm $\|\cdot\|$, so it holds in any metric space, not just normed spaces.
 
 \hfill $\square$
+}}
+
+\bigskip
+\begin{center}
+\rule{0.5\textwidth}{1pt}\\[6pt]
+\textbf{Homework from Lecture on March 18, 2026}\\[2pt]
+\rule{0.5\textwidth}{1pt}
+\end{center}
+\bigskip
+
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+\textbf{Question.}\\
+Let $X := (X, \|\cdot \|_X$) and $Y= (Y, \|\cdot \|_Y$) be normed spaces, and let $T: X\rightarrow Y$ be a linear operator. Prove that if $dim(X)<\infty$, then $T$ is bounded.
+\noindent\\
+\textbf{Solution.}\\
+\quad\\
+\noindent\fbox{ \parbox{\textwidth}{
+Suppose $\dim(X) = n < \infty$, and let $\{e_1, \dots, e_n\}$ be a basis for $X$. Then for any $x \in X$, there exist unique scalars $a_1, \dots, a_n$ such that
+\[
+x = \sum_{i=1}^n a_i e_i.
+\]
+By linearity of $T$, we have
+\[
+T(x) = \sum_{i=1}^n a_i T(e_i).
+\]
+Using the triangle inequality,
+\[
+\|T(x)\|_Y \le \sum_{i=1}^n |a_i| \, \|T(e_i)\|_Y.
+\]
+Let
+\[
+M := \max_{1 \le i \le n} \|T(e_i)\|_Y.
+\]
+Then
+\[
+\|T(x)\|_Y \le M \sum_{i=1}^n |a_i|.
+\]
+
+Define a new norm on $X$ based on the basis $\{e_1, \dots, e_n\}$ by
+\[
+\|x\|_* := \sum_{i=1}^n |a_i|.
+\]
+Since $X$ is finite-dimensional, all norms on $X$ are equivalent. Hence there exists a constant $C > 0$ such that
+\[
+\|x\|_* \le C \|x\|_X \quad \text{for all } x \in X.
+\]
+Therefore,
+\[
+\|T(x)\|_Y \le M \|x\|_* \le MC \|x\|_X.
+\]
+Let $K := MC$. Then for all $x \in X$,
+\[
+\|T(x)\|_Y \le K \|x\|_X.
+\]
+
+Thus $T$ is bounded.
+
+\hfill $\square$
+
+}}
+
+\bigskip
+
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+\textbf{Question.}\\
+Let $T: X\rightarrow Y$ be a linear operator between normed linear spaces. Suppose that $T$ is continuous. Then, show that $T(0)=0$.
+\noindent\\
+\textbf{Solution.}\\
+\quad\\
+\noindent\fbox{ \parbox{\textwidth}{
+Since $T$ is linear, for any $x \in X$ we have
+\[
+T(0) = T(x - x) = T(x) - T(x) = 0.
+\]
+Thus $T(0) = 0$.
+
+\medskip
+
+Alternatively, using continuity: since $T$ is continuous at $0$, for any sequence $\{x_n\}$ in $X$ with $x_n \to 0$, we have $T(x_n) \to T(0)$. Taking $x_n = 0$ for all $n$, we get $T(x_n) = 0$ for all $n$, hence $T(0) = 0$.
+
+\hfill $\square$
+}}
+
+\bigskip
+
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+\textbf{Question.}\\
+Let $T: X \to Y$ be a linear operator between normed linear spaces. Suppose that $T$ is continuous. Then, for $\varepsilon = 1$, there exists $\delta > 0$ such that
+\[
+\|u - 0\| < \delta \implies \|T(u) - T(0)\| < 1.
+\]
+Since $T(0) = 0$, this simplifies to
+\[
+\|u\| < \delta \implies \|T(u)\| < 1.
+\]
+
+Show that this implies
+\[
+\|u\| < \delta \implies \|T(u)\| \le 1.
+\]
+\noindent\\
+\textbf{Solution.}\\
+\quad\\
+\noindent\fbox{ \parbox{\textwidth}{
+Let $u \in X$ with $\|u\| < \delta$. For any $0 < t < 1$, we have
+\[
+\|t u\| = t \|u\| < \|u\| < \delta.
+\]
+Hence, by the previous implication,
+\[
+\|T(tu)\| < 1.
+\]
+Using linearity of $T$, we obtain
+\[
+\|t T(u)\| < 1 \quad \Rightarrow \quad t \|T(u)\| < 1.
+\]
+Thus,
+\[
+\|T(u)\| < \frac{1}{t}.
+\]
+Since this holds for all $0 < t < 1$, letting $t \to 1^{-}$ gives
+\[
+\|T(u)\| \le 1.
+\]
+
+\hfill $\square$
+
 }}
 
 \bigskip
