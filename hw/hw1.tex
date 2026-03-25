@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage{amsmath,amssymb}
 \usepackage[margin=1in]{geometry}
+\usepackage{mdframed}
+\usepackage{needspace}
 
 \begin{document}
 
@@ -25,7 +27,7 @@ Homework 1\\
 \end{center}
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $W \subset V$. Show that $W$ is a subspace of $V$ if and only if:
@@ -38,7 +40,7 @@ Let $W \subset V$. Show that $W$ is a subspace of $V$ if and only if:
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Suppose first that $W$ is a subspace of $V$. Then $W$ is itself a vector space with the same operations as $V$. Hence:
 \begin{align*}
 x,y\in W &\implies x+y\in W, \\
@@ -97,12 +99,12 @@ a(x + y) = ax + ay.
 In each case, the identity holds because $W \subset V$ and the identity already holds in $V$. The only axioms that require the three closure assumptions are: (A3) requires $0 \in W$; (A4) requires closure under scalar multiplication (to get $-x = (-1)x \in W$); and all axioms involving addition or scalar multiplication of elements of $W$ require that the results remain in $W$ (closure under addition and scalar multiplication).
 
 Therefore all vector space axioms hold on $W$, so $W$ is a subspace of $V$.
-}}
+\end{mdframed}
 
 \bigskip
 
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $T: V \to W$ be a function. Show that $T$ is linear if and only if:
@@ -115,7 +117,7 @@ for all $x,y \in V$ and $a \in F$.
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 By definition, $T$ is linear if for all $x,y\in V$ and all $a,b\in F$,
 \begin{align*}
 T(ax+by)=aT(x)+bT(y).
@@ -142,11 +144,11 @@ T(ax+by)
 &=aT(x)+bT(y).
 \end{align*}
 Thus $T$ satisfies the defining property of linearity, hence $T$ is linear.
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $B = \{x_1,\dots,x_n\}$ be a basis of $V$. Show that every $x \in V$ can be written uniquely as:
@@ -157,7 +159,7 @@ x = a_1 x_1 + \cdots + a_n x_n.
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Since $B$ is a basis of $V$, by definition it spans $V$ and is linearly independent. Because $B$ spans $V$, every $x\in V$ can be expressed as a linear combination of the basis vectors:
 \begin{align*}
 x=a_1x_1+\cdots+a_nx_n
@@ -181,11 +183,11 @@ Hence
 a_i=b_i\qquad \text{for all } i=1,\dots,n.
 \end{align*}
 So the representation is unique.
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $V$ be an $n$-dimensional vector space with ordered basis $B = \{x_1,\dots,x_n\}$. Define the coordinate map:
@@ -199,7 +201,7 @@ Show that the map $x \mapsto [x]_B$ is a linear isomorphism from $V$ to $F^n$.
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Define $\Phi:V\to F^n$ by
 \begin{align*}
 \Phi(x)=[x]_B,
@@ -246,11 +248,11 @@ Thus every vector in $F^n$ is in the image of $\Phi$, so $\Phi$ is surjective.
 Note that in linear algebra, “linear” = “homomorphism.” iT is exactly what it means for $\Phi$ to be a homomorphism of vector spaces.
 
 Since $\Phi$ is linear, injective, and surjective, it is a linear isomorphism.
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $B, B'$ be two ordered bases of $V$. Show that there exists an invertible matrix $Q$ such that:
@@ -262,7 +264,7 @@ and identify $Q$ as the change of coordinate matrix.
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Let
 \begin{align*}
 B=\{x_1,\dots,x_n\},\qquad B'=\{x_1',\dots,x_n'\}.
@@ -302,11 +304,11 @@ Q=\begin{bmatrix}
 \end{bmatrix}.
 \end{align*}
 Since $Q$ comes from a linear isomorphism, it is invertible.
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $T: V \to V$ be linear and let $B, B'$ be bases. Show that:
@@ -318,7 +320,7 @@ where $Q$ is the change of coordinate matrix from $B'$ to $B$.
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Let
 \begin{align*}
 \Phi_B(x)=[x]_B,\qquad \Phi_{B'}(x)=[x]_{B'}.
@@ -362,11 +364,11 @@ If instead one defines $Q$ to be the change of coordinate matrix from $B$ to $B'
 [T]_{B'}=Q[T]_BQ^{-1}.
 \end{align*}
 where the exact placement of $Q$ and $Q^{-1}$ depends on the convention for the change of coordinate matrix.
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Fill in the missing steps to prove that if $T,S$ are linear, then $T+S$ is linear:
@@ -378,7 +380,7 @@ Fill in the missing steps to prove that if $T,S$ are linear, then $T+S$ is linea
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Let $x,y\in X$ and $a\in F$. Then
 \begin{align*}
 (T+S)(x+y)
@@ -396,11 +398,11 @@ Also,
 &=a(T+S)(x).
 \end{align*}
 Hence $T+S$ is linear.
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Show that checking closure under addition and scalar multiplication is sufficient to prove $W \subset V$ is a subspace. Explain why $0 \in W$ automatically follows.
@@ -409,7 +411,7 @@ Show that checking closure under addition and scalar multiplication is sufficien
 \noindent
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Assume $W\neq \varnothing$, and assume:
 \begin{align*}
 x,y\in W &\implies x+y\in W, \\
@@ -432,11 +434,11 @@ So additive inverses are also in $W$.
 Because all remaining vector space axioms are inherited from $V$, it follows that $W$ is a subspace of $V$.
 
 Therefore, for a nonempty subset $W$, closure under addition and scalar multiplication is enough to conclude that $W$ is a subspace.
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Suppose
@@ -448,7 +450,7 @@ Show that $a_i = b_i$ for all $i$ using linear independence.
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Subtract the two expressions:
 \begin{align*}
 0
@@ -463,11 +465,11 @@ Therefore
 \begin{align*}
 a_i=b_i\qquad \text{for all }i.
 \end{align*}
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Prove that the coordinate map $x \mapsto [x]_B$ is linear, injective, and surjective.
@@ -475,7 +477,7 @@ Prove that the coordinate map $x \mapsto [x]_B$ is linear, injective, and surjec
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Let $B=\{x_1,\dots,x_n\}$. Define $\Phi(x)=[x]_B$.
 
 To prove linearity, write
@@ -505,12 +507,12 @@ Then
 Hence every vector in $F^n$ is hit by $\Phi$.
 
 Therefore $\Phi$ is linear, injective, and surjective.
-}}
+\end{mdframed}
 
 \bigskip
 
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Construct the matrix $Q$ explicitly by expressing each vector of $B'$ in terms of $B$. Show that $Q$ is invertible.
@@ -518,7 +520,7 @@ Construct the matrix $Q$ explicitly by expressing each vector of $B'$ in terms o
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Let
 \begin{align*}
 B=\{x_1,\dots,x_n\},\qquad B'=\{x_1',\dots,x_n'\}.
@@ -557,12 +559,12 @@ Hence
 c_1x_1'+\cdots+c_nx_n'=0.
 \end{align*}
 Since $B'$ is linearly independent, all $c_j=0$. Thus $\ker(Q)=\{0\}$, so $Q$ is injective. Because $Q$ is an $n\times n$ matrix, injective implies invertible. Therefore $Q$ is invertible.
-}}
+\end{mdframed}
 
 \bigskip
 
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Show that the matrix representation $[T]_B$ satisfies
@@ -574,7 +576,7 @@ for all $x \in V$.
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Let $B=\{x_1,\dots,x_n\}$ be a basis of $V$. By definition, the $j$th column of $[T]_B$ is the coordinate vector of $T(x_j)$ with respect to $B$:
 \begin{align*}
 [T(x_j)]_B=\text{column }j\text{ of }[T]_B.
@@ -607,11 +609,11 @@ But multiplying the matrix $[T]_B$ by the vector $[x]_B$ produces exactly this s
 [T(x)]_B=[T]_B[x]_B.
 \end{align*}
 This is the defining relation between a linear map and its matrix representation with respect to the basis $B$.
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Show that $W \neq \varnothing$ and the single condition
@@ -623,7 +625,7 @@ is sufficient to prove $W$ is a subspace of $V$.
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 \textbf{Zero vector:} Since $W \neq \varnothing$, pick any $w \in W$. Take $c = 0$, $x = y = w$:
 \[
 0 \cdot w + w = w \in W.
@@ -646,11 +648,11 @@ a \cdot x + 0 = ax \in W.
 Hence all three subspace conditions are satisfied, so $W$ is a subspace.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $W_1, W_2$ be subspaces of a vector space $V$ over $F$. Show that $W_1 \cap W_2$ is a subspace of $V$.
@@ -658,7 +660,7 @@ Let $W_1, W_2$ be subspaces of a vector space $V$ over $F$. Show that $W_1 \cap 
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 \textbf{Zero vector:} Since $W_1$ and $W_2$ are subspaces, $0 \in W_1$ and $0 \in W_2$, so $0 \in W_1 \cap W_2$.
 
 \textbf{Closure under addition:} Let $x, y \in W_1 \cap W_2$. Then $x, y \in W_1$ and $x, y \in W_2$. Since $W_1$ is a subspace, $x + y \in W_1$. Since $W_2$ is a subspace, $x + y \in W_2$. Hence $x + y \in W_1 \cap W_2$.
@@ -668,11 +670,11 @@ Let $W_1, W_2$ be subspaces of a vector space $V$ over $F$. Show that $W_1 \cap 
 Therefore $W_1 \cap W_2$ is a subspace of $V$.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $W_1, W_2$ be subspaces of $V$. Recall $W_1 + W_2 = \{x_1 + x_2 : x_1 \in W_1,\; x_2 \in W_2\}$. Show:
@@ -685,7 +687,7 @@ Conclude that $W_1 + W_2$ is the smallest subspace containing both $W_1$ and $W_
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 \textbf{Part 1:}
 
 \textit{$W_1 + W_2$ is a subspace:}
@@ -703,7 +705,7 @@ Conclude that $W_1 + W_2$ is the smallest subspace containing both $W_1$ and $W_
 \textbf{Conclusion:} $W_1 + W_2$ contains both $W_1$ and $W_2$, and is contained in every subspace that does so. Therefore it is the smallest such subspace.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 \begin{center}
@@ -713,7 +715,7 @@ Conclude that $W_1 + W_2$ is the smallest subspace containing both $W_1$ and $W_
 \end{center}
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Show that $\mathbb{R} \cong \{x + 0i : x \in \mathbb{R}\} \subset \mathbb{C}$ is a subfield of $\mathbb{C}$.
@@ -721,7 +723,7 @@ Show that $\mathbb{R} \cong \{x + 0i : x \in \mathbb{R}\} \subset \mathbb{C}$ is
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 We already proved $\mathbb{C}$ is a field. We identify $\mathbb{R}$ with $\{x + 0i : x \in \mathbb{R}\} \subset \mathbb{C}$.
 
 \textbf{Closed under addition:} If $a, b \in \mathbb{R}$, then $(a + 0i) + (b + 0i) = (a+b) + 0i \in \mathbb{R}$.
@@ -737,11 +739,11 @@ We already proved $\mathbb{C}$ is a field. We identify $\mathbb{R}$ with $\{x + 
 Hence $\mathbb{R}$ is a subfield of $\mathbb{C}$: it is a subset that is itself a field under the same operations.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Show that $|\bar{z}| = |z|$ and $z\bar{z} = |z|^2$ for all $z \in \mathbb{C}$.
@@ -749,7 +751,7 @@ Show that $|\bar{z}| = |z|$ and $z\bar{z} = |z|^2$ for all $z \in \mathbb{C}$.
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Let $z = x + iy$ with $x, y \in \mathbb{R}$. Then $\bar{z} = x - iy$.
 
 \textbf{$|\bar{z}| = |z|$:}
@@ -764,11 +766,11 @@ z\bar{z} &= (x + iy)(x - iy) = x^2 - (iy)^2 = x^2 - i^2 y^2 = x^2 + y^2.
 Since $|z|^2 = (\sqrt{x^2+y^2})^2 = x^2 + y^2$, we have $z\bar{z} = |z|^2$.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Show that $d(z_1, z_2) = |z_1 - z_2|$ defines a metric on $\mathbb{C}$. That is, verify non-negativity, symmetry, and the triangle inequality.
@@ -776,7 +778,7 @@ Show that $d(z_1, z_2) = |z_1 - z_2|$ defines a metric on $\mathbb{C}$. That is,
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 \textbf{Non-negativity:} $d(z_1, z_2) = |z_1 - z_2| \ge 0$ since the modulus is non-negative. Also $d(z_1, z_2) = 0 \iff |z_1 - z_2| = 0 \iff z_1 - z_2 = 0 \iff z_1 = z_2$.
 
 \textbf{Symmetry:}
@@ -792,11 +794,11 @@ d(z_1, z_3) = |z_1 - z_3| = |(z_1 - z_2) + (z_2 - z_3)| \le |z_1 - z_2| + |z_2 -
 Hence $d$ is a metric on $\mathbb{C}$.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Show by induction that for all $z_1, \dots, z_n \in \mathbb{C}$:
@@ -807,7 +809,7 @@ Show by induction that for all $z_1, \dots, z_n \in \mathbb{C}$:
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 \textbf{Base case ($n = 2$):} This is the triangle inequality for $|\cdot|$ on $\mathbb{C}$:
 \[
 |z_1 + z_2| \le |z_1| + |z_2|.
@@ -829,7 +831,7 @@ For $n+1$:
 By induction, the result holds for all $n \ge 2$.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 \begin{center}
@@ -839,7 +841,7 @@ By induction, the result holds for all $n \ge 2$.
 \end{center}
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $T, S : X \to Y$ be linear operators. Show that $\alpha T + \beta S$ is a linear operator for any scalars $\alpha, \beta$, and that the collection of all linear operators from $X$ to $Y$ forms a vector space.
@@ -848,7 +850,7 @@ Let $T, S : X \to Y$ be linear operators. Show that $\alpha T + \beta S$ is a li
 \noindent
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Let $u,v \in X$ and let $c \in F$. Define $(\alpha T+\beta S):X\to Y$ by
 \begin{align*}
 (\alpha T+\beta S)(x)=\alpha T(x)+\beta S(x).
@@ -886,11 +888,11 @@ so $(T+S)+R=T+(S+R)$. Similarly $T+S=S+T$, and for $a,b\in F$,
 (a+b)T=aT+bT,\qquad a(T+S)=aT+aS,\qquad (ab)T=a(bT),\qquad 1T=T.
 \end{align*}
 Therefore $\mathcal{L}(X,Y)$ is a vector space.
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $(X, d)$ be a metric space. Carefully define what it means for a sequence $\{x_n\}$ in $X$ to be \emph{convergent} and what it means for it to be \emph{Cauchy}. Then prove that every convergent sequence in any metric space is Cauchy. (Use $d$, not $\|\cdot\|$.)
@@ -898,7 +900,7 @@ Let $(X, d)$ be a metric space. Carefully define what it means for a sequence $\
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 \textbf{Definitions:}
 
 A sequence $\{x_n\}$ in $(X, d)$ \textbf{converges} to $x \in X$ if for every $\varepsilon > 0$ there exists $N \in \mathbb{N}$ such that
@@ -924,7 +926,7 @@ Hence $\{x_n\}$ is Cauchy.
 Note: the converse (Cauchy $\Rightarrow$ convergent) holds only in \emph{complete} metric spaces. That is exactly the definition of completeness.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 \begin{center}
@@ -934,7 +936,7 @@ Note: the converse (Cauchy $\Rightarrow$ convergent) holds only in \emph{complet
 \end{center}
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $X = (X, \langle \cdot, \cdot \rangle)$ be an inner product space over $\mathbb{R}$. The Pythagorean theorem states: if $x \perp y$, then $\|x+y\|^2 = \|x\|^2 + \|y\|^2$. Using the identity
@@ -947,7 +949,7 @@ show that this is the law of cosines in $X = \mathbb{R}^2$ with the standard dot
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 In $\mathbb{R}^2$ with the standard inner product $\langle x, y \rangle = x \cdot y = \|x\|\|y\|\cos\theta$, the identity
 \[
 \|x+y\|^2 = \|x\|^2 + \|y\|^2 + 2\langle x, y \rangle
@@ -967,11 +969,11 @@ Replacing $y$ by $-y$ (so the angle between $x$ and $-y$ is $\pi - \theta$), the
 which is the classical law of cosines. When $\theta = \pi/2$ (i.e., $x \perp y$), we recover the Pythagorean theorem: $c^2 = a^2 + b^2$.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $X = (X, \langle \cdot, \cdot \rangle)$ be an inner product space over $\mathbb{R}$. For non-zero $x, y \in X$, define
@@ -983,7 +985,7 @@ Show that when $X = \mathbb{R}^2$ with the dot product, $\theta$ is the usual an
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 By the Cauchy--Schwarz inequality, $|\langle x,y\rangle| \le \|x\|\|y\|$, so
 \[
 -1 \le \frac{\langle x, y \rangle}{\|x\|\|y\|} \le 1.
@@ -998,11 +1000,11 @@ In $\mathbb{R}^2$, let $x = (x_1, x_2)$ and $y = (y_1, y_2)$. Write $x = \|x\|(\
 So $\langle x,y\rangle / (\|x\|\|y\|) = \cos(\alpha - \beta)$, and $\theta = |\alpha - \beta|$ (up to the range $[0,\pi]$), which is exactly the geometric angle between $x$ and $y$.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 (\textbf{Polarization identity over $\mathbb{R}$.}) Let $X = (X, \langle \cdot, \cdot \rangle)$ be an inner product space over $\mathbb{R}$. Show that for all $x, y \in X$:
@@ -1013,7 +1015,7 @@ So $\langle x,y\rangle / (\|x\|\|y\|) = \cos(\alpha - \beta)$, and $\theta = |\a
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 By the law of cosines (Proposition from lecture):
 \begin{align*}
 \|x+y\|^2 &= \|x\|^2 + \|y\|^2 + 2\,\text{Re}\,\langle x, y \rangle, \\
@@ -1029,11 +1031,11 @@ Dividing by $4$:
 \]
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $V, W$ be inner product spaces over $\mathbb{C}$. A linear map $T: V \to W$ is an isometry if $\langle T(u), T(v) \rangle_W = \langle u, v \rangle_V$ for all $u, v$. Show that $T$ is an isometry if and only if $\|T(v)\|_W = \|v\|_V$ for all $v \in V$.
@@ -1042,7 +1044,7 @@ Let $V, W$ be inner product spaces over $\mathbb{C}$. A linear map $T: V \to W$ 
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 $(\Rightarrow)$: If $\langle T(u), T(v) \rangle = \langle u, v \rangle$ for all $u, v$, then taking $u = v$ gives $\|T(v)\|^2 = \langle T(v), T(v) \rangle = \langle v, v \rangle = \|v\|^2$, so $\|T(v)\| = \|v\|$.
 
 $(\Leftarrow)$: Suppose $\|T(v)\| = \|v\|$ for all $v$. We use the polarization identity over $\mathbb{C}$:
@@ -1062,11 +1064,11 @@ By the norm-preserving hypothesis, $\|T(w)\|^2 = \|w\|^2$ for all $w$. Substitut
 \]
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces. Show that if $f: X \to Y$ is Lipschitz continuous, then $f$ is continuous.
@@ -1074,7 +1076,7 @@ Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces. Show that if $f: X \to Y$ is Lip
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Suppose $f$ is Lipschitz: there exists $L \ge 0$ such that
 \[
 d_Y(f(x), f(y)) \le L\, d_X(x, y) \quad \text{for all } x, y \in X.
@@ -1088,7 +1090,7 @@ Hence $f$ is continuous at $x_0$. Since $x_0$ was arbitrary, $f$ is continuous o
 Note: this uses the metric $d$, not the norm $\|\cdot\|$, so it holds in any metric space, not just normed spaces.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 \begin{center}
@@ -1098,14 +1100,14 @@ Note: this uses the metric $d$, not the norm $\|\cdot\|$, so it holds in any met
 \end{center}
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $X := (X, \|\cdot \|_X$) and $Y= (Y, \|\cdot \|_Y$) be normed spaces, and let $T: X\rightarrow Y$ be a linear operator. Prove that if $dim(X)<\infty$, then $T$ is bounded.
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Suppose $\dim(X) = n < \infty$, and let $\{e_1, \dots, e_n\}$ be a basis for $X$. Then for any $x \in X$, there exist unique scalars $a_1, \dots, a_n$ such that
 \[
 x = \sum_{i=1}^n a_i e_i.
@@ -1148,18 +1150,18 @@ Thus $T$ is bounded.
 
 \hfill $\square$
 
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $T: X\rightarrow Y$ be a linear operator between normed linear spaces. Suppose that $T$ is continuous. Then, show that $T(0)=0$.
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Since $T$ is linear, for any $x \in X$ we have
 \[
 T(0) = T(x - x) = T(x) - T(x) = 0.
@@ -1171,11 +1173,11 @@ Thus $T(0) = 0$.
 Alternatively, using continuity: since $T$ is continuous at $0$, for any sequence $\{x_n\}$ in $X$ with $x_n \to 0$, we have $T(x_n) \to T(0)$. Taking $x_n = 0$ for all $n$, we get $T(x_n) = 0$ for all $n$, hence $T(0) = 0$.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $T: X \to Y$ be a linear operator between normed linear spaces. Suppose that $T$ is continuous. Then, for $\varepsilon = 1$, there exists $\delta > 0$ such that
@@ -1194,7 +1196,7 @@ Show that this implies
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 Let $u \in X$ with $\|u\| < \delta$. For any $0 < t < 1$, we have
 \[
 \|t u\| = t \|u\| < \|u\| < \delta.
@@ -1218,7 +1220,7 @@ Since this holds for all $0 < t < 1$, letting $t \to 1^{-}$ gives
 
 \hfill $\square$
 
-}}
+\end{mdframed}
 
 \bigskip
 \begin{center}
@@ -1228,7 +1230,7 @@ Since this holds for all $0 < t < 1$, letting $t \to 1^{-}$ gives
 \end{center}
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $V$ be an inner product space and let $X \subseteq V$ be any subset (not necessarily a subspace). Show that the orthogonal complement
@@ -1240,7 +1242,7 @@ is a subspace of $V$.
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 We verify the subspace conditions: closure under addition, closure under scalar multiplication, and containment of the zero vector.
 
 \textbf{Zero vector:} For all $x \in X$,
@@ -1266,11 +1268,11 @@ Hence $a u \in X^\perp$.
 Since $X^\perp$ contains $0$ and is closed under addition and scalar multiplication, $X^\perp$ is a subspace of $V$.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $V$ be an inner product space and let $S \subseteq V$ be a subspace. Show that
@@ -1281,7 +1283,7 @@ S \cap S^\perp = \{0\}.
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 First, $0 \in S \cap S^\perp$ because $0$ belongs to every subspace. So $\{0\} \subseteq S \cap S^\perp$.
 
 Now suppose $v \in S \cap S^\perp$. Then:
@@ -1300,11 +1302,11 @@ By the non-degeneracy (positive definiteness) of the inner product, $\langle v, 
 Therefore $S \cap S^\perp \subseteq \{0\}$, and hence $S \cap S^\perp = \{0\}$.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Prove the Gram--Schmidt process by induction. Specifically, let $B = (v_1, v_2, \dots)$ be a sequence of non-zero vectors in an inner product space $V$. Define
@@ -1321,7 +1323,7 @@ Show by induction on $k$ that for all $k \ge 1$:
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 \textbf{Base case ($k=1$):}
 $u_1 = v_1$. The set $\{u_1\}$ is trivially orthogonal (a single vector is orthogonal to itself vacuously for the pairwise condition). Since $v_1 \neq 0$ by hypothesis, $u_1 \neq 0$. Also, $\operatorname{span}\{u_1\} = \operatorname{span}\{v_1\}$. $\checkmark$
 
@@ -1364,11 +1366,11 @@ Therefore
 By induction, the result holds for all $k \ge 1$.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \bigskip
 
-\clearpage
+\needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
 Let $V$ be an inner product space, let $O = \{u_1, \dots, u_n\}$ be an orthonormal set, and let $S = \operatorname{span}(O)$. Define
@@ -1380,7 +1382,7 @@ Show that if $\langle v - \hat{v}, u_i \rangle = 0$ for each $u_i \in O$, then $
 \noindent\\
 \textbf{Solution.}\\
 \quad\\
-\noindent\fbox{ \parbox{\textwidth}{
+\begin{mdframed}[linewidth=1pt]
 We need to show that $\langle v - \hat{v}, s \rangle = 0$ for all $s \in S$.
 
 Let $s \in S$. Since $O = \{u_1, \dots, u_n\}$ is a basis for $S$, there exist scalars $c_1, \dots, c_n \in F$ such that
@@ -1406,6 +1408,6 @@ Hence
 Since this holds for all $s \in S$, we conclude $v - \hat{v} \in S^\perp$.
 
 \hfill $\square$
-}}
+\end{mdframed}
 
 \end{document}
