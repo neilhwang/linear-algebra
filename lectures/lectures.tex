@@ -1728,6 +1728,468 @@ Indeed,
 Thus $T \in \mathcal{L}(X,Y)$ and $T_n \to T$. Therefore $\mathcal{L}(X,Y)$ is complete.
 }
 
+
+\newpage
+
+%% ============================================================
+%% LECTURE: March 24, 2026
+%% Orthogonality, Gram-Schmidt, and Best Approximation
+%% ============================================================
+
+\section*{\centering Lecture: March 24, 2026 \\ Orthogonality, Gram--Schmidt, and Best Approximation}
+\medskip
+
+
+%% ============================================================
+\subsection*{Orthogonality}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} Let $V = (X, \langle \cdot, \cdot \rangle)$ be an inner product space.
+
+Two vectors $u, v \in V$ are \textbf{orthogonal} if
+\[
+\langle u, v \rangle = 0,
+\]
+denoted $u \perp v$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} In $\mathbb{R}^2$ with the standard dot product, $u \perp v$ means the vectors meet at a $90^\circ$ angle. But the definition works in \emph{any} inner product space, including function spaces where ``perpendicularity'' has no geometric picture. The zero vector is orthogonal to every vector: $\langle 0, v \rangle = 0$ for all $v$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Orthogonal Subsets}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} Subsets $X, Y \subseteq V$ are \textbf{orthogonal} if
+\[
+\langle x, y \rangle = 0 \quad \text{for all } x \in X,\; y \in Y,
+\]
+written $X \perp Y$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} This is a condition on \emph{every} pair. It is not enough for some elements to be orthogonal; every element of $X$ must be orthogonal to every element of $Y$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Orthogonal Complement}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} Let $X \subseteq V$. The \textbf{orthogonal complement} of $X$ is
+\[
+X^\perp = \{ v \in V \mid v \perp x \text{ for all } x \in X \} = \{ v \in V \mid \langle v, x \rangle = 0 \;\forall\, x \in X \}.
+\]
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} $X^\perp$ collects \emph{everything} in $V$ that is orthogonal to every element of $X$. Key properties (assigned as homework):
+\begin{enumerate}[leftmargin=1.5em]
+    \item $X^\perp$ is always a subspace of $V$, even if $X$ itself is not a subspace.
+    \item For any subspace $S$ of $V$: $S \cap S^\perp = \{0\}$.
+\end{enumerate}
+
+\textbf{Example:} In $\mathbb{R}^3$, this is analogous to the direct sum $\mathbb{R}^3 = \mathbb{R}^2 \oplus Z$, where $Z$ is the $z$-axis and $\mathbb{R}^2$ is the $xy$-plane. We have $\mathbb{R}^2 \cap Z = \{0\}$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Orthogonal Sets}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} Let $V$ be an inner product space. A set
+\[
+O = \{ u_i \mid i \in \Lambda \} \subset V
+\]
+is an \textbf{orthogonal set} if
+\[
+u_i \perp u_j \quad \text{for all } i \neq j.
+\]
+
+Here $\Lambda$ can be any index set (finite, countable, or uncountable).
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} Note that the zero vector is orthogonal to every vector, so $0$ \emph{can} be in an orthogonal set. However, it is excluded from orthogonal sets when we want linear independence (see below).
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Orthonormal Sets}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} An orthogonal set $O = \{u_i \mid i \in \Lambda\}$ is \textbf{orthonormal} if each $u_i$ is a unit vector:
+\[
+\|u_i\| = 1 \quad \text{for all } i \in \Lambda.
+\]
+
+Equivalently,
+\[
+\langle u_i, u_j \rangle = \delta_{ij} = \begin{cases} 1 & \text{if } i = j, \\ 0 & \text{otherwise.} \end{cases}
+\]
+Here $\delta_{ij}$ is the \textbf{Kronecker delta}.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} Since $\|u_i\| = 1 \neq 0$, the zero vector cannot be in an orthonormal set. To turn an orthogonal set into an orthonormal one, normalize each vector: replace $u_i$ by $u_i / \|u_i\|$.
+
+\textbf{Example:} In $\mathbb{R}^3$, the standard basis $\{e_1, e_2, e_3\}$ is orthonormal with respect to the dot product: $\langle e_i, e_j \rangle = \delta_{ij}$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Orthogonal Sets Are Linearly Independent}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem.} Any orthogonal set of non-zero vectors in $V$ is linearly independent.
+
+(In particular, this always implies finite-dimensionality when $V$ is finite-dimensional.)
+}
+
+\medskip
+
+\redbox{
+\textbf{Proof.} Let $O = \{u_i \mid i \in \Lambda\}$ be an orthogonal set of non-zero vectors. Suppose
+\[
+r_1 u_1 + \cdots + r_n u_n = 0
+\]
+(note: $n$ is not fixed; it is any finite subcollection). Take the inner product of both sides with $u_k$:
+\[
+0 = \langle r_1 u_1 + \cdots + r_n u_n,\; u_k \rangle = r_1 \langle u_1, u_k \rangle + \cdots + r_n \langle u_n, u_k \rangle = r_k \langle u_k, u_k \rangle.
+\]
+Since $u_k \neq 0$, we have $\langle u_k, u_k \rangle \neq 0$ (by non-degeneracy of the inner product), so $r_k = 0$. \qed
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The key trick is to ``test'' the linear combination against one of the vectors in the set. The orthogonality condition kills all terms except the one we are testing, isolating the coefficient. This is why orthogonal bases are so powerful: extracting coordinates becomes trivial.
+
+Compare with a general basis, where finding coordinates requires solving a linear system.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Gram--Schmidt Orthogonalization}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem (Gram--Schmidt).} Let $V$ be an inner product space and let
+\[
+O = \{u_1, \dots, u_n\}
+\]
+be an orthogonal set of non-zero vectors in $V$. If $v \notin \langle u_1, \dots, u_n \rangle$ (i.e., $v$ is not in the span), then there exists a non-zero vector $u \in V$ such that
+\[
+\{u_1, \dots, u_n, u\}
+\]
+is orthogonal and
+\[
+\langle u_1, \dots, u_n, u \rangle = \langle u_1, \dots, u_n, v \rangle.
+\]
+
+Explicitly:
+\[
+u = v - r_1 u_1 - r_2 u_2 - \cdots - r_n u_n, \qquad r_i = \frac{\langle v, u_i \rangle}{\langle u_i, u_i \rangle}.
+\]
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The idea is to subtract off the ``shadow'' (projection) of $v$ onto each existing orthogonal vector. What remains is the component of $v$ perpendicular to all of them.
+
+To verify: for each $j$,
+\[
+\langle u, u_j \rangle = \langle v, u_j \rangle - r_j \langle u_j, u_j \rangle = \langle v, u_j \rangle - \frac{\langle v, u_j \rangle}{\langle u_j, u_j \rangle} \langle u_j, u_j \rangle = 0. \quad \checkmark
+\]
+
+Note that $u \neq 0$ because $v \notin \operatorname{span}\{u_1, \dots, u_n\}$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{The Gram--Schmidt Process}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem (Gram--Schmidt Process).} Let $B = (v_1, v_2, \dots)$ be a sequence of non-zero vectors in an inner product space $V$. Define a sequence $O = (u_1, u_2, \dots)$ by:
+\begin{align*}
+u_1 &= v_1, \\
+u_2 &= v_2 - \frac{\langle v_2, u_1 \rangle}{\langle u_1, u_1 \rangle}\, u_1, \\
+u_3 &= v_3 - \frac{\langle v_3, u_1 \rangle}{\langle u_1, u_1 \rangle}\, u_1 - \frac{\langle v_3, u_2 \rangle}{\langle u_2, u_2 \rangle}\, u_2, \\
+&\;\;\vdots \\
+u_k &= v_k - \sum_{i=1}^{k-1} \frac{\langle v_k, u_i \rangle}{\langle u_i, u_i \rangle}\, u_i.
+\end{align*}
+
+Then $O$ is an orthogonal sequence in $V$ and
+\[
+\langle u_1, \dots, u_k \rangle = \langle v_1, \dots, v_k \rangle \quad \text{for all } k.
+\]
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The point is to maintain the span at each iterative step, not just orthogonality. Each $u_k$ is built from $v_k$ by removing its components along all previously constructed orthogonal vectors.
+
+The proof is by induction: the base case $k=1$ is trivial ($u_1 = v_1$). The inductive step applies the preceding theorem to adjoin $v_{k+1}$ to the orthogonal set $\{u_1, \dots, u_k\}$.
+
+To get an \textbf{orthonormal} set, normalize at the end: $\hat{u}_i = u_i / \|u_i\|$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Example: Gram--Schmidt on Polynomials}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Example.} Let $V$ = real polynomials with inner product
+\[
+\langle p(x), g(x) \rangle = \int_{-1}^{1} p(x)\, g(x)\, dx.
+\]
+
+Let $B = (1, x, x^2, x^3, \dots)$ be the standard monomial basis.
+
+Apply Gram--Schmidt:
+
+\textbf{Step 1:} $u_1 = v_1 = 1$.
+
+\textbf{Step 2:}
+\[
+u_2 = v_2 - \frac{\langle v_2, u_1 \rangle}{\langle u_1, u_1 \rangle}\, u_1 = x - \frac{\int_{-1}^{1} x \cdot 1\, dx}{\int_{-1}^{1} 1 \cdot 1\, dx} \cdot 1 = x - \frac{0}{2} = x.
+\]
+
+\textbf{Step 3:}
+\[
+u_3 = x^2 - \frac{\langle x^2, u_1 \rangle}{\langle u_1, u_1 \rangle}\, u_1 - \frac{\langle x^2, u_2 \rangle}{\langle u_2, u_2 \rangle}\, u_2 = x^2 - \frac{\int_{-1}^{1} x^2\, dx}{\int_{-1}^{1} 1\, dx} \cdot 1 - \frac{\int_{-1}^{1} x^3\, dx}{\int_{-1}^{1} x^2\, dx} \cdot x = x^2 - \frac{1}{3}.
+\]
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The polynomials produced by this process are (scalar multiples of) the \textbf{Legendre polynomials}. After normalization, they form an orthonormal basis for $L^2([-1,1])$.
+
+Note how odd-powered cross terms vanish by symmetry: $\int_{-1}^{1} x^{2k+1}\, dx = 0$ because the integrand is odd on a symmetric interval. This simplifies many of the Gram--Schmidt computations.
+
+The $u_4$ step (not shown completely) yields $u_4 = x^3 - \tfrac{3}{5}x$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Orthonormal Basis and Hilbert Basis}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} A \textbf{maximal} orthonormal set (or more generally, an orthogonal set of non-zero vectors) in an inner product space $V$ is called a \textbf{Hilbert basis} for $V$.
+
+(To prove such a set exists in general requires Zorn's lemma.)
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} ``Maximal'' means that no non-zero vector can be added to the set while preserving orthogonality. In finite dimensions, a Hilbert basis is the same as an orthonormal basis. In infinite dimensions, the distinction between an algebraic basis (Hamel basis) and a Hilbert basis becomes important.
+
+If $O = \{u_1, \dots, u_n\}$ is an orthonormal basis for $V$, then every $v \in V$ can be expanded as:
+\[
+v = r_1 u_1 + \cdots + r_n u_n.
+\]
+The coordinates $r_i$ are found trivially:
+\[
+r_i = \langle v, u_i \rangle.
+\]
+This is because $\langle v, u_i \rangle = \langle r_1 u_1 + \cdots + r_n u_n, u_i \rangle = r_i \langle u_i, u_i \rangle = r_i$.
+
+Compare this with a general (non-orthogonal) basis, where finding coordinates requires solving a system of equations.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Fourier Expansion and Fourier Coefficients}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} Let $O = \{u_1, \dots, u_n\}$ be an orthonormal subset of $V$ (not necessarily a basis), and let $S = \langle O \rangle = \operatorname{span}(O)$.
+
+For any $v \in V$, the \textbf{Fourier expansion} of $v$ with respect to $O$ is
+\[
+\hat{v} = \sum_{i=1}^{n} \langle v, u_i \rangle\, u_i.
+\]
+Each coefficient $\langle v, u_i \rangle$ is called a \textbf{Fourier coefficient} of $v$ with respect to $O$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} If $O$ is an orthonormal \emph{basis} for the entire space, then $\hat{v} = v$. But if $O$ spans only a subspace $S \subsetneq V$, then $\hat{v}$ is the ``best approximation'' of $v$ within $S$ (see next theorem).
+
+The Fourier expansion generalizes the familiar Fourier series from analysis: if $V = L^2([0, 2\pi])$ and $O = \{e^{inx}/\sqrt{2\pi}\}$, the Fourier coefficients are exactly the classical Fourier coefficients.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Best Approximation Theorem}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem.} Let $O = \{u_1, \dots, u_n\}$ be an orthonormal set in an inner product space $V$, and let $S = \langle O \rangle$. Then for any $v \in V$:
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item $\hat{v} \in S$ and $v - \hat{v} \in S^\perp$.
+    \item $\hat{v}$ is the \textbf{unique} vector in $S$ satisfying $(v - \hat{v}) \in S^\perp$.
+\end{enumerate}
+}
+
+\medskip
+
+\redbox{
+\textbf{Proof of (1).}
+
+$\hat{v} \in S$ is clear since $\hat{v}$ is a linear combination of the $u_i$.
+
+For each $u_i \in O$:
+\begin{align*}
+\langle v - \hat{v},\; u_i \rangle
+&= \langle v, u_i \rangle - \langle \hat{v}, u_i \rangle \\
+&= \langle v, u_i \rangle - \left\langle \sum_{j} \langle v, u_j \rangle\, u_j,\; u_i \right\rangle \\
+&= \langle v, u_i \rangle - \langle v, u_i \rangle \langle u_i, u_i \rangle \\
+&= \langle v, u_i \rangle - \langle v, u_i \rangle = 0.
+\end{align*}
+Since $v - \hat{v}$ is orthogonal to every basis vector of $S$, it is orthogonal to all of $S$. Hence $v - \hat{v} \in S^\perp$.
+}
+
+\medskip
+
+\redbox{
+\textbf{Proof of (2) (Uniqueness).}
+
+Suppose $s \in S$ and $(v - s) \in S^\perp$. Then $\hat{v} - s \in S$ (since both are in $S$) and
+\[
+\hat{v} - s = (v - s) - (v - \hat{v}) \in S^\perp
+\]
+(since both $v - s$ and $v - \hat{v}$ are in $S^\perp$, and $S^\perp$ is a subspace).
+
+Therefore $\hat{v} - s \in S \cap S^\perp = \{0\}$, so $\hat{v} = s$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The decomposition $v = \hat{v} + (v - \hat{v})$ splits $v$ into a component \emph{in} $S$ and a component \emph{perpendicular} to $S$. This is an orthogonal decomposition.
+
+The uniqueness proof uses the key fact that $S \cap S^\perp = \{0\}$ (homework problem).
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{$\hat{v}$ Is the Closest Point in $S$}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem.} $\hat{v}$ is the unique vector in $S$ satisfying
+\[
+\|v - \hat{v}\| < \|v - s\| \quad \text{for all } s \in S \setminus \{\hat{v}\}.
+\]
+
+That is, $\hat{v}$ is the \textbf{best approximation} to $v$ within $S$.
+}
+
+\medskip
+
+\redbox{
+\textbf{Proof.} Since $v - \hat{v} \in S^\perp$ (by the previous theorem) and $\hat{v} - s \in S$ for any $s \in S$, we have
+\[
+(v - \hat{v}) \perp (\hat{v} - s).
+\]
+
+Write $v - s = (v - \hat{v}) + (\hat{v} - s)$. By the Pythagorean theorem (since the two summands are orthogonal):
+\begin{align*}
+\|v - s\|^2
+&= \|(v - \hat{v}) + (\hat{v} - s)\|^2 \\
+&= \|v - \hat{v}\|^2 + \|\hat{v} - s\|^2.
+\end{align*}
+
+Therefore $\|v - s\|^2 \ge \|v - \hat{v}\|^2$, with equality if and only if $\|\hat{v} - s\| = 0$, i.e., $s = \hat{v}$. \qed
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} This is the geometric heart of orthogonal projection. The picture is:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item $S$ is a subspace (a ``plane'' through the origin).
+    \item $v$ is a vector possibly outside $S$.
+    \item $\hat{v}$ is the foot of the perpendicular from $v$ to $S$.
+    \item $v - \hat{v}$ is the ``error'' or ``residual'', perpendicular to $S$.
+\end{itemize}
+
+This theorem has wide applications:
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Least squares:} In statistics, the least-squares solution $\hat{\beta}$ minimizes $\|y - X\beta\|^2$, which is exactly orthogonal projection of $y$ onto the column space of $X$.
+    \item \textbf{Fourier analysis:} The partial Fourier series is the best $L^2$-approximation by trigonometric polynomials.
+    \item \textbf{Signal processing:} Projecting a signal onto a subspace spanned by basis functions gives the best approximation in that subspace.
+\end{itemize}
+
+The Pythagorean theorem is the key tool: because the residual $v - \hat{v}$ is orthogonal to anything in $S$, the distance decomposes cleanly into independent components.
+}
+
+
 \newpage
 \bibliographystyle{apalike}
 \bibliography{references}
