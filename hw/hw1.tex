@@ -1400,4 +1400,186 @@ Since this holds for all $s \in S$, we conclude $v - \hat{v} \in S^\perp$.
 \hfill $\square$
 \end{mdframed}
 
+\bigskip
+
+\needspace{4\baselineskip}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+\textbf{Question (\S6.2, Problem 2).}\\
+In each part, apply the Gram--Schmidt process to the given subset $S$ of the inner product space $V$ to obtain an orthogonal basis for $\operatorname{span}(S)$. Then normalize the vectors to obtain an orthonormal basis $\beta$ for $\operatorname{span}(S)$, and compute the Fourier coefficients of the given vector $x$ relative to $\beta$. Finally, use the Fourier expansion to verify your result.
+
+\medskip
+
+\textbf{(a)} $V = \mathbb{R}^3$, $S = \{(1,0,1),\,(0,1,1),\,(1,3,3)\}$, and $x = (1,1,2)$.
+
+\textbf{(b)} $V = \mathbb{R}^3$, $S = \{(1,1,1),\,(0,1,1),\,(0,0,1)\}$, and $x = (1,0,1)$.
+
+\textbf{(c)} $V = P_2(\mathbb{R})$ with inner product $\langle f(x), g(x) \rangle = \int_0^1 f(t)g(t)\,dt$, $S = \{1, x, x^2\}$, and $h(x) = 1 + x$.
+
+\noindent\\
+\textbf{Solution.}\\
+\quad\\
+\begin{mdframed}[linewidth=1pt]
+
+\textbf{Part (a):} $V = \mathbb{R}^3$, $S = \{v_1, v_2, v_3\} = \{(1,0,1),\,(0,1,1),\,(1,3,3)\}$, $x = (1,1,2)$.
+
+\textbf{Step 1: Gram--Schmidt.}
+
+$u_1 = v_1 = (1,0,1)$.
+
+$u_2 = v_2 - \dfrac{\langle v_2, u_1 \rangle}{\langle u_1, u_1 \rangle} u_1$. We compute:
+\[
+\langle v_2, u_1 \rangle = (0)(1)+(1)(0)+(1)(1) = 1, \qquad \langle u_1, u_1 \rangle = 1+0+1 = 2.
+\]
+\[
+u_2 = (0,1,1) - \tfrac{1}{2}(1,0,1) = \bigl(-\tfrac{1}{2}, 1, \tfrac{1}{2}\bigr).
+\]
+
+$u_3 = v_3 - \dfrac{\langle v_3, u_1 \rangle}{\langle u_1, u_1 \rangle} u_1 - \dfrac{\langle v_3, u_2 \rangle}{\langle u_2, u_2 \rangle} u_2$. We compute:
+\[
+\langle v_3, u_1 \rangle = 1+0+3 = 4, \qquad \langle v_3, u_2 \rangle = -\tfrac{1}{2}+3+\tfrac{3}{2} = 4, \qquad \langle u_2, u_2 \rangle = \tfrac{1}{4}+1+\tfrac{1}{4} = \tfrac{3}{2}.
+\]
+\[
+u_3 = (1,3,3) - \tfrac{4}{2}(1,0,1) - \tfrac{4}{3/2}\bigl(-\tfrac{1}{2},1,\tfrac{1}{2}\bigr) = (1,3,3) - (2,0,2) - \tfrac{8}{3}\bigl(-\tfrac{1}{2},1,\tfrac{1}{2}\bigr).
+\]
+\[
+= (-1,3,1) - \bigl(-\tfrac{4}{3}, \tfrac{8}{3}, \tfrac{4}{3}\bigr) = \bigl(\tfrac{1}{3}, \tfrac{1}{3}, -\tfrac{1}{3}\bigr).
+\]
+
+Orthogonal basis: $\{u_1, u_2, u_3\} = \{(1,0,1),\; (-\tfrac{1}{2},1,\tfrac{1}{2}),\; (\tfrac{1}{3},\tfrac{1}{3},-\tfrac{1}{3})\}$.
+
+\textbf{Step 2: Normalize.}
+\[
+\|u_1\| = \sqrt{2}, \quad \|u_2\| = \sqrt{3/2}, \quad \|u_3\| = \sqrt{1/3}.
+\]
+\[
+\beta = \left\{ \frac{1}{\sqrt{2}}(1,0,1),\; \frac{1}{\sqrt{3/2}}\bigl(-\tfrac{1}{2},1,\tfrac{1}{2}\bigr),\; \frac{1}{\sqrt{1/3}}\bigl(\tfrac{1}{3},\tfrac{1}{3},-\tfrac{1}{3}\bigr) \right\}.
+\]
+Simplifying: $\beta = \left\{ \frac{1}{\sqrt{2}}(1,0,1),\; \frac{1}{\sqrt{6}}(-1,2,1),\; \frac{1}{\sqrt{3}}(1,1,-1) \right\}$.
+
+\textbf{Step 3: Fourier coefficients.} For $x = (1,1,2)$:
+\[
+\langle x, \hat{u}_1 \rangle = \frac{1}{\sqrt{2}}(1+0+2) = \frac{3}{\sqrt{2}}, \quad \langle x, \hat{u}_2 \rangle = \frac{1}{\sqrt{6}}(-1+2+2) = \frac{3}{\sqrt{6}},
+\]
+\[
+\langle x, \hat{u}_3 \rangle = \frac{1}{\sqrt{3}}(1+1-2) = 0.
+\]
+
+\textbf{Verification:}
+\[
+\hat{x} = \frac{3}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}}(1,0,1) + \frac{3}{\sqrt{6}} \cdot \frac{1}{\sqrt{6}}(-1,2,1) + 0 = \frac{3}{2}(1,0,1) + \frac{1}{2}(-1,2,1) = (1,1,2) = x. \;\checkmark
+\]
+
+\bigskip
+\hrule
+\bigskip
+
+\textbf{Part (b):} $V = \mathbb{R}^3$, $S = \{v_1,v_2,v_3\} = \{(1,1,1),\,(0,1,1),\,(0,0,1)\}$, $x = (1,0,1)$.
+
+\textbf{Step 1: Gram--Schmidt.}
+
+$u_1 = (1,1,1)$.
+
+$\langle v_2, u_1 \rangle = 0+1+1 = 2$, $\langle u_1, u_1 \rangle = 3$.
+\[
+u_2 = (0,1,1) - \tfrac{2}{3}(1,1,1) = \bigl(-\tfrac{2}{3}, \tfrac{1}{3}, \tfrac{1}{3}\bigr).
+\]
+
+$\langle v_3, u_1 \rangle = 1$, $\langle v_3, u_2 \rangle = \tfrac{1}{3}$, $\langle u_2, u_2 \rangle = \tfrac{4}{9}+\tfrac{1}{9}+\tfrac{1}{9} = \tfrac{2}{3}$.
+\[
+u_3 = (0,0,1) - \tfrac{1}{3}(1,1,1) - \tfrac{1/3}{2/3}\bigl(-\tfrac{2}{3},\tfrac{1}{3},\tfrac{1}{3}\bigr) = \bigl(-\tfrac{1}{3},-\tfrac{1}{3},\tfrac{2}{3}\bigr) - \tfrac{1}{2}\bigl(-\tfrac{2}{3},\tfrac{1}{3},\tfrac{1}{3}\bigr) = \bigl(0, -\tfrac{1}{2}, \tfrac{1}{2}\bigr).
+\]
+
+\textbf{Step 2: Normalize.}
+\[
+\|u_1\| = \sqrt{3}, \quad \|u_2\| = \sqrt{2/3}, \quad \|u_3\| = \frac{1}{\sqrt{2}}.
+\]
+\[
+\beta = \left\{ \frac{1}{\sqrt{3}}(1,1,1),\; \frac{1}{\sqrt{6}}(-2,1,1),\; \frac{1}{\sqrt{2}}(0,-1,1) \right\}.
+\]
+
+\textbf{Step 3: Fourier coefficients.} For $x = (1,0,1)$:
+\[
+\langle x, \hat{u}_1 \rangle = \frac{2}{\sqrt{3}}, \quad \langle x, \hat{u}_2 \rangle = \frac{-1}{\sqrt{6}}, \quad \langle x, \hat{u}_3 \rangle = \frac{1}{\sqrt{2}}.
+\]
+
+\textbf{Verification:}
+\[
+\hat{x} = \frac{2}{\sqrt{3}}\cdot\frac{1}{\sqrt{3}}(1,1,1) + \frac{-1}{\sqrt{6}}\cdot\frac{1}{\sqrt{6}}(-2,1,1) + \frac{1}{\sqrt{2}}\cdot\frac{1}{\sqrt{2}}(0,-1,1)
+\]
+\[
+= \tfrac{2}{3}(1,1,1) + \tfrac{1}{6}(2,-1,-1) + \tfrac{1}{2}(0,-1,1) = \bigl(\tfrac{2}{3}+\tfrac{1}{3}, \tfrac{2}{3}-\tfrac{1}{6}-\tfrac{1}{2}, \tfrac{2}{3}-\tfrac{1}{6}+\tfrac{1}{2}\bigr) = (1, 0, 1) = x. \;\checkmark
+\]
+
+\bigskip
+\hrule
+\bigskip
+
+\textbf{Part (c):} $V = P_2(\mathbb{R})$, $\langle f, g \rangle = \int_0^1 f(t)g(t)\,dt$, $S = \{1, x, x^2\}$, $h(x) = 1+x$.
+
+\textbf{Step 1: Gram--Schmidt.}
+
+$u_1 = 1$.
+
+$\langle x, 1 \rangle = \int_0^1 t\,dt = \tfrac{1}{2}$, $\langle 1, 1 \rangle = \int_0^1 1\,dt = 1$.
+\[
+u_2 = x - \tfrac{1/2}{1} \cdot 1 = x - \tfrac{1}{2}.
+\]
+
+$\langle x^2, u_1 \rangle = \int_0^1 t^2\,dt = \tfrac{1}{3}$, $\langle x^2, u_2 \rangle = \int_0^1 t^2(t-\tfrac{1}{2})\,dt = \int_0^1 (t^3 - \tfrac{1}{2}t^2)\,dt = \tfrac{1}{4} - \tfrac{1}{6} = \tfrac{1}{12}$,
+\[
+\langle u_2, u_2 \rangle = \int_0^1 (t-\tfrac{1}{2})^2\,dt = \int_0^1 (t^2 - t + \tfrac{1}{4})\,dt = \tfrac{1}{3} - \tfrac{1}{2} + \tfrac{1}{4} = \tfrac{1}{12}.
+\]
+\[
+u_3 = x^2 - \tfrac{1/3}{1}\cdot 1 - \tfrac{1/12}{1/12}(x - \tfrac{1}{2}) = x^2 - \tfrac{1}{3} - x + \tfrac{1}{2} = x^2 - x + \tfrac{1}{6}.
+\]
+
+Orthogonal basis: $\{1,\; x - \tfrac{1}{2},\; x^2 - x + \tfrac{1}{6}\}$.
+
+\textbf{Step 2: Normalize.}
+\[
+\|u_1\| = 1, \quad \|u_2\| = \frac{1}{\sqrt{12}} = \frac{1}{2\sqrt{3}}, \quad \|u_3\|^2 = \int_0^1 (t^2-t+\tfrac{1}{6})^2\,dt = \frac{1}{180}, \; \|u_3\| = \frac{1}{\sqrt{180}}.
+\]
+\[
+\beta = \left\{1,\; 2\sqrt{3}\bigl(x-\tfrac{1}{2}\bigr),\; \sqrt{180}\bigl(x^2-x+\tfrac{1}{6}\bigr)\right\} = \left\{1,\; \sqrt{3}(2x-1),\; 6\sqrt{5}(x^2-x+\tfrac{1}{6})\right\}.
+\]
+
+\textbf{Step 3: Fourier coefficients.} For $h(x) = 1 + x$:
+\[
+\langle h, \hat{u}_1 \rangle = \int_0^1 (1+t)\,dt = \tfrac{3}{2},
+\]
+\[
+\langle h, \hat{u}_2 \rangle = \sqrt{3}\int_0^1 (1+t)(2t-1)\,dt = \sqrt{3}\int_0^1 (2t^2+t-1)\,dt = \sqrt{3}\bigl(\tfrac{2}{3}+\tfrac{1}{2}-1\bigr) = \sqrt{3}\cdot\tfrac{1}{6} = \frac{\sqrt{3}}{6},
+\]
+\[
+\langle h, \hat{u}_3 \rangle = 6\sqrt{5}\int_0^1 (1+t)(t^2-t+\tfrac{1}{6})\,dt = 6\sqrt{5}\int_0^1 (t^3 - \tfrac{5}{6}t + \tfrac{1}{6})\,dt = 6\sqrt{5}\bigl(\tfrac{1}{4} - \tfrac{5}{12} + \tfrac{1}{6}\bigr) = 6\sqrt{5}\cdot 0 = 0.
+\]
+
+\textbf{Verification:}
+\[
+\hat{h} = \tfrac{3}{2}\cdot 1 + \frac{\sqrt{3}}{6}\cdot\sqrt{3}(2x-1) + 0 = \tfrac{3}{2} + \tfrac{1}{2}(2x-1) = \tfrac{3}{2} + x - \tfrac{1}{2} = 1 + x = h(x). \;\checkmark
+\]
+
+(Note: $h \in \operatorname{span}(S) = P_2(\mathbb{R})$, so the Fourier expansion recovers $h$ exactly.)
+
+\bigskip
+\hrule
+\bigskip
+
+\textbf{Parts (d)--(m):} The procedure is identical in each case:
+\begin{enumerate}
+    \item Apply Gram--Schmidt to $S = \{v_1, v_2, \dots\}$ to get orthogonal $\{u_1, u_2, \dots\}$.
+    \item Normalize: $\hat{u}_i = u_i / \|u_i\|$.
+    \item Compute Fourier coefficients: $c_i = \langle x, \hat{u}_i \rangle$.
+    \item Verify: $\hat{x} = \sum c_i \hat{u}_i$ equals $x$ (if $x \in \operatorname{span}(S)$).
+\end{enumerate}
+For complex inner product spaces (parts d, j, k, l, m), recall $\langle u, v \rangle = \sum u_i \overline{v_i}$ and the inner product is conjugate-linear in the second argument.
+
+For matrix spaces (parts g, h, l, m), the standard inner product is $\langle A, B \rangle = \operatorname{tr}(B^* A)$ (or equivalently, treat the entries as a vector and take the dot product).
+
+For function spaces (part i), the inner product is $\langle f, g \rangle = \int_0^\pi f(t)g(t)\,dt$.
+
+The Gram--Schmidt formulas and Fourier coefficient computations are the same in every case; only the inner product changes.
+
+\end{mdframed}
+
 \end{document}
