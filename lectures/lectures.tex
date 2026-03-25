@@ -1,6 +1,5 @@
 \documentclass[12pt]{article}
 
-\usepackage{booktabs}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{geometry}
@@ -391,15 +390,6 @@ A subset $W \subseteq V$ is called a \emph{subspace} if:
 \end{tikzpicture}
 \end{center}
 
-\subsection*{Linear Transformations}
-
-Let $V,W$ be vector spaces over $F$.
-A function $T: V \to W$ is called a \emph{linear transformation} if
-\[
-T(x+y) = T(x) + T(y), \qquad T(ax) = aT(x)
-\]
-for all $x,y \in V$ and $a \in F$.
-
 \subsection*{Bases and Coordinates}
 
 Let $V$ be an $n$--dimensional vector space over $F$.
@@ -666,33 +656,6 @@ The relation $[T]_{\mathcal{B}} = Q[T]_{\mathcal{B}'}Q^{-1}$ then follows
 by conjugating both sides by $Q$.
 
 
-\subsection*{Vector Spaces and Subspaces}
-\hfill \break  $~\!\!$ \dotfill \medskip \\
-
-\redbox{
-\textbf{Subspace Test.} Let $W \subseteq V$ where $V$ is a vector space over $\mathbb{F}$.
-
-Then $W$ is a subspace iff:
-\begin{align*}
-\text{(i)}\; x,y \in W \Rightarrow x+y \in W, \\
-\text{(ii)}\; a \in \mathbb{F}, x \in W \Rightarrow ax \in W.
-\end{align*}
-}
-
-\medskip
-
-\bluebox{
-This implies automatically:
-\[
-0 \in W,\quad x-y \in W.
-\]
-So closure under addition + scalar multiplication is sufficient.
-}
-
-\medskip
-\hrule
-\medskip
-
 \subsection*{Sum and Direct Sum of Subspaces}
 
 \redbox{
@@ -752,111 +715,229 @@ so both sides are $0$, hence uniqueness.
 \hrule
 \medskip
 
-\subsection*{Basis and Coordinates}
+\subsection*{Rank--Nullity Theorem}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
 
 \redbox{
-A set $B=\{x_1,\dots,x_n\}$ is a basis of $V$ iff:
+\textbf{Theorem (Rank--Nullity).} Let $T: V \to W$ be a linear transformation. Then
+\[
+\dim(\ker T) + \dim(\operatorname{Im} T) = \dim(V).
+\]
+Equivalently, $\dim(\text{domain}) = \dim(\text{kernel}) + \dim(\text{image})$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} This is one of the central theorems of linear algebra. It says the dimension of the domain splits into the ``lost'' dimensions (kernel) and the ``surviving'' dimensions (image). Also note:
+\begin{itemize}[leftmargin=1.5em]
+    \item The image of a subspace under a linear map is a subspace of the codomain.
+    \item The preimage of a subspace under a linear map is a subspace of the domain.
+\end{itemize}
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Basis as Direct Sum}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+$\{v_1, \dots, v_n\}$ is a basis for $V$ if and only if
+\[
+V = \operatorname{span}\{v_1\} \oplus \operatorname{span}\{v_2\} \oplus \cdots \oplus \operatorname{span}\{v_n\}.
+\]
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} A basis decomposes $V$ into a direct sum of $1$-dimensional subspaces. Each coordinate $a_i$ in $v = a_1 v_1 + \cdots + a_n v_n$ corresponds to the component in $\operatorname{span}\{v_i\}$, and the direct sum guarantees this decomposition is unique.
+
+\textbf{Example:} In $\mathbb{R}^3$ with the standard basis $\{e_1, e_2, e_3\}$:
+\[
+\mathbb{R}^3 = \operatorname{span}\{e_1\} \oplus \operatorname{span}\{e_2\} \oplus \operatorname{span}\{e_3\}
+\]
+where each summand is one of the coordinate axes.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+%% COMPLEX NUMBERS (Feb 10 lecture)
+%% ============================================================
+
+\subsection*{The Complex Numbers}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} As a set,
+\[
+\mathbb{C} = \{x + iy \mid x, y \in \mathbb{R}\}, \qquad \mathbb{R}^2 = \{(x,y) \mid x, y \in \mathbb{R}\}.
+\]
+As sets, $\mathbb{C}$ is the same as $\mathbb{R}^2$ (there is a bijection), but they have \textbf{different algebraic structures}.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} Addition looks the same:
+\[
+\mathbb{C}: (x_1 + iy_1) + (x_2 + iy_2) = (x_1+x_2) + i(y_1+y_2), \qquad \mathbb{R}^2: (x_1,y_1) + (x_2,y_2) = (x_1+x_2,\; y_1+y_2).
+\]
+But $\mathbb{C}$ has a multiplication that $\mathbb{R}^2$ does not (as a vector space). A field $F$ is an abelian group with scalar multiplication; a vector space over $F$ is built on top of $F$.
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Standard Form and Subfield $\mathbb{R} \subset \mathbb{C}$}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+The \textbf{standard form} of $z \in \mathbb{C}$ is $z = x + iy$, where
+\[
+\operatorname{Re}(z) = x, \qquad \operatorname{Im}(z) = y.
+\]
+
+$\mathbb{R}$ embeds in $\mathbb{C}$ as $\mathbb{R} \cong \{x + 0i : x \in \mathbb{R}\} \subset \mathbb{C}$.
+
+$\mathbb{R}$ is a \textbf{subfield} of $\mathbb{C}$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} Not everything can be easily expressed in standard form (e.g., $i^i$). The identification $\mathbb{R} \hookrightarrow \mathbb{C}$ preserves all field operations, so $\mathbb{R}$ is a subfield.
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Absolute Value (Modulus)}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+The \textbf{absolute value} (modulus, standard norm) is
+\[
+|\cdot|: \mathbb{C} \to \mathbb{R}, \qquad z = x+iy \mapsto |z| = \sqrt{x^2 + y^2}.
+\]
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Complex Conjugate}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\[
+\overline{\phantom{z}}: \mathbb{C} \to \mathbb{C}, \qquad z = x+iy \mapsto \bar{z} = x - iy.
+\]
+This is a reflection about the real axis.
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Standard Inner Product on $\mathbb{C}$}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\[
+\langle \cdot, \cdot \rangle: \mathbb{C} \times \mathbb{C} \to \mathbb{C}, \qquad \langle z_1, z_2 \rangle = z_1 \cdot \overline{z_2}.
+\]
+(The standard inner product on $\mathbb{R}^n$ is the dot product.)
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Polar and Exponential Form}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+Let $z = x + iy \neq 0$. Then
+\[
+z = |z|(\cos\theta + i\sin\theta) = |z|e^{i\theta},
+\]
+where $\theta$ satisfies $\cos\theta = \frac{x}{|z|}$ and $\sin\theta = \frac{y}{|z|}$.
+
+The last equality is \textbf{Euler's formula}: $e^{i\theta} = \cos\theta + i\sin\theta$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The angle $\theta$ is multi-valued (defined up to $2\pi$). The \textbf{principal argument} $\operatorname{Arg}(z)$ is the unique $\theta \in (-\pi, \pi]$. Polar form is especially useful for multiplication: $|z_1 z_2| = |z_1||z_2|$ and arguments add.
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Basic Properties of Modulus and Conjugate}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
 \begin{align*}
-\text{(i)}\; \text{span}(B)=V, \\
-\text{(ii)}\; B \text{ is linearly independent}.
+&\overline{z_1 \pm z_2} = \bar{z}_1 \pm \bar{z}_2, \qquad \overline{z_1 \cdot z_2} = \bar{z}_1 \cdot \bar{z}_2, \qquad \overline{\left(\frac{z_1}{z_2}\right)} = \frac{\bar{z}_1}{\bar{z}_2}, \\[6pt]
+&|z_1 z_2| = |z_1||z_2|, \qquad \left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}, \qquad |z|^2 = z\bar{z}, \\[6pt]
+&\operatorname{Re}(z) = \frac{z + \bar{z}}{2}, \qquad \operatorname{Im}(z) = \frac{z - \bar{z}}{2i}.
 \end{align*}
-
-Then every $x \in V$ can be written uniquely:
-\[
-x = a_1 x_1 + \cdots + a_n x_n.
-\]
-}
-
-\medskip
-
-\bluebox{
-Define coordinate map:
-\[
-[x]_B = (a_1,\dots,a_n) \in \mathbb{F}^n.
-\]
-
-This gives an isomorphism:
-\[
-V \cong \mathbb{F}^n.
-\]
 }
 
 \medskip
 \hrule
 \medskip
 
-\subsection*{Linear Maps}
+\subsection*{Triangle Inequality for $\mathbb{C}$}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
 
 \redbox{
-A map $T:V \to W$ is linear iff:
 \[
-T(x+y)=T(x)+T(y),\quad T(ax)=aT(x).
+\bigl||z_1| - |z_2|\bigr| \le |z_1 + z_2| \le |z_1| + |z_2|.
 \]
 }
 
 \medskip
 
-\bluebox{
-Then:
-\[
-T(0)=0,\quad T(\text{span}) = \text{span}.
-\]
+\redbox{
+\textbf{Proof of $|z_1 + z_2| \le |z_1| + |z_2|$:}
 
-Also $\text{Im}(T)$ is a subspace.
+Both sides are non-negative, so we may square:
+\begin{align*}
+|z_1 + z_2|^2 &= (z_1+z_2)\overline{(z_1+z_2)} = z_1\bar{z}_1 + z_1\bar{z}_2 + z_2\bar{z}_1 + z_2\bar{z}_2 \\
+&= |z_1|^2 + |z_2|^2 + 2\operatorname{Re}(z_1\bar{z}_2).
+\end{align*}
+It suffices to show $|z_1+z_2|^2 - (|z_1|+|z_2|)^2 \le 0$:
+\[
+\text{LHS} = 2\bigl(\operatorname{Re}(z_1\bar{z}_2) - |z_1||z_2|\bigr) \le 0
+\]
+since $\operatorname{Re}(z_1\bar{z}_2) \le |z_1\bar{z}_2| = |z_1||z_2|$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The \textbf{reverse triangle inequality} $\bigl||z_1|-|z_2|\bigr| \le |z_1+z_2|$ follows by writing $z_1 = (z_1+z_2) + (-z_2)$ and applying the triangle inequality, then by symmetry.
 }
 
 \medskip
 \hrule
 \medskip
 
-\subsection*{Matrix Representation}
-
-\redbox{
-Given bases $B,C$, there exists a matrix $[T]_{C \leftarrow B}$ such that:
-\[
-[T(x)]_C = [T]_{C \leftarrow B}[x]_B.
-\]
-}
-
-\medskip
-
-\bluebox{
-Columns = images of basis vectors.
-
-This converts linear maps into matrix multiplication.
-}
-
-\medskip
-\hrule
-\medskip
-
-\subsection*{Change of Basis}
-
-\redbox{
-If $B,B'$ are bases, then:
-\[
-[x]_{B'} = Q [x]_B,
-\]
-where $Q$ is invertible.
-}
-
-\medskip
-
-\redbox{
-\[
-[T]_{B'} = Q [T]_B Q^{-1}.
-\]
-}
-
-\medskip
-
-\bluebox{
-This is similarity transformation $\to$ same operator, different matrix.
-}
-
-\medskip
-\hrule
-\medskip
+%% ============================================================
+%% Back to Inner Product Spaces (Mar 3 lecture)
+%% ============================================================
 
 \subsection*{Inner Product Spaces}
 
@@ -867,6 +948,29 @@ An inner product $\langle \cdot,\cdot\rangle$ satisfies:
 \langle u,v\rangle = \overline{\langle v,u\rangle},\\
 \langle ru+sw, v\rangle = r\langle u,v\rangle + s\langle w,v\rangle.
 \end{align*}
+}
+
+\medskip
+
+\redbox{
+\textbf{Definition.} A vector space $V$ with a specific inner product $\langle \cdot,\cdot \rangle$ is called an \textbf{inner product space}, denoted $(V, \langle \cdot, \cdot \rangle)$.
+
+There are many inner products one can define on a given vector space (e.g., the dot product on $\mathbb{C}$ discussed earlier).
+}
+
+\medskip
+
+\bluebox{
+\textbf{Properties of the inner product} (derived from the axioms):
+\begin{enumerate}[leftmargin=1.5em]
+    \item $\langle u, v+w \rangle = \langle v, u \rangle + \langle u, w \rangle$ \quad (additivity in the second variable, via conjugate symmetry)
+    \item $\langle u, rv \rangle = \bar{r}\langle u, v \rangle$ \quad (conjugate-linearity in the second variable)
+    \item $\langle u, 0 \rangle = 0$ \quad (take $r=0$: $\langle u, 0 \rangle = \langle u, 0 \cdot 0 \rangle = \bar{0}\langle u, 0 \rangle = 0$)
+    \item If $\langle u, v \rangle = \langle u, w \rangle$ for all $u \neq 0$, then $v = w$. \\
+    \textit{Proof:} $\langle u, v-w \rangle = 0$ for all $u$. Take $u = v-w$: $\langle v-w, v-w \rangle = 0 \Rightarrow v-w = 0$.
+    \item If $\langle T(v), w \rangle = 0$ for all $v, w \in V$, then $T = 0$. \\
+    \textit{Proof (over $\mathbb{C}$):} Let $v = ru + w$, $u, w \in V$. Then $0 = \langle T(v), w \rangle = \langle T(ru+w), w \rangle = r\langle T(u), w \rangle + \langle T(w), w \rangle$. This holds for all $r, w$, forcing $\langle T(u), w \rangle = 0$ for all $u, w$. Then $T(u) = 0$ for all $u$ by property (4).
+\end{enumerate}
 }
 
 \medskip
@@ -891,6 +995,23 @@ From inner product:
 \[
 \|u\| = \sqrt{\langle u,u\rangle}.
 \]
+This is called the \textbf{induced norm}.
+}
+
+\medskip
+
+\redbox{
+\textbf{Definition.} A vector space $V$ with a specific norm $(V, \|\cdot\|)$ is called a \textbf{normed linear space} (normed vector space).
+
+One can \textbf{induce} a norm from an inner product: $(V, \langle \cdot, \cdot \rangle) \longrightarrow (V, \|\cdot\|, \langle \cdot, \cdot \rangle)$.
+}
+
+\medskip
+
+\redbox{
+\textbf{Theorem.} Let $(V, \langle \cdot, \cdot \rangle)$ be an inner product space. Then $\|u\| := \sqrt{\langle u, u \rangle}$ is a norm.
+
+\textit{Proof:} Non-negativity and definiteness follow from the inner product axiom $\langle v,v \rangle \ge 0$ with equality iff $v=0$. Homogeneity: $\|ru\| = \sqrt{\langle ru, ru \rangle} = \sqrt{r\bar{r}\langle u,u \rangle} = |r|\|u\|$. The triangle inequality is proved below using Cauchy--Schwarz.
 }
 
 \medskip
@@ -977,6 +1098,99 @@ An inner product space is \textbf{Hilbert} if complete under induced norm.
 }
 
 \medskip
+
+\bluebox{
+\textbf{Commentary:} The chain of structures is:
+\[
+\langle \cdot, \cdot \rangle \;\xrightarrow{\text{induces}}\; \|\cdot\| \;\xrightarrow{\text{induces}}\; d \;\xrightarrow{\text{induces}}\; \text{topology (open sets)}.
+\]
+Each arrow loses information: not every norm comes from an inner product, and not every metric comes from a norm. But if we start with an inner product, we get all three for free.
+
+Are all Banach spaces also Hilbert? No---a given norm $\|\cdot\|$ may not have any inner product $\langle \cdot, \cdot \rangle$ that induces it. The parallelogram law (below) characterizes exactly when a norm is induced by an inner product.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+%% Mar 10 lecture content
+%% ============================================================
+
+\subsection*{Pythagorean Theorem}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem.} Let $X$ be an inner product space over $\mathbb{R}$. If $x \perp y$, then
+\[
+\|x + y\|^2 = \|x\|^2 + \|y\|^2.
+\]
+(Here $\|\cdot\|$ is the induced norm.)
+}
+
+\medskip
+
+\redbox{
+\textbf{Proof.} We show $\langle x, y \rangle = \frac{1}{2}\bigl(\|x+y\|^2 - \|x\|^2 - \|y\|^2\bigr)$. Expanding:
+\begin{align*}
+\|x+y\|^2 = \langle x+y, x+y \rangle = \|x\|^2 + 2\langle x,y \rangle + \|y\|^2.
+\end{align*}
+So $\langle x, y \rangle = \frac{1}{2}(\|x+y\|^2 - \|x\|^2 - \|y\|^2)$. If $x \perp y$ then $\langle x,y \rangle = 0$, giving $\|x+y\|^2 = \|x\|^2 + \|y\|^2$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} This is the abstract generalization of the classical Pythagorean theorem. In $\mathbb{R}^2$ with the dot product, it reduces to the usual statement about right triangles.
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Law of Cosines (Expansion Formula)}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Proposition.} For all $x, y$ in an inner product space $X$:
+\[
+\|x+y\|^2 = \|x\|^2 + \|y\|^2 + 2\operatorname{Re}\langle x, y \rangle.
+\]
+}
+
+\medskip
+
+\redbox{
+\textbf{Proof.}
+\begin{align*}
+\|x+y\|^2 &= \langle x+y, x+y \rangle = \langle x,x \rangle + \langle x,y \rangle + \overline{\langle x,y \rangle} + \langle y,y \rangle \\
+&= \|x\|^2 + \|y\|^2 + 2\operatorname{Re}\langle x,y \rangle.
+\end{align*}
+(Since $\langle y,x \rangle + \langle x,y \rangle = \overline{\langle x,y \rangle} + \langle x,y \rangle = 2\operatorname{Re}\langle x,y \rangle$.)
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Angle Between Vectors}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} Let $X = (X, \langle \cdot, \cdot \rangle)$ be an inner product space over $\mathbb{R}$. For non-zero $x, y \in X$, the \textbf{angle} between $x$ and $y$ is the unique $\theta \in [0, \pi]$ satisfying
+\[
+\cos\theta = \frac{\langle x, y \rangle}{\|x\|\|y\|}.
+\]
+(Well-defined by Cauchy--Schwarz: $-1 \le \frac{\langle x,y \rangle}{\|x\|\|y\|} \le 1$, and $\cos$ is bijective on $[0,\pi]$.)
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} In $\mathbb{R}^2$ with the dot product, this recovers the usual geometric angle. The special case $\theta = \pi/2$ gives $\langle x,y \rangle = 0$, i.e., orthogonality.
+}
+
+\medskip
 \hrule
 \medskip
 
@@ -1020,70 +1234,68 @@ Over $\mathbb{C}$:
 \hrule
 \medskip
 
+\subsection*{Jordan--von Neumann Theorem}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem (Jordan--von Neumann).} Let $X$ be a vector space normed by $\|\cdot\|$. Then $\|\cdot\|$ is induced by an inner product if and only if the parallelogram law holds.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} This characterizes which norms come from inner products. The idea of the proof:
+
+$(\Rightarrow)$: Already done---direct computation from the inner product.
+
+$(\Leftarrow)$: Suppose the parallelogram law holds. Define $\langle x, y \rangle := \frac{1}{4}(\|x+y\|^2 - \|x-y\|^2)$ (over $\mathbb{R}$). One must verify this is an inner product: non-negativity and definiteness are easy; Hermitian symmetry follows from the formula; \emph{linearity in the first variable} is the hard part and requires the parallelogram law (many applications of it).
+
+A consequence (``Hilbertability''): every Hilbert space is a Banach space, but not conversely.
+}
+
+\medskip
+\hrule
+\medskip
+
 \subsection*{Isometries}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
 
 \redbox{
-$T$ is an isometry iff:
+\textbf{Definition.} Let $V, W$ be inner product spaces. A linear map $T: V \to W$ is an \textbf{isometry} (inner-product-preserving) if
 \[
-\|T(v)\| = \|v\|
-\quad \Longleftrightarrow \quad
-\langle T(u),T(v)\rangle = \langle u,v\rangle.
+\langle T(u), T(v) \rangle_W = \langle u, v \rangle_V \quad \text{for all } u, v \in V.
 \]
+
+Note: when discussing linear transformations between inner product spaces, $V$ and $W$ are always over the same field.
+}
+
+\medskip
+
+\redbox{
+\textbf{Proposition.} $T: V \to W$ is an isometry if and only if $\|T(v)\|_W = \|v\|_V$ for all $v$.
+
+\textit{Proof ($\Rightarrow$):} $\|T(v)\|^2 = \langle T(v), T(v) \rangle = \langle v, v \rangle = \|v\|^2$.
+
+\textit{Proof ($\Leftarrow$, over $\mathbb{R}$):} By the polarization identity,
+\begin{align*}
+\langle T(u), T(v) \rangle &= \tfrac{1}{4}(\|T(u)+T(v)\|^2 - \|T(u)-T(v)\|^2) \\
+&= \tfrac{1}{4}(\|T(u+v)\|^2 - \|T(u-v)\|^2) \\
+&= \tfrac{1}{4}(\|u+v\|^2 - \|u-v\|^2) = \langle u, v \rangle.
+\end{align*}
+(The $\mathbb{C}$ case uses the $\mathbb{C}$ polarization identity.)
+}
+
+\medskip
+
+\redbox{
+\textbf{Proposition.} $T: V \to W$ is an isometry if and only if $d(T(u), T(v)) = d(u, v)$ for all $u, v$ (as long as $d$ is the induced metric and $T$ is linear).
+
+\textit{Proof:} $d(T(u), T(v)) = \|T(u) - T(v)\| = \|T(u-v)\| = \|u-v\| = d(u,v)$.
 }
 
 \medskip
 \hrule
 \medskip
-
-\subsection*{Bounded Linear Operators}
-
-\redbox{
-$T:X\to Y$ is bounded iff:
-\[
-\|T(u)\| \le M\|u\|.
-\]
-
-Operator norm:
-\[
-\|T\| = \sup_{\|u\|=1}\|T(u)\|.
-\]
-}
-
-\medskip
-
-\redbox{
-\textbf{Theorem.} $T$ is continuous iff bounded.
-}
-
-\medskip
-
-\bluebox{
-Finite-dimensional result:
-
-Every linear map is bounded.
-}
-
-\medskip
-\hrule
-\medskip
-
-\subsection*{Space of Operators}
-
-\redbox{
-\[
-\mathcal{L}(X,Y)
-\]
-is a vector space.
-}
-
-\medskip
-
-\bluebox{
-Dimension (finite case):
-\[
-\dim(\mathcal{L}(X,Y)) = \dim(X)\cdot\dim(Y).
-\]
-}
 
 \subsection*{Bounded Linear Operators and Operator Norm}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
@@ -1309,29 +1521,6 @@ Hence $\mathcal{L}(X,Y)$ is a normed vector space.
 \subsection*{Properties of the Operator Norm}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 
-\textbf{Triangle Inequality.}
-
-\redbox{
-For $T,S \in \mathcal{L}(X,Y)$,
-\begin{align*}
-\|T+S\| \le \|T\| + \|S\|.
-\end{align*}
-}
-
-\medskip
-
-\bluebox{
-\textbf{Commentary:} From the estimate
-\[
-\|(T+S)(u)\| \le (\|T\| + \|S\|)\|u\|,
-\]
-the inequality follows by taking the infimum over all admissible constants $M$ in the definition of the operator norm.
-}
-
-\medskip
-\hrule
-\medskip
-
 \textbf{Homogeneity.}
 
 \redbox{
@@ -1539,5 +1728,470 @@ Indeed,
 Thus $T \in \mathcal{L}(X,Y)$ and $T_n \to T$. Therefore $\mathcal{L}(X,Y)$ is complete.
 }
 
+
+\newpage
+
+%% ============================================================
+%% LECTURE: March 24, 2026
+%% Orthogonality, Gram-Schmidt, and Best Approximation
+%% ============================================================
+
+\section*{\centering Lecture: March 24, 2026 \\ Orthogonality, Gram--Schmidt, and Best Approximation}
+\medskip
+
+
+%% ============================================================
+\subsection*{Orthogonality}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} Let $V = (X, \langle \cdot, \cdot \rangle)$ be an inner product space.
+
+Two vectors $u, v \in V$ are \textbf{orthogonal} if
+\[
+\langle u, v \rangle = 0,
+\]
+denoted $u \perp v$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} In $\mathbb{R}^2$ with the standard dot product, $u \perp v$ means the vectors meet at a $90^\circ$ angle. But the definition works in \emph{any} inner product space, including function spaces where ``perpendicularity'' has no geometric picture. The zero vector is orthogonal to every vector: $\langle 0, v \rangle = 0$ for all $v$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Orthogonal Subsets}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} Subsets $X, Y \subseteq V$ are \textbf{orthogonal} if
+\[
+\langle x, y \rangle = 0 \quad \text{for all } x \in X,\; y \in Y,
+\]
+written $X \perp Y$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} This is a condition on \emph{every} pair. It is not enough for some elements to be orthogonal; every element of $X$ must be orthogonal to every element of $Y$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Orthogonal Complement}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} Let $X \subseteq V$. The \textbf{orthogonal complement} of $X$ is
+\[
+X^\perp = \{ v \in V \mid v \perp x \text{ for all } x \in X \} = \{ v \in V \mid \langle v, x \rangle = 0 \;\forall\, x \in X \}.
+\]
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} $X^\perp$ collects \emph{everything} in $V$ that is orthogonal to every element of $X$. Key properties (assigned as homework):
+\begin{enumerate}[leftmargin=1.5em]
+    \item $X^\perp$ is always a subspace of $V$, even if $X$ itself is not a subspace.
+    \item For any subspace $S$ of $V$: $S \cap S^\perp = \{0\}$.
+\end{enumerate}
+
+\textbf{Example:} In $\mathbb{R}^3$, this is analogous to the direct sum $\mathbb{R}^3 = \mathbb{R}^2 \oplus Z$, where $Z$ is the $z$-axis and $\mathbb{R}^2$ is the $xy$-plane. We have $\mathbb{R}^2 \cap Z = \{0\}$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Orthogonal Sets}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} Let $V$ be an inner product space. A set
+\[
+O = \{ u_i \mid i \in \Lambda \} \subset V
+\]
+is an \textbf{orthogonal set} if
+\[
+u_i \perp u_j \quad \text{for all } i \neq j.
+\]
+
+Here $\Lambda$ can be any index set (finite, countable, or uncountable).
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} Note that the zero vector is orthogonal to every vector, so $0$ \emph{can} be in an orthogonal set. However, it is excluded from orthogonal sets when we want linear independence (see below).
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Orthonormal Sets}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} An orthogonal set $O = \{u_i \mid i \in \Lambda\}$ is \textbf{orthonormal} if each $u_i$ is a unit vector:
+\[
+\|u_i\| = 1 \quad \text{for all } i \in \Lambda.
+\]
+
+Equivalently,
+\[
+\langle u_i, u_j \rangle = \delta_{ij} = \begin{cases} 1 & \text{if } i = j, \\ 0 & \text{otherwise.} \end{cases}
+\]
+Here $\delta_{ij}$ is the \textbf{Kronecker delta}.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} Since $\|u_i\| = 1 \neq 0$, the zero vector cannot be in an orthonormal set. To turn an orthogonal set into an orthonormal one, normalize each vector: replace $u_i$ by $u_i / \|u_i\|$.
+
+\textbf{Example:} In $\mathbb{R}^3$, the standard basis $\{e_1, e_2, e_3\}$ is orthonormal with respect to the dot product: $\langle e_i, e_j \rangle = \delta_{ij}$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Orthogonal Sets Are Linearly Independent}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem.} Any orthogonal set of non-zero vectors in $V$ is linearly independent.
+
+(In particular, this always implies finite-dimensionality when $V$ is finite-dimensional.)
+}
+
+\medskip
+
+\redbox{
+\textbf{Proof.} Let $O = \{u_i \mid i \in \Lambda\}$ be an orthogonal set of non-zero vectors. Suppose
+\[
+r_1 u_1 + \cdots + r_n u_n = 0
+\]
+(note: $n$ is not fixed; it is any finite subcollection). Take the inner product of both sides with $u_k$:
+\[
+0 = \langle r_1 u_1 + \cdots + r_n u_n,\; u_k \rangle = r_1 \langle u_1, u_k \rangle + \cdots + r_n \langle u_n, u_k \rangle = r_k \langle u_k, u_k \rangle.
+\]
+Since $u_k \neq 0$, we have $\langle u_k, u_k \rangle \neq 0$ (by non-degeneracy of the inner product), so $r_k = 0$. \qed
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The key trick is to ``test'' the linear combination against one of the vectors in the set. The orthogonality condition kills all terms except the one we are testing, isolating the coefficient. This is why orthogonal bases are so powerful: extracting coordinates becomes trivial.
+
+Compare with a general basis, where finding coordinates requires solving a linear system.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Gram--Schmidt Orthogonalization}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem (Gram--Schmidt).} Let $V$ be an inner product space and let
+\[
+O = \{u_1, \dots, u_n\}
+\]
+be an orthogonal set of non-zero vectors in $V$. If $v \notin \langle u_1, \dots, u_n \rangle$ (i.e., $v$ is not in the span), then there exists a non-zero vector $u \in V$ such that
+\[
+\{u_1, \dots, u_n, u\}
+\]
+is orthogonal and
+\[
+\langle u_1, \dots, u_n, u \rangle = \langle u_1, \dots, u_n, v \rangle.
+\]
+
+Explicitly:
+\[
+u = v - r_1 u_1 - r_2 u_2 - \cdots - r_n u_n, \qquad r_i = \frac{\langle v, u_i \rangle}{\langle u_i, u_i \rangle}.
+\]
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The idea is to subtract off the ``shadow'' (projection) of $v$ onto each existing orthogonal vector. What remains is the component of $v$ perpendicular to all of them.
+
+To verify: for each $j$,
+\[
+\langle u, u_j \rangle = \langle v, u_j \rangle - r_j \langle u_j, u_j \rangle = \langle v, u_j \rangle - \frac{\langle v, u_j \rangle}{\langle u_j, u_j \rangle} \langle u_j, u_j \rangle = 0. \quad \checkmark
+\]
+
+Note that $u \neq 0$ because $v \notin \operatorname{span}\{u_1, \dots, u_n\}$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{The Gram--Schmidt Process}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem (Gram--Schmidt Process).} Let $B = (v_1, v_2, \dots)$ be a sequence of non-zero vectors in an inner product space $V$. Define a sequence $O = (u_1, u_2, \dots)$ by:
+\begin{align*}
+u_1 &= v_1, \\
+u_2 &= v_2 - \frac{\langle v_2, u_1 \rangle}{\langle u_1, u_1 \rangle}\, u_1, \\
+u_3 &= v_3 - \frac{\langle v_3, u_1 \rangle}{\langle u_1, u_1 \rangle}\, u_1 - \frac{\langle v_3, u_2 \rangle}{\langle u_2, u_2 \rangle}\, u_2, \\
+&\;\;\vdots \\
+u_k &= v_k - \sum_{i=1}^{k-1} \frac{\langle v_k, u_i \rangle}{\langle u_i, u_i \rangle}\, u_i.
+\end{align*}
+
+Then $O$ is an orthogonal sequence in $V$ and
+\[
+\langle u_1, \dots, u_k \rangle = \langle v_1, \dots, v_k \rangle \quad \text{for all } k.
+\]
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The point is to maintain the span at each iterative step, not just orthogonality. Each $u_k$ is built from $v_k$ by removing its components along all previously constructed orthogonal vectors.
+
+The proof is by induction: the base case $k=1$ is trivial ($u_1 = v_1$). The inductive step applies the preceding theorem to adjoin $v_{k+1}$ to the orthogonal set $\{u_1, \dots, u_k\}$.
+
+To get an \textbf{orthonormal} set, normalize at the end: $\hat{u}_i = u_i / \|u_i\|$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Example: Gram--Schmidt on Polynomials}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Example.} Let $V$ = real polynomials with inner product
+\[
+\langle p(x), g(x) \rangle = \int_{-1}^{1} p(x)\, g(x)\, dx.
+\]
+
+Let $B = (1, x, x^2, x^3, \dots)$ be the standard monomial basis.
+
+Apply Gram--Schmidt:
+
+\textbf{Step 1:} $u_1 = v_1 = 1$.
+
+\textbf{Step 2:}
+\[
+u_2 = v_2 - \frac{\langle v_2, u_1 \rangle}{\langle u_1, u_1 \rangle}\, u_1 = x - \frac{\int_{-1}^{1} x \cdot 1\, dx}{\int_{-1}^{1} 1 \cdot 1\, dx} \cdot 1 = x - \frac{0}{2} = x.
+\]
+
+\textbf{Step 3:}
+\[
+u_3 = x^2 - \frac{\langle x^2, u_1 \rangle}{\langle u_1, u_1 \rangle}\, u_1 - \frac{\langle x^2, u_2 \rangle}{\langle u_2, u_2 \rangle}\, u_2 = x^2 - \frac{\int_{-1}^{1} x^2\, dx}{\int_{-1}^{1} 1\, dx} \cdot 1 - \frac{\int_{-1}^{1} x^3\, dx}{\int_{-1}^{1} x^2\, dx} \cdot x = x^2 - \frac{1}{3}.
+\]
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The polynomials produced by this process are (scalar multiples of) the \textbf{Legendre polynomials}. After normalization, they form an orthonormal basis for $L^2([-1,1])$.
+
+Note how odd-powered cross terms vanish by symmetry: $\int_{-1}^{1} x^{2k+1}\, dx = 0$ because the integrand is odd on a symmetric interval. This simplifies many of the Gram--Schmidt computations.
+
+The $u_4$ step (not shown completely) yields $u_4 = x^3 - \tfrac{3}{5}x$.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Orthonormal Basis and Hilbert Basis}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} A \textbf{maximal} orthonormal set (or more generally, an orthogonal set of non-zero vectors) in an inner product space $V$ is called a \textbf{Hilbert basis} for $V$.
+
+(To prove such a set exists in general requires Zorn's lemma.)
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} ``Maximal'' means that no non-zero vector can be added to the set while preserving orthogonality. In finite dimensions, a Hilbert basis is the same as an orthonormal basis. In infinite dimensions, the distinction between an algebraic basis (Hamel basis) and a Hilbert basis becomes important.
+
+If $O = \{u_1, \dots, u_n\}$ is an orthonormal basis for $V$, then every $v \in V$ can be expanded as:
+\[
+v = r_1 u_1 + \cdots + r_n u_n.
+\]
+The coordinates $r_i$ are found trivially:
+\[
+r_i = \langle v, u_i \rangle.
+\]
+This is because $\langle v, u_i \rangle = \langle r_1 u_1 + \cdots + r_n u_n, u_i \rangle = r_i \langle u_i, u_i \rangle = r_i$.
+
+Compare this with a general (non-orthogonal) basis, where finding coordinates requires solving a system of equations.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Fourier Expansion and Fourier Coefficients}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Definition.} Let $O = \{u_1, \dots, u_n\}$ be an orthonormal subset of $V$ (not necessarily a basis), and let $S = \langle O \rangle = \operatorname{span}(O)$.
+
+For any $v \in V$, the \textbf{Fourier expansion} of $v$ with respect to $O$ is
+\[
+\hat{v} = \sum_{i=1}^{n} \langle v, u_i \rangle\, u_i.
+\]
+Each coefficient $\langle v, u_i \rangle$ is called a \textbf{Fourier coefficient} of $v$ with respect to $O$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} If $O$ is an orthonormal \emph{basis} for the entire space, then $\hat{v} = v$. But if $O$ spans only a subspace $S \subsetneq V$, then $\hat{v}$ is the ``best approximation'' of $v$ within $S$ (see next theorem).
+
+The Fourier expansion generalizes the familiar Fourier series from analysis: if $V = L^2([0, 2\pi])$ and $O = \{e^{inx}/\sqrt{2\pi}\}$, the Fourier coefficients are exactly the classical Fourier coefficients.
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{Best Approximation Theorem}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem.} Let $O = \{u_1, \dots, u_n\}$ be an orthonormal set in an inner product space $V$, and let $S = \langle O \rangle$. Then for any $v \in V$:
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item $\hat{v} \in S$ and $v - \hat{v} \in S^\perp$.
+    \item $\hat{v}$ is the \textbf{unique} vector in $S$ satisfying $(v - \hat{v}) \in S^\perp$.
+\end{enumerate}
+}
+
+\medskip
+
+\redbox{
+\textbf{Proof of (1).}
+
+$\hat{v} \in S$ is clear since $\hat{v}$ is a linear combination of the $u_i$.
+
+For each $u_i \in O$:
+\begin{align*}
+\langle v - \hat{v},\; u_i \rangle
+&= \langle v, u_i \rangle - \langle \hat{v}, u_i \rangle \\
+&= \langle v, u_i \rangle - \left\langle \sum_{j} \langle v, u_j \rangle\, u_j,\; u_i \right\rangle \\
+&= \langle v, u_i \rangle - \langle v, u_i \rangle \langle u_i, u_i \rangle \\
+&= \langle v, u_i \rangle - \langle v, u_i \rangle = 0.
+\end{align*}
+Since $v - \hat{v}$ is orthogonal to every basis vector of $S$, it is orthogonal to all of $S$. Hence $v - \hat{v} \in S^\perp$.
+}
+
+\medskip
+
+\redbox{
+\textbf{Proof of (2) (Uniqueness).}
+
+Suppose $s \in S$ and $(v - s) \in S^\perp$. Then $\hat{v} - s \in S$ (since both are in $S$) and
+\[
+\hat{v} - s = (v - s) - (v - \hat{v}) \in S^\perp
+\]
+(since both $v - s$ and $v - \hat{v}$ are in $S^\perp$, and $S^\perp$ is a subspace).
+
+Therefore $\hat{v} - s \in S \cap S^\perp = \{0\}$, so $\hat{v} = s$.
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} The decomposition $v = \hat{v} + (v - \hat{v})$ splits $v$ into a component \emph{in} $S$ and a component \emph{perpendicular} to $S$. This is an orthogonal decomposition.
+
+The uniqueness proof uses the key fact that $S \cap S^\perp = \{0\}$ (homework problem).
+}
+
+\medskip
+\hrule
+\medskip
+
+%% ============================================================
+\subsection*{$\hat{v}$ Is the Closest Point in $S$}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{Theorem.} $\hat{v}$ is the unique vector in $S$ satisfying
+\[
+\|v - \hat{v}\| < \|v - s\| \quad \text{for all } s \in S \setminus \{\hat{v}\}.
+\]
+
+That is, $\hat{v}$ is the \textbf{best approximation} to $v$ within $S$.
+}
+
+\medskip
+
+\redbox{
+\textbf{Proof.} Since $v - \hat{v} \in S^\perp$ (by the previous theorem) and $\hat{v} - s \in S$ for any $s \in S$, we have
+\[
+(v - \hat{v}) \perp (\hat{v} - s).
+\]
+
+Write $v - s = (v - \hat{v}) + (\hat{v} - s)$. By the Pythagorean theorem (since the two summands are orthogonal):
+\begin{align*}
+\|v - s\|^2
+&= \|(v - \hat{v}) + (\hat{v} - s)\|^2 \\
+&= \|v - \hat{v}\|^2 + \|\hat{v} - s\|^2.
+\end{align*}
+
+Therefore $\|v - s\|^2 \ge \|v - \hat{v}\|^2$, with equality if and only if $\|\hat{v} - s\| = 0$, i.e., $s = \hat{v}$. \qed
+}
+
+\medskip
+
+\bluebox{
+\textbf{Commentary:} This is the geometric heart of orthogonal projection. The picture is:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item $S$ is a subspace (a ``plane'' through the origin).
+    \item $v$ is a vector possibly outside $S$.
+    \item $\hat{v}$ is the foot of the perpendicular from $v$ to $S$.
+    \item $v - \hat{v}$ is the ``error'' or ``residual'', perpendicular to $S$.
+\end{itemize}
+
+This theorem has wide applications:
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Least squares:} In statistics, the least-squares solution $\hat{\beta}$ minimizes $\|y - X\beta\|^2$, which is exactly orthogonal projection of $y$ onto the column space of $X$.
+    \item \textbf{Fourier analysis:} The partial Fourier series is the best $L^2$-approximation by trigonometric polynomials.
+    \item \textbf{Signal processing:} Projecting a signal onto a subspace spanned by basis functions gives the best approximation in that subspace.
+\end{itemize}
+
+The Pythagorean theorem is the key tool: because the residual $v - \hat{v}$ is orthogonal to anything in $S$, the distance decomposes cleanly into independent components.
+}
+
+
+\newpage
+\bibliographystyle{apalike}
+\bibliography{references}
 
 \end{document}
