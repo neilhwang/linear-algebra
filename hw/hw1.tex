@@ -51,17 +51,51 @@ x,y\in W &\implies x+y\in W, \\
 a\in F,\ x\in W &\implies ax\in W, \\
 0&\in W.
 \end{align*}
-We show that $W$ is a subspace of $V$.
+We show that $W$ is a subspace of $V$, i.e., $W$ is itself a vector space under the same operations as $V$. We verify all eight vector space axioms.
 
-Since $W\subset V$, the addition and scalar multiplication on $W$ are the same as those on $V$. Because $V$ is a vector space, the associative, commutative, and distributive laws automatically hold on $W$ as well.
+Since $W \subset V$, addition and scalar multiplication on $W$ are the restrictions of the operations on $V$. All elements of $W$ are also elements of $V$, so any identity that holds for all elements of $V$ automatically holds for elements of $W$.
 
-Also, for any $x\in W$, since $-1\in F$ and $W$ is closed under scalar multiplication,
-\begin{align*}
+\textbf{(A1) Commutativity of addition:} For all $x, y \in W$, since $x, y \in V$ and $V$ is a vector space,
+\[
+x + y = y + x.
+\]
+
+\textbf{(A2) Associativity of addition:} For all $x, y, z \in W \subset V$,
+\[
+(x + y) + z = x + (y + z).
+\]
+
+\textbf{(A3) Existence of additive identity:} $0 \in W$ by assumption, and $x + 0 = x$ for all $x \in W$ since this holds in $V$.
+
+\textbf{(A4) Existence of additive inverses:} Let $x \in W$. Since $-1 \in F$ and $W$ is closed under scalar multiplication,
+\[
 -x = (-1)x \in W.
-\end{align*}
-Thus every element of $W$ has an additive inverse in $W$.
+\]
+And $x + (-x) = 0$ holds because it holds in $V$.
 
-The zero vector belongs to $W$ by assumption. Closure under addition is already assumed, and closure under scalar multiplication is also assumed. Therefore all vector space axioms hold on $W$, so $W$ is a subspace of $V$.
+\textbf{(S1) Compatibility of scalar multiplication:} For all $a, b \in F$ and $x \in W \subset V$,
+\[
+a(bx) = (ab)x.
+\]
+
+\textbf{(S2) Identity element of scalar multiplication:} For all $x \in W \subset V$,
+\[
+1 \cdot x = x.
+\]
+
+\textbf{(D1) Distributivity of scalar multiplication over vector addition:} For all $a \in F$ and $x, y \in W \subset V$,
+\[
+a(x + y) = ax + ay.
+\]
+
+\textbf{(D2) Distributivity of scalar multiplication over field addition:} For all $a, b \in F$ and $x \in W \subset V$,
+\[
+(a + b)x = ax + bx.
+\]
+
+In each case, the identity holds because $W \subset V$ and the identity already holds in $V$. The only axioms that require the three closure assumptions are: (A3) requires $0 \in W$; (A4) requires closure under scalar multiplication (to get $-x = (-1)x \in W$); and all axioms involving addition or scalar multiplication of elements of $W$ require that the results remain in $W$ (closure under addition and scalar multiplication).
+
+Therefore all vector space axioms hold on $W$, so $W$ is a subspace of $V$.
 }}
 
 \bigskip
