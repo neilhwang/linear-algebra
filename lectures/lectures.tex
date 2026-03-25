@@ -2191,6 +2191,258 @@ The Pythagorean theorem is the key tool: because the residual $v - \hat{v}$ is o
 
 
 \newpage
+
+\subsection*{Review and Suggested Improvements}
+\hfill \break  $~\!\!$ \dotfill \medskip \\
+
+\redbox{
+\textbf{1. Subspace Test (Non-emptiness).}
+
+The statement of the subspace test implicitly requires that $W \neq \emptyset$.
+
+Otherwise, the closure conditions are vacuously true.
+
+\medskip
+\textbf{Fix:} Add the assumption $W \neq \emptyset$. Then closure under scalar multiplication implies $0 \in W$.
+}
+
+\medskip
+
+\redbox{
+\textbf{2. Coordinate Isomorphism (Dependence on Basis).}
+
+The identification $V \cong \mathbb{F}^n$ depends on the choice of basis.
+
+\medskip
+\textbf{Clarification:}
+There is no canonical isomorphism unless a basis is fixed.
+}
+
+\medskip
+
+\redbox{
+\textbf{3. Change of Basis Consistency.}
+
+The notes use conflicting conventions:
+\[
+[x]_{B'} = Q[x]_B \quad \text{and} \quad [x]_B = Q[x]_{B'}.
+\]
+
+\medskip
+\textbf{Fix:} Choose one convention and use it consistently.
+
+Recommended:
+\[
+[x]_{B'} = Q[x]_B,
+\]
+where columns of $Q$ are the coordinates of the new basis vectors expressed in the old basis.
+}
+
+\medskip
+
+\redbox{
+\textbf{4. Big Diagram (Key Insight).}
+
+\medskip
+Add the core interpretation:
+
+\medskip
+\textbf{Statement:}
+``Apply $T$ then coordinatize'' equals ``coordinatize then multiply by the matrix.''
+
+\medskip
+This is exactly what commutativity expresses.
+}
+
+\medskip
+
+\redbox{
+\textbf{5. Rank--Nullity (Sharper Interpretation).}
+
+\medskip
+\textbf{Improvement:}
+\begin{itemize}[leftmargin=1.5em]
+    \item $\ker T$: directions collapsed to $0$
+    \item $\operatorname{Im} T$: directions that remain distinguishable
+\end{itemize}
+}
+
+\medskip
+
+\redbox{
+\textbf{6. Inner Product Convention.}
+
+\medskip
+The notes assume:
+\[
+\langle ru+sw, v \rangle = r\langle u,v\rangle + s\langle w,v\rangle.
+\]
+
+\medskip
+\textbf{Clarify:}
+We use the convention:
+\begin{itemize}[leftmargin=1.5em]
+    \item linear in the first argument
+    \item conjugate-linear in the second
+\end{itemize}
+}
+
+\medskip
+
+\redbox{
+\textbf{7. Cauchy--Schwarz (Missing Step).}
+
+\medskip
+The proof is incomplete. Add:
+
+\begin{align*}
+0 \le \|u - \lambda v\|^2
+= \|u\|^2 - 2\operatorname{Re}(\lambda \langle u,v\rangle) + |\lambda|^2 \|v\|^2.
+\end{align*}
+
+Then choose $\lambda = \frac{\langle u,v\rangle}{\langle v,v\rangle}$.
+}
+
+\medskip
+
+\redbox{
+\textbf{8. Gram--Schmidt (Big Picture).}
+
+\medskip
+\textbf{Add:}
+Gram--Schmidt converts any basis into an orthogonal (or orthonormal) basis spanning the same subspace.
+}
+
+\medskip
+
+\redbox{
+\textbf{9. Best Approximation (Terminology).}
+
+\medskip
+\textbf{Add:}
+$\hat{v}$ is called the \textbf{orthogonal projection} of $v$ onto $S$.
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Precision Corrections}
+
+\redbox{
+\textbf{1. Typo.} Replace ``Specifical'' with ``Specifically''.
+}
+
+\medskip
+
+\redbox{
+\textbf{2. Operator Norm Proof.}
+
+Remove unnecessary discussion about ``weak inequality''—it distracts from the argument.
+}
+
+\medskip
+
+\redbox{
+\textbf{3. Field Definition.}
+
+Incorrect:
+``A field is an abelian group with scalar multiplication.''
+
+\medskip
+\textbf{Correct:}
+A field is a set with two operations (addition and multiplication) satisfying the field axioms.
+}
+
+\medskip
+
+\redbox{
+\textbf{4. Inner Product Property Error.}
+
+Incorrect:
+\[
+\langle u, v+w \rangle = \langle v,u\rangle + \langle u,w\rangle.
+\]
+
+\medskip
+\textbf{Correct:}
+\[
+\langle u, v+w \rangle = \langle u,v\rangle + \langle u,w\rangle.
+\]
+}
+
+\medskip
+
+\redbox{
+\textbf{5. Hilbert Basis Terminology.}
+
+``Hilbert basis'' is nonstandard.
+
+\medskip
+\textbf{Clarify:}
+Many texts call this a \textbf{complete orthonormal set}.
+}
+
+\medskip
+\hrule
+\medskip
+
+\subsection*{Pedagogical Improvements}
+
+\redbox{
+\textbf{1. Add Concrete Matrix Example.}
+
+\medskip
+Example:
+\[
+T(x,y) = (x+y, y)
+\quad \Rightarrow \quad
+[T] = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}.
+\]
+}
+
+\medskip
+
+\redbox{
+\textbf{2. Add Numerical Gram--Schmidt Example.}
+
+Include a simple $\mathbb{R}^2$ or $\mathbb{R}^3$ example to complement the polynomial case.
+}
+
+\medskip
+
+\redbox{
+\textbf{3. Add Geometric Interpretation of Projection.}
+
+\medskip
+Think of $\hat{v}$ as the foot of the perpendicular from $v$ onto $S$.
+}
+
+\medskip
+
+\redbox{
+\textbf{4. Add Common Mistakes Box.}
+
+\begin{itemize}[leftmargin=1.5em]
+    \item Forgetting that basis order matters
+    \item Mixing up $Q$ and $Q^{-1}$
+    \item Assuming $V = \mathbb{F}^n$ without choosing a basis
+\end{itemize}
+}
+
+\medskip
+
+\redbox{
+\textbf{5. Structural Suggestion.}
+
+Subspaces, bases, and coordinate maps appear twice.
+
+\medskip
+\textbf{Fix:}
+Either remove repetition or label the later section as a formal recap.
+}
+
+\newpage
 \bibliographystyle{apalike}
 \bibliography{references}
 
