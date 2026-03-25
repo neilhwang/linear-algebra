@@ -245,8 +245,6 @@ Then by definition,
 \Phi(x)=[x]_B=(a_1,\dots,a_n).
 \end{align*}
 Thus every vector in $F^n$ is in the image of $\Phi$, so $\Phi$ is surjective.
-Note that in linear algebra, “linear” = “homomorphism.” iT is exactly what it means for $\Phi$ to be a homomorphism of vector spaces.
-
 Since $\Phi$ is linear, injective, and surjective, it is a linear isomorphism.
 \end{mdframed}
 
@@ -257,9 +255,9 @@ Since $\Phi$ is linear, injective, and surjective, it is a linear isomorphism.
 \textbf{Question.}\\
 Let $B, B'$ be two ordered bases of $V$. Show that there exists an invertible matrix $Q$ such that:
 \begin{align*}
-[x]_{B'} = Q [x]_B
+[x]_{B} = Q [x]_{B'}
 \end{align*}
-and identify $Q$ as the change of coordinate matrix.
+and identify $Q$ as the change of coordinate matrix from $B'$-coordinates to $B$-coordinates.
 
 \noindent\\
 \textbf{Solution.}\\
@@ -279,28 +277,28 @@ and
 \end{align*}
 Both are linear isomorphisms. Therefore the composition
 \begin{align*}
-Q:=\Phi_{B'}\circ \Phi_B^{-1}:F^n\to F^n
+Q:=\Phi_{B}\circ \Phi_{B'}^{-1}:F^n\to F^n
 \end{align*}
 is a linear isomorphism. Hence $Q$ is represented by an invertible $n\times n$ matrix.
 
 Now let $x\in V$. Then
 \begin{align*}
-Q[x]_B
-&=(\Phi_{B'}\circ \Phi_B^{-1})([x]_B) \\
-&=\Phi_{B'}(x) \\
-&=[x]_{B'}.
+Q[x]_{B'}
+&=(\Phi_{B}\circ \Phi_{B'}^{-1})([x]_{B'}) \\
+&=\Phi_{B}(x) \\
+&=[x]_{B}.
 \end{align*}
 So
 \begin{align*}
-[x]_{B'}=Q[x]_B.
+[x]_{B}=Q[x]_{B'}.
 \end{align*}
 
-Here, this matrix $Q$ is identified as the change of coordinate matrix from $B$-coordinates to $B'$-coordinates.
+Here, $Q$ is identified as the change of coordinate matrix from $B'$-coordinates to $B$-coordinates.
 
-Equivalently, the $j$th column of $Q$ is the coordinate vector of the basis vector $x_j$ with respect to $B'$, namely
+The $j$th column of $Q$ is the coordinate vector of the $j$th basis vector of $B'$ with respect to $B$:
 \begin{align*}
 Q=\begin{bmatrix}
-[x_1]_{B'} & [x_2]_{B'} & \cdots & [x_n]_{B'}
+[x_1']_{B} & [x_2']_{B} & \cdots & [x_n']_{B}
 \end{bmatrix}.
 \end{align*}
 Since $Q$ comes from a linear isomorphism, it is invertible.
@@ -311,11 +309,10 @@ Since $Q$ comes from a linear isomorphism, it is invertible.
 \needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
-Let $T: V \to V$ be linear and let $B, B'$ be bases. Show that:
+Let $T: V \to V$ be linear and let $B, B'$ be bases. Let $Q$ be the change of coordinate matrix from $B'$ to $B$, so that $[x]_B = Q[x]_{B'}$. Show that:
 \begin{align*}
-[T]_{B'} = Q [T]_B Q^{-1}
+[T]_{B'} = Q^{-1} [T]_B Q.
 \end{align*}
-where $Q$ is the change of coordinate matrix from $B'$ to $B$.
 
 \noindent\\
 \textbf{Solution.}\\
@@ -359,11 +356,6 @@ we conclude that
 [T]_{B'}=Q^{-1}[T]_BQ.
 \end{align*}
 
-If instead one defines $Q$ to be the change of coordinate matrix from $B$ to $B'$, then the formula becomes
-\begin{align*}
-[T]_{B'}=Q[T]_BQ^{-1}.
-\end{align*}
-where the exact placement of $Q$ and $Q^{-1}$ depends on the convention for the change of coordinate matrix.
 \end{mdframed}
 
 \bigskip
@@ -626,11 +618,7 @@ is sufficient to prove $W$ is a subspace of $V$.
 \textbf{Solution.}\\
 \quad\\
 \begin{mdframed}[linewidth=1pt]
-\textbf{Zero vector:} Since $W \neq \varnothing$, pick any $w \in W$. Take $c = 0$, $x = y = w$:
-\[
-0 \cdot w + w = w \in W.
-\]
-Now take $c = -1$, $x = y = w$:
+\textbf{Zero vector:} Since $W \neq \varnothing$, pick any $w \in W$. Take $c = -1$, $x = y = w$:
 \[
 (-1)w + w = 0 \in W.
 \]
@@ -1018,10 +1006,10 @@ So $\langle x,y\rangle / (\|x\|\|y\|) = \cos(\alpha - \beta)$, and $\theta = |\a
 \begin{mdframed}[linewidth=1pt]
 By the law of cosines (Proposition from lecture):
 \begin{align*}
-\|x+y\|^2 &= \|x\|^2 + \|y\|^2 + 2\,\text{Re}\,\langle x, y \rangle, \\
-\|x-y\|^2 &= \|x\|^2 + \|y\|^2 - 2\,\text{Re}\,\langle x, y \rangle.
+\|x+y\|^2 &= \|x\|^2 + \|y\|^2 + 2\langle x, y \rangle, \\
+\|x-y\|^2 &= \|x\|^2 + \|y\|^2 - 2\langle x, y \rangle.
 \end{align*}
-Since the field is $\mathbb{R}$, $\text{Re}\,\langle x, y \rangle = \langle x, y \rangle$. Subtracting:
+(Over $\mathbb{R}$, the inner product is real-valued, so no $\operatorname{Re}$ is needed.) Subtracting:
 \begin{align*}
 \|x+y\|^2 - \|x-y\|^2 &= 4\langle x, y \rangle.
 \end{align*}
@@ -1309,7 +1297,7 @@ Therefore $S \cap S^\perp \subseteq \{0\}$, and hence $S \cap S^\perp = \{0\}$.
 \needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
 \textbf{Question.}\\
-Prove the Gram--Schmidt process by induction. Specifically, let $B = (v_1, v_2, \dots)$ be a sequence of non-zero vectors in an inner product space $V$. Define
+Prove the Gram--Schmidt process by induction. Specifically, let $B = (v_1, v_2, \dots)$ be a sequence of \emph{linearly independent} vectors in an inner product space $V$. Define
 \begin{align*}
 u_1 &= v_1, \\
 u_k &= v_k - \sum_{i=1}^{k-1} \frac{\langle v_k, u_i \rangle}{\langle u_i, u_i \rangle}\, u_i, \quad k \ge 2.
@@ -1354,7 +1342,9 @@ By the inductive hypothesis, $\{u_1, \dots, u_k\}$ is orthogonal, so $\langle u_
 \end{align*}
 So $u_{k+1}$ is orthogonal to each of $u_1, \dots, u_k$.
 
-\textbf{Non-zero:} By the inductive hypothesis, $\operatorname{span}\{u_1, \dots, u_k\} = \operatorname{span}\{v_1, \dots, v_k\}$. The formula for $u_{k+1}$ is $v_{k+1}$ minus a linear combination of $u_1, \dots, u_k$. If $u_{k+1} = 0$, this would mean $v_{k+1} \in \operatorname{span}\{u_1, \dots, u_k\} = \operatorname{span}\{v_1, \dots, v_k\}$. Since the $v_i$ are assumed to be linearly independent (they are non-zero vectors being fed into the process from a basis or independent set), this is a contradiction. Hence $u_{k+1} \neq 0$.
+\textbf{Non-zero:} By the inductive hypothesis, $\operatorname{span}\{u_1, \dots, u_k\} = \operatorname{span}\{v_1, \dots, v_k\}$. The formula for $u_{k+1}$ is $v_{k+1}$ minus a linear combination of $u_1, \dots, u_k$. If $u_{k+1} = 0$, this would mean $v_{k+1} \in \operatorname{span}\{u_1, \dots, u_k\} = \operatorname{span}\{v_1, \dots, v_k\}$, contradicting the linear independence of $\{v_1, \dots, v_{k+1}\}$. Hence $u_{k+1} \neq 0$.
+
+(Note: this step is precisely where linear independence of the $v_i$ is needed. If we only assumed the $v_i$ are non-zero, the conclusion could fail---e.g., if $v_2 = v_1$.)
 
 \textbf{Span:} Since $u_{k+1} = v_{k+1} - \sum_{i=1}^{k} r_i u_i$, we can write $v_{k+1} = u_{k+1} + \sum_{i=1}^{k} r_i u_i$, so $v_{k+1} \in \operatorname{span}\{u_1, \dots, u_{k+1}\}$. Conversely, $u_{k+1}$ is a linear combination of $v_{k+1}$ and $u_1, \dots, u_k$, and by the inductive hypothesis each $u_i \in \operatorname{span}\{v_1, \dots, v_k\}$, so $u_{k+1} \in \operatorname{span}\{v_1, \dots, v_{k+1}\}$.
 
