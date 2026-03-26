@@ -1,0 +1,195 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\geometry{margin=1in}
+
+\title{Linear Algebra -- Study Notes}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Inner Product Properties (Derived from Axioms)}
+
+The inner product axioms are:
+\begin{enumerate}
+    \item \textbf{Positive-definiteness:} $\langle v, v \rangle \ge 0$, with $\langle v, v \rangle = 0 \iff v = 0$.
+    \item \textbf{Conjugate symmetry:} $\langle u, v \rangle = \overline{\langle v, u \rangle}$.
+    \item \textbf{Linearity in the first variable:} $\langle ru + v, w \rangle = r\langle u, w \rangle + \langle v, w \rangle$.
+\end{enumerate}
+
+\subsection{Property 1: Additivity in the second variable}
+
+\textbf{Claim:} $\langle u, v+w \rangle = \langle u, v \rangle + \langle u, w \rangle$.
+
+\begin{proof}
+By conjugate symmetry:
+$\langle u, v+w \rangle = \overline{\langle v+w, u \rangle}$.
+
+By linearity in the first variable:
+$= \overline{\langle v, u \rangle + \langle w, u \rangle}$.
+
+Conjugate distributes over addition:
+$= \overline{\langle v, u \rangle} + \overline{\langle w, u \rangle}$.
+
+By conjugate symmetry on each term:
+$= \langle u, v \rangle + \langle u, w \rangle$.
+\end{proof}
+
+\subsection{Property 2: Conjugate-linearity in the second variable}
+
+\textbf{Claim:} $\langle u, rv \rangle = \bar{r}\,\langle u, v \rangle$.
+
+\begin{proof}
+By conjugate symmetry:
+$\langle u, rv \rangle = \overline{\langle rv, u \rangle}$.
+
+By linearity in the first variable:
+$= \overline{r\,\langle v, u \rangle}$.
+
+Conjugate of a product ($\overline{r \cdot z} = \bar{r} \cdot \bar{z}$):
+$= \bar{r} \cdot \overline{\langle v, u \rangle}$.
+
+By conjugate symmetry:
+$= \bar{r}\,\langle u, v \rangle$.
+\end{proof}
+
+\subsection{Property 3: Inner product with zero}
+
+\textbf{Claim:} $\langle u, 0 \rangle = 0$.
+
+\begin{proof}
+Write $0 = 0 \cdot v$ for any $v$. By Property~2:
+$\langle u, 0 \cdot v \rangle = \bar{0} \cdot \langle u, v \rangle = 0$.
+
+Similarly, $\langle 0, u \rangle = 0$ by conjugate symmetry:
+$\langle 0, u \rangle = \overline{\langle u, 0 \rangle} = \overline{0} = 0$.
+\end{proof}
+
+\subsection{Property 4: Cancellation}
+
+\textbf{Claim:} If $\langle u, v \rangle = \langle u, w \rangle$ for all $u$, then $v = w$.
+
+\begin{proof}
+Subtracting: $\langle u, v \rangle - \langle u, w \rangle = 0$ for all $u$.
+
+We rewrite the left side as $\langle u, v - w \rangle$ by expanding:
+\[
+\langle u, v + (-1)w \rangle
+= \langle u, v \rangle + \langle u, (-1)w \rangle
+\quad \text{(Property~1: additivity in second slot)}
+\]
+\[
+= \langle u, v \rangle + \overline{(-1)}\,\langle u, w \rangle
+= \langle u, v \rangle - \langle u, w \rangle
+\quad \text{(Property~2 with $r = -1$: $\bar{r} = -1$)}
+\]
+So $\langle u, v - w \rangle = 0$ for all $u$.
+
+Choose $u = v - w$:
+$\langle v-w, v-w \rangle = 0$.
+
+By positive-definiteness: $v - w = 0$, so $v = w$.
+\end{proof}
+
+\subsection{Property 5: $\langle T(v), w \rangle = 0$ for all $v, w$ implies $T = 0$ (over $\mathbb{C}$)}
+
+\textbf{Claim:} If $T: V \to V$ is linear and $\langle T(v), w \rangle = 0$ for all $v, w \in V$, then $T = 0$.
+
+\begin{proof}
+Set $v = ru + w$ for arbitrary $r \in \mathbb{C}$, $u, w \in V$. By hypothesis:
+\[
+0 = \langle T(ru + w), w \rangle.
+\]
+
+Linearity of $T$ and linearity in the first slot:
+\[
+0 = r\,\langle T(u), w \rangle + \langle T(w), w \rangle.
+\]
+
+Fix $u$ and $w$. The term $\langle T(w), w \rangle$ is a fixed complex number, but $r$ is free to be any complex scalar. The only way $r \cdot c = \text{constant}$ holds for every $r \in \mathbb{C}$ is if $c = 0$. Therefore:
+\[
+\langle T(u), w \rangle = 0 \quad \text{for all } u, w.
+\]
+
+Pick $w = T(u)$:
+$\langle T(u), T(u) \rangle = 0$, so $T(u) = 0$ by positive-definiteness.
+
+Since $u$ was arbitrary, $T = 0$.
+\end{proof}
+
+\section{Cauchy--Schwarz Inequality}
+
+\textbf{Theorem.} For all $u, v$ in an inner product space:
+\[
+|\langle u, v \rangle| \le \|u\|\|v\|.
+\]
+
+\begin{proof}
+If $v = 0$, both sides are $0$. Assume $v \neq 0$.
+
+For any $\lambda \in \mathbb{C}$, positive-definiteness gives:
+\[
+0 \le \|u - \lambda v\|^2 = \langle u - \lambda v,\; u - \lambda v \rangle.
+\]
+Expanding by linearity in the first slot and conjugate-linearity in the second:
+\[
+= \|u\|^2 - \lambda\overline{\langle u,v\rangle} - \bar{\lambda}\langle u,v\rangle + |\lambda|^2\|v\|^2.
+\]
+(Using: $\langle \lambda v, u \rangle = \lambda\langle v, u\rangle = \lambda\overline{\langle u,v\rangle}$ and $\langle u, \lambda v\rangle = \bar{\lambda}\langle u,v\rangle$.)
+
+Choose $\lambda = \dfrac{\langle u,v\rangle}{\|v\|^2}$. Then:
+\begin{itemize}
+    \item $\bar{\lambda} = \dfrac{\overline{\langle u,v\rangle}}{\|v\|^2}$
+    \item $|\lambda|^2 = \dfrac{|\langle u,v\rangle|^2}{\|v\|^4}$
+    \item $\lambda\overline{\langle u,v\rangle} = \dfrac{\langle u,v\rangle \cdot \overline{\langle u,v\rangle}}{\|v\|^2} = \dfrac{|\langle u,v\rangle|^2}{\|v\|^2}$
+    \item $\bar{\lambda}\langle u,v\rangle = \dfrac{\overline{\langle u,v\rangle} \cdot \langle u,v\rangle}{\|v\|^2} = \dfrac{|\langle u,v\rangle|^2}{\|v\|^2}$
+    \item $|\lambda|^2\|v\|^2 = \dfrac{|\langle u,v\rangle|^2}{\|v\|^2}$
+\end{itemize}
+So all three trailing terms equal $\dfrac{|\langle u,v\rangle|^2}{\|v\|^2}$, giving:
+\[
+0 \le \|u\|^2 - \frac{|\langle u,v\rangle|^2}{\|v\|^2}.
+\]
+Rearranging: $|\langle u,v\rangle|^2 \le \|u\|^2\|v\|^2$. Taking square roots:
+\[
+|\langle u,v\rangle| \le \|u\|\|v\|. \qedhere
+\]
+\end{proof}
+
+\textbf{Equality} holds iff $u = \lambda v$ for some scalar $\lambda$ (i.e., $u$ and $v$ are linearly dependent).
+
+\subsection{Why choose $\lambda = \langle u,v\rangle / \|v\|^2$?}
+
+This is the value that minimizes $\|u - \lambda v\|^2$ over $\lambda$. Geometrically, $\lambda v$ is the orthogonal projection of $u$ onto $v$, and the inequality says the residual $u - \lambda v$ has non-negative squared norm.
+
+\section{Triangle Inequality (for the induced norm)}
+
+\textbf{Theorem.} $\|u + v\| \le \|u\| + \|v\|$.
+
+\begin{proof}
+Expand:
+\begin{align*}
+\|u+v\|^2 &= \langle u+v,\; u+v\rangle \\
+&= \|u\|^2 + \langle u,v\rangle + \langle v,u\rangle + \|v\|^2 \\
+&= \|u\|^2 + \|v\|^2 + 2\operatorname{Re}\langle u,v\rangle.
+\end{align*}
+The last step uses conjugate symmetry: $\langle u,v\rangle + \langle v,u\rangle = \langle u,v\rangle + \overline{\langle u,v\rangle} = 2\operatorname{Re}\langle u,v\rangle$.
+
+Now bound using Cauchy--Schwarz:
+\[
+\operatorname{Re}\langle u,v\rangle \le |\langle u,v\rangle| \le \|u\|\|v\|.
+\]
+Therefore:
+\[
+\|u+v\|^2 \le \|u\|^2 + 2\|u\|\|v\| + \|v\|^2 = \bigl(\|u\| + \|v\|\bigr)^2.
+\]
+Taking square roots: $\|u+v\| \le \|u\| + \|v\|$.
+\end{proof}
+
+\end{document}
