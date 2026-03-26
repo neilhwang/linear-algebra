@@ -1267,10 +1267,64 @@ Over $\mathbb{R}$:
 
 \medskip
 
+\bluebox{
+\textbf{Proof (real case).} From the parallelogram law proof we have:
+\begin{align*}
+\|x+y\|^2 &= \|x\|^2 + \|y\|^2 + \langle x,y\rangle + \langle y,x\rangle, \\
+\|x-y\|^2 &= \|x\|^2 + \|y\|^2 - \langle x,y\rangle - \langle y,x\rangle.
+\end{align*}
+Subtracting:
+\[
+\|x+y\|^2 - \|x-y\|^2 = 2\langle x,y\rangle + 2\langle y,x\rangle.
+\]
+Over $\mathbb{R}$, conjugate symmetry gives $\langle y,x\rangle = \overline{\langle x,y\rangle} = \langle x,y\rangle$ (since the inner product is real-valued). So:
+\[
+\|x+y\|^2 - \|x-y\|^2 = 4\langle x,y\rangle. \qed
+\]
+}
+
+\medskip
+
 \redbox{
 Over $\mathbb{C}$:
 \[
 \langle x,y\rangle = \frac{1}{4}\left(\|x+y\|^2 - \|x-y\|^2 + i\|x+iy\|^2 - i\|x-iy\|^2\right).
+\]
+}
+
+\medskip
+
+\bluebox{
+\textbf{Proof (complex case).} Over $\mathbb{C}$, $\langle y,x\rangle = \overline{\langle x,y\rangle}$ and the sum $\langle x,y\rangle + \overline{\langle x,y\rangle} = 2\operatorname{Re}\langle x,y\rangle$, so the subtraction from the real case only recovers the real part:
+\[
+\|x+y\|^2 - \|x-y\|^2 = 4\operatorname{Re}\langle x,y\rangle.
+\]
+To recover the imaginary part, replace $y$ with $iy$. Expand:
+\begin{align*}
+\|x+iy\|^2 &= \|x\|^2 + \langle x, iy\rangle + \langle iy, x\rangle + \|iy\|^2 \\
+&= \|x\|^2 + \bar{i}\langle x,y\rangle + i\langle y,x\rangle + \|y\|^2 \\
+&= \|x\|^2 + \|y\|^2 - i\langle x,y\rangle + i\overline{\langle x,y\rangle}.
+\end{align*}
+Similarly:
+\[
+\|x-iy\|^2 = \|x\|^2 + \|y\|^2 + i\langle x,y\rangle - i\overline{\langle x,y\rangle}.
+\]
+Subtracting:
+\[
+\|x+iy\|^2 - \|x-iy\|^2 = -2i\langle x,y\rangle + 2i\overline{\langle x,y\rangle}.
+\]
+Writing $\langle x,y\rangle = a + bi$ so $\overline{\langle x,y\rangle} = a - bi$:
+\[
+-2i(a+bi) + 2i(a-bi) = -2ia + 2b + 2ia + 2b = 4b = 4\operatorname{Im}\langle x,y\rangle.
+\]
+Combining both pieces:
+\begin{align*}
+\frac{1}{4}\bigl(\|x+y\|^2 - \|x-y\|^2\bigr) &= \operatorname{Re}\langle x,y\rangle, \\
+\frac{1}{4}\bigl(\|x+iy\|^2 - \|x-iy\|^2\bigr) &= \operatorname{Im}\langle x,y\rangle.
+\end{align*}
+Therefore:
+\[
+\frac{1}{4}\bigl(\|x+y\|^2 - \|x-y\|^2 + i\|x+iy\|^2 - i\|x-iy\|^2\bigr) = \operatorname{Re}\langle x,y\rangle + i\operatorname{Im}\langle x,y\rangle = \langle x,y\rangle. \qed
 \]
 }
 
