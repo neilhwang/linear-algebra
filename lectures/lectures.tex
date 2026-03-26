@@ -1029,13 +1029,29 @@ One can \textbf{induce} a norm from an inner product: $(V, \langle \cdot, \cdot 
 \medskip
 
 \bluebox{
-Proof idea (filled):
+\textbf{Proof.}
+If $v = 0$, both sides are $0$ and the inequality holds. So assume $v \neq 0$.
 
-Consider:
+For any $\lambda \in \mathbb{C}$, positive-definiteness gives:
 \[
-\|u - \lambda v\|^2 \ge 0,
+0 \le \|u - \lambda v\|^2 = \langle u - \lambda v,\; u - \lambda v \rangle.
 \]
-choose $\lambda = \frac{\langle u,v\rangle}{\langle v,v\rangle}$.
+Expanding by linearity in the first slot and conjugate-linearity in the second:
+\[
+= \langle u, u \rangle - \lambda \langle v, u \rangle - \bar{\lambda}\langle u, v \rangle + |\lambda|^2 \langle v, v \rangle
+= \|u\|^2 - \lambda \overline{\langle u, v \rangle} - \bar{\lambda}\langle u, v \rangle + |\lambda|^2 \|v\|^2.
+\]
+Choose $\lambda = \dfrac{\langle u, v \rangle}{\langle v, v \rangle} = \dfrac{\langle u, v \rangle}{\|v\|^2}$. Then $\bar{\lambda} = \dfrac{\overline{\langle u, v \rangle}}{\|v\|^2}$ and $|\lambda|^2 = \dfrac{|\langle u, v \rangle|^2}{\|v\|^4}$. Substituting:
+\[
+0 \le \|u\|^2 - \frac{\langle u,v\rangle}{\|v\|^2}\overline{\langle u,v\rangle} - \frac{\overline{\langle u,v\rangle}}{\|v\|^2}\langle u,v\rangle + \frac{|\langle u,v\rangle|^2}{\|v\|^4}\|v\|^2.
+\]
+Each of the three trailing terms equals $\dfrac{|\langle u,v\rangle|^2}{\|v\|^2}$, so:
+\[
+0 \le \|u\|^2 - \frac{|\langle u,v\rangle|^2}{\|v\|^2}.
+\]
+Rearranging: $|\langle u,v\rangle|^2 \le \|u\|^2\|v\|^2$. Taking square roots gives $|\langle u,v\rangle| \le \|u\|\|v\|$. \qed
+
+\textbf{Equality} holds iff $\|u - \lambda v\|^2 = 0$, i.e., $u = \lambda v$ (one is a scalar multiple of the other).
 }
 
 \medskip
@@ -1053,11 +1069,20 @@ choose $\lambda = \frac{\langle u,v\rangle}{\langle v,v\rangle}$.
 \medskip
 
 \bluebox{
-Use:
+\textbf{Proof.}
+Expand:
+\begin{align*}
+\|u+v\|^2 &= \langle u+v, u+v \rangle \\
+&= \|u\|^2 + \langle u, v \rangle + \langle v, u \rangle + \|v\|^2 \\
+&= \|u\|^2 + \|v\|^2 + 2\operatorname{Re}\langle u, v \rangle.
+\end{align*}
+(Since $\langle u,v\rangle + \langle v,u\rangle = \langle u,v\rangle + \overline{\langle u,v\rangle} = 2\operatorname{Re}\langle u,v\rangle$.)
+
+Now $\operatorname{Re}\langle u,v\rangle \le |\langle u,v\rangle| \le \|u\|\|v\|$ by Cauchy--Schwarz. Therefore:
 \[
-\|u+v\|^2 = \|u\|^2 + \|v\|^2 + 2\text{Re}\langle u,v\rangle
+\|u+v\|^2 \le \|u\|^2 + \|v\|^2 + 2\|u\|\|v\| = (\|u\| + \|v\|)^2.
 \]
-then apply Cauchy--Schwarz.
+Taking square roots: $\|u+v\| \le \|u\| + \|v\|$. \qed
 }
 
 \medskip
