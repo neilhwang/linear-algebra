@@ -1230,7 +1230,26 @@ So $\langle x, y \rangle = \frac{1}{2}(\|x+y\|^2 - \|x\|^2 - \|y\|^2)$. If $x \p
 \medskip
 
 \bluebox{
-Characterizes norms coming from inner products.
+\textbf{Proof.} Expand each term using $\|a\|^2 = \langle a, a \rangle$.
+
+Left side, first term:
+\begin{align*}
+\|x+y\|^2 &= \langle x+y,\; x+y \rangle \\
+&= \|x\|^2 + \langle x,y\rangle + \langle y,x\rangle + \|y\|^2.
+\end{align*}
+
+Left side, second term:
+\begin{align*}
+\|x-y\|^2 &= \langle x-y,\; x-y \rangle \\
+&= \|x\|^2 - \langle x,y\rangle - \langle y,x\rangle + \|y\|^2.
+\end{align*}
+
+Adding: the cross terms $\langle x,y\rangle + \langle y,x\rangle$ cancel, giving
+\[
+\|x+y\|^2 + \|x-y\|^2 = 2\|x\|^2 + 2\|y\|^2 = 2(\|x\|^2 + \|y\|^2). \qed
+\]
+
+Characterizes norms coming from inner products (see Jordan--von Neumann below).
 }
 
 \medskip
