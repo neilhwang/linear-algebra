@@ -6,3 +6,7 @@
 *.fdb_latexmk
 *.fls
 *.toc
+
+# Large files (avoid GitHub warnings)
+*.pdf
+*.HEIC
