@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(magick --version)",
+      "Bash(python -c \"from PIL import Image; print\\(''pillow ok''\\)\")",
+      "Bash(python -c \"from pillow_heif import register_heif_opener; print\\(''''heif ok''''\\)\")",
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "Bash(pdflatex -interaction=nonstopmode lectures.tex)",
+      "Bash(pdflatex -interaction=nonstopmode hw2.tex)",
+      "Bash(grep -c \"\\\\\\\\section\\\\|\\\\\\\\subsection\" lectures/lectures.tex)",
+      "Bash(pdflatex -interaction=nonstopmode hw.tex)"
+    ]
+  }
+}
