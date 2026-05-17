@@ -19,13 +19,13 @@ Homework 1\\
 
 
 
-\bigskip
-\begin{center}
-\rule{0.5\textwidth}{1pt}\\[6pt]
-\textbf{Homework from Lecture on February 3, 2026}\\[2pt]
-\rule{0.5\textwidth}{1pt}
-\end{center}
-\bigskip
+% \bigskip
+% \begin{center}
+% \rule{0.5\textwidth}{1pt}\\[6pt]
+% \textbf{Homework from Lecture on February 3, 2026}\\[2pt]
+% \rule{0.5\textwidth}{1pt}
+% \end{center}
+% \bigskip
 
 \needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
@@ -38,8 +38,7 @@ Let $W \subset V$. Show that $W$ is a subspace of $V$ if and only if:
 \end{align*}
 
 \noindent\\
-\textbf{Solution.}\\
-\quad\\
+\textbf{Solution.}
 \begin{mdframed}[linewidth=1pt]
 Suppose first that $W$ is a subspace of $V$. Then $W$ is itself a vector space with the same operations as $V$. Hence:
 \begin{align*}
@@ -115,8 +114,7 @@ T(ax) = aT(x)
 for all $x,y \in V$ and $a \in F$.
 
 \noindent\\
-\textbf{Solution.}\\
-\quad\\
+\textbf{Solution.}
 \begin{mdframed}[linewidth=1pt]
 By definition, $T$ is linear if for all $x,y\in V$ and all $a,b\in F$,
 \begin{align*}
@@ -194,9 +192,7 @@ Let $V$ be an $n$-dimensional vector space with ordered basis $B = \{x_1,\dots,x
 \begin{align*}
 [x]_B = (a_1,\dots,a_n) \in F^n
 \end{align*}
-where $x = a_1 x_1 + \cdots + a_n x_n$.
-
-Show that the map $x \mapsto [x]_B$ is a linear isomorphism from $V$ to $F^n$.
+where $x = a_1 x_1 + \cdots + a_n x_n$. Show that the map $x \mapsto [x]_B$ is a linear isomorphism from $V$ to $F^n$.
 
 \noindent\\
 \textbf{Solution.}\\
@@ -1313,7 +1309,7 @@ Show by induction on $k$ that for all $k \ge 1$:
 \quad\\
 \begin{mdframed}[linewidth=1pt]
 \textbf{Base case ($k=1$):}
-$u_1 = v_1$. The set $\{u_1\}$ is trivially orthogonal (a single vector is orthogonal to itself vacuously for the pairwise condition). Since $v_1 \neq 0$ by hypothesis, $u_1 \neq 0$. Also, $\operatorname{span}\{u_1\} = \operatorname{span}\{v_1\}$. $\checkmark$
+$u_1 = v_1$. The set $\{u_1\}$ is trivially orthogonal (a single vector is orthogonal to itself vacuously for the pairwise condition). Since $v_1 \neq 0$ by hypothesis, $u_1 \neq 0$. Also, $\operatorname{span}\{u_1\} = \operatorname{span}\{v_1\}$. 
 
 \textbf{Inductive step:} Assume the statement holds for some $k \ge 1$. That is:
 \begin{itemize}
@@ -1388,7 +1384,7 @@ Now compute:
 \end{align*}
 Here we used linearity of the inner product in the second variable (conjugate-linearity gives $\overline{c_i}$ in the complex case; the argument is the same since each term is zero).
 
-Wait---in the complex case, $\langle v - \hat{v}, c_i u_i \rangle = \overline{c_i}\, \langle v - \hat{v}, u_i \rangle$. But by hypothesis, $\langle v - \hat{v}, u_i \rangle = 0$ for each $i$. Therefore each term equals $\overline{c_i} \cdot 0 = 0$.
+In the complex case, $\langle v - \hat{v}, c_i u_i \rangle = \overline{c_i}\, \langle v - \hat{v}, u_i \rangle$. But by hypothesis, $\langle v - \hat{v}, u_i \rangle = 0$ for each $i$. Therefore each term equals $\overline{c_i} \cdot 0 = 0$.
 
 Hence
 \begin{align*}
