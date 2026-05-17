@@ -11,7 +11,16 @@
       "Bash(pdflatex -interaction=nonstopmode lectures.tex)",
       "Bash(pdflatex -interaction=nonstopmode hw2.tex)",
       "Bash(grep -c \"\\\\\\\\section\\\\|\\\\\\\\subsection\" lectures/lectures.tex)",
-      "Bash(pdflatex -interaction=nonstopmode hw.tex)"
+      "Bash(pdflatex -interaction=nonstopmode hw.tex)",
+      "Bash(mkdir -p /tmp/heic_backup)",
+      "Bash(cp \"lecture screenshots/\"*.HEIC /tmp/heic_backup/)",
+      "Bash(rm \"lecture screenshots/\"*.HEIC)",
+      "Bash(sed -n '49,58p' hw/hw1.tex)",
+      "Bash(sed -n '130,139p' hw/hw1.tex)",
+      "Bash(sed -n '1330,1338p' hw/hw1.tex)",
+      "Bash(sed -n '1409,1417p' hw/hw1.tex)",
+      "Bash(sed -n '2540,2550p' lectures/lectures.tex)",
+      "Bash(sed -n '3330,3340p' lectures/lectures.tex)"
     ]
   }
 }
