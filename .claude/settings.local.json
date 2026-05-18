@@ -20,7 +20,9 @@
       "Bash(sed -n '1330,1338p' hw/hw1.tex)",
       "Bash(sed -n '1409,1417p' hw/hw1.tex)",
       "Bash(sed -n '2540,2550p' lectures/lectures.tex)",
-      "Bash(sed -n '3330,3340p' lectures/lectures.tex)"
+      "Bash(sed -n '3330,3340p' lectures/lectures.tex)",
+      "Bash(grep -n '\\\\\\\\checkmark' hw/hw2.tex)",
+      "Bash(grep -c '\\\\\\\\checkmark' hw/hw2.tex)"
     ]
   }
 }
