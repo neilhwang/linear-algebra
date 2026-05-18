@@ -21,7 +21,7 @@ Homework 2\\
 \bigskip
 \begin{center}
 \rule{0.5\textwidth}{1pt}\\[6pt]
-\textbf{Homework from Lecture on May 13, 2026}\\[2pt]
+\textnormal{Homework from Lecture on May 13, 2026}\\[2pt]
 \rule{0.5\textwidth}{1pt}
 \end{center}
 \bigskip
@@ -32,7 +32,7 @@ Homework 2\\
 
 \needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
-\textbf{Question 1.}\\
+\textnormal{Question 1.}\\
 Check by example the theorem:
 $[T]_{B_v'} = Q^{-1} [T]_{B_v} Q.$\\
 
@@ -45,10 +45,10 @@ Let
 Verify by direct computation that $[T]_{\mathcal{B}_V'} = Q^{-1}\,[T]_{\mathcal{B}_V}\, Q$, where $Q = [I_V]_{\mathcal{B}_V'}^{\mathcal{B}_V}$ is the change-of-coordinate matrix from $\mathcal{B}_V'$ to $\mathcal{B}_V$.
 
 \noindent\\
-\textbf{Solution.}\\
+\textnormal{Solution.}\\
 \quad\\
 \begin{mdframed}[linewidth=1pt]
-\textbf{I first compute $[T]_{\mathcal{B}_V}$} by applying $T$ to each basis vector:
+\textnormal{I first compute $[T]_{\mathcal{B}_V}$} by applying $T$ to each basis vector:
 \[
 T\binom{1}{1} = \binom{2}{4}, \qquad T\binom{-1}{1} = \binom{-4}{2}.
 \]
@@ -69,7 +69,7 @@ Therefore:
 \]
 
 \medskip
-\textbf{Next, I compute $[T]_{\mathcal{B}_V'}$} by applying $T$ to each basis vector:
+\textnormal{Next, I compute $[T]_{\mathcal{B}_V'}$} by applying $T$ to each basis vector:
 \[
 T\binom{2}{4} = \binom{2}{14}, \qquad T\binom{3}{1} = \binom{8}{6}.
 \]
@@ -92,7 +92,7 @@ Therefore:
 \]
 
 \medskip
-\textbf{I then compute the change-of-coordinate matrix $Q = [I_V]_{\mathcal{B}_V'}^{\mathcal{B}_V}$} by expressing each $\mathcal{B}_V'$ vector in $\mathcal{B}_V$-coordinates.
+\textnormal{I then compute the change-of-coordinate matrix $Q = [I_V]_{\mathcal{B}_V'}^{\mathcal{B}_V}$} by expressing each $\mathcal{B}_V'$ vector in $\mathcal{B}_V$-coordinates.
 
 $\binom{2}{4} = a\binom{1}{1} + b\binom{-1}{1}$: $a - b = 2$, $a + b = 4$, so $a = 3$, $b = 1$.
 
@@ -105,7 +105,7 @@ Q^{-1} = \frac{1}{\det Q}\begin{pmatrix} -1 & -2 \\ -1 & 3 \end{pmatrix} = \frac
 \]
 
 \medskip
-\textbf{Finally, I verify that $Q^{-1}[T]_{\mathcal{B}_V}\, Q = [T]_{\mathcal{B}_V'}$.}
+\textnormal{Finally, I verify that $Q^{-1}[T]_{\mathcal{B}_V}\, Q = [T]_{\mathcal{B}_V'}$.}
 
 First compute $Q^{-1}[T]_{\mathcal{B}_V}$:
 \[
@@ -123,7 +123,7 @@ Then multiply by $Q$:
 = [T]_{\mathcal{B}_V'}. \quad\]
 
 \medskip
-\textbf{Consistency check:} Both matrix representations have $\det = 10$ and $\operatorname{tr} = 6$, confirming they represent the same linear transformation.\end{mdframed}
+\textnormal{Consistency check:} Both matrix representations have $\det = 10$ and $\operatorname{tr} = 6$, confirming they represent the same linear transformation.\end{mdframed}
 
 \bigskip
 
@@ -135,31 +135,31 @@ Then multiply by $Q$:
 
 \needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
-\textbf{Question 2.}\\
+\textnormal{Question 2.}\\
 Show that similarity is an equivalence relation on $M_{n \times n}(F)$. That is, if we say $B$ is similar to $A$ when there exists an invertible $Q$ such that $B = QAQ^{-1}$, show this relation is reflexive, symmetric, and transitive.
 
 \noindent\\
-\textbf{Solution.}\\
+\textnormal{Solution.}\\
 \quad\\
 \begin{mdframed}[linewidth=1pt]
-\textbf{Reflexive:} $A = IAI^{-1}$, so $A$ is similar to itself.
+\textnormal{Reflexive:} $A = IAI^{-1}$, so $A$ is similar to itself.
 
 \medskip
-\textbf{Symmetric:} Suppose $B$ is similar to $A$, i.e., $B = QAQ^{-1}$ for some invertible $Q$. Then
+\textnormal{Symmetric:} Suppose $B$ is similar to $A$, i.e., $B = QAQ^{-1}$ for some invertible $Q$. Then
 \[
 A = Q^{-1}BQ = Q^{-1}B(Q^{-1})^{-1}.
 \]
 Setting $P = Q^{-1}$ (which is invertible), we have $A = PBP^{-1}$, so $A$ is similar to $B$.
 
 \medskip
-\textbf{Transitive:} Suppose $B = Q_1 A Q_1^{-1}$ and $C = Q_2 B Q_2^{-1}$. Then
+\textnormal{Transitive:} Suppose $B = Q_1 A Q_1^{-1}$ and $C = Q_2 B Q_2^{-1}$. Then
 \[
 C = Q_2(Q_1 A Q_1^{-1})Q_2^{-1} = (Q_2 Q_1)\, A\, (Q_2 Q_1)^{-1}.
 \]
 Setting $P = Q_2 Q_1$ (invertible, since the product of invertible matrices is invertible), we have $C = PAP^{-1}$, so $C$ is similar to $A$. \qed
 
 \medskip
-\textbf{Interpretation:} Similar matrices are precisely those that represent the same linear transformation in different ordered bases. The equivalence classes under similarity partition $M_{n\times n}(F)$ into sets of matrices that share the same eigenvalues, characteristic polynomial, determinant, trace, and rank.
+\textnormal{Interpretation:} Similar matrices are precisely those that represent the same linear transformation in different ordered bases. The equivalence classes under similarity partition $M_{n\times n}(F)$ into sets of matrices that share the same eigenvalues, characteristic polynomial, determinant, trace, and rank.
 \end{mdframed}
 
 \bigskip
@@ -172,40 +172,40 @@ Setting $P = Q_2 Q_1$ (invertible, since the product of invertible matrices is i
 
 \needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
-\textbf{Question 3.} (\S5.2, p.278 \#2)\\
+\textnormal{Question 3.} (\S5.2, p.278 \#2)\\
 For each of the following matrices $A \in M_{n \times n}(\mathbb{R})$, test $A$ for diagonalizability, and if $A$ is diagonalizable, find an invertible matrix $Q$ and a diagonal matrix $D$ such that $Q^{-1}AQ = D$.
 
 \bigskip
 
 %% (a)
-\noindent\textbf{(a)}
+\noindent\textnormal{(a)}
 $A = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}$.
 
 \begin{mdframed}[linewidth=1pt]
-\textbf{Characteristic polynomial:}
+\textnormal{Characteristic polynomial:}
 $\det(A - \lambda I) = (1-\lambda)^2$.
 
 Eigenvalue $\lambda = 1$ with algebraic multiplicity $2$.
 
-\textbf{Geometric multiplicity:}
+\textnormal{Geometric multiplicity:}
 $A - I = \begin{pmatrix} 0 & 2 \\ 0 & 0 \end{pmatrix}$, rank $= 1$, so geometric multiplicity $= 2 - 1 = 1$.
 
-Since geometric multiplicity $< $ algebraic multiplicity, $A$ is \textbf{not diagonalizable}.
+Since geometric multiplicity $< $ algebraic multiplicity, $A$ is \textnormal{not diagonalizable}.
 \end{mdframed}
 
 \bigskip
 
 %% (b)
-\noindent\textbf{(b)}
+\noindent\textnormal{(b)}
 $A = \begin{pmatrix} 1 & 3 \\ 3 & 1 \end{pmatrix}$.
 
 \begin{mdframed}[linewidth=1pt]
-\textbf{Characteristic polynomial:}
+\textnormal{Characteristic polynomial:}
 $\det(A - \lambda I) = (1-\lambda)^2 - 9 = \lambda^2 - 2\lambda - 8 = (\lambda - 4)(\lambda + 2)$.
 
-Eigenvalues: $\lambda_1 = 4$, $\lambda_2 = -2$ (distinct, so $A$ is \textbf{diagonalizable}).
+Eigenvalues: $\lambda_1 = 4$, $\lambda_2 = -2$ (distinct, so $A$ is \textnormal{diagonalizable}).
 
-\textbf{Eigenvectors:}
+\textnormal{Eigenvectors:}
 
 $\lambda = 4$: $(A - 4I)x = 0$: $\begin{pmatrix} -3 & 3 \\ 3 & -3 \end{pmatrix} \to x_1 = x_2$. Eigenvector: $v_1 = \binom{1}{1}$.
 
@@ -215,21 +215,21 @@ $\lambda = -2$: $(A + 2I)x = 0$: $\begin{pmatrix} 3 & 3 \\ 3 & 3 \end{pmatrix} \
 \boxed{Q = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}, \qquad D = \begin{pmatrix} 4 & 0 \\ 0 & -2 \end{pmatrix}.}
 \]
 
-\textbf{Check:} $\det A = 1 - 9 = -8 = (4)(-2)$. $\operatorname{tr} A = 2 = 4 + (-2)$.\end{mdframed}
+\textnormal{Check:} $\det A = 1 - 9 = -8 = (4)(-2)$. $\operatorname{tr} A = 2 = 4 + (-2)$.\end{mdframed}
 
 \bigskip
 
 %% (c)
-\noindent\textbf{(c)}
+\noindent\textnormal{(c)}
 $A = \begin{pmatrix} 1 & 4 \\ 3 & 2 \end{pmatrix}$.
 
 \begin{mdframed}[linewidth=1pt]
-\textbf{Characteristic polynomial:}
+\textnormal{Characteristic polynomial:}
 $\det(A - \lambda I) = (1-\lambda)(2-\lambda) - 12 = \lambda^2 - 3\lambda - 10 = (\lambda - 5)(\lambda + 2)$.
 
-Eigenvalues: $\lambda_1 = 5$, $\lambda_2 = -2$ (distinct, so $A$ is \textbf{diagonalizable}).
+Eigenvalues: $\lambda_1 = 5$, $\lambda_2 = -2$ (distinct, so $A$ is \textnormal{diagonalizable}).
 
-\textbf{Eigenvectors:}
+\textnormal{Eigenvectors:}
 
 $\lambda = 5$: $(A - 5I)x = 0$: $\begin{pmatrix} -4 & 4 \\ 3 & -3 \end{pmatrix} \to x_1 = x_2$. Eigenvector: $v_1 = \binom{1}{1}$.
 
@@ -239,16 +239,16 @@ $\lambda = -2$: $(A + 2I)x = 0$: $\begin{pmatrix} 3 & 4 \\ 3 & 4 \end{pmatrix} \
 \boxed{Q = \begin{pmatrix} 1 & 4 \\ 1 & -3 \end{pmatrix}, \qquad D = \begin{pmatrix} 5 & 0 \\ 0 & -2 \end{pmatrix}.}
 \]
 
-\textbf{Check:} $\det A = 2 - 12 = -10 = (5)(-2)$. $\operatorname{tr} A = 3 = 5 + (-2)$.\end{mdframed}
+\textnormal{Check:} $\det A = 2 - 12 = -10 = (5)(-2)$. $\operatorname{tr} A = 3 = 5 + (-2)$.\end{mdframed}
 
 \bigskip
 
 %% (d)
-\noindent\textbf{(d)}
+\noindent\textnormal{(d)}
 $A = \begin{pmatrix} 7 & -4 & 0 \\ 8 & -5 & 0 \\ 6 & -6 & 3 \end{pmatrix}$.
 
 \begin{mdframed}[linewidth=1pt]
-\textbf{Characteristic polynomial:}
+\textnormal{Characteristic polynomial:}
 Expand along the third column (only one nonzero entry):
 \[
 \det(A - \lambda I) = (3 - \lambda)\det\begin{pmatrix} 7-\lambda & -4 \\ 8 & -5-\lambda \end{pmatrix} = (3-\lambda)\bigl[(7-\lambda)(-5-\lambda) + 32\bigr].
@@ -263,15 +263,15 @@ Therefore:
 
 Eigenvalues: $\lambda_1 = 3$ (algebraic multiplicity $2$), $\lambda_2 = -1$ (algebraic multiplicity $1$).
 
-\textbf{Geometric multiplicity of $\lambda = 3$:}
+\textnormal{Geometric multiplicity of $\lambda = 3$:}
 \[
 A - 3I = \begin{pmatrix} 4 & -4 & 0 \\ 8 & -8 & 0 \\ 6 & -6 & 0 \end{pmatrix}.
 \]
 All rows are proportional to $(1, -1, 0)$, so rank $= 1$ and geometric multiplicity $= 3 - 1 = 2$.
 
-Since algebraic multiplicity $=$ geometric multiplicity for both eigenvalues, $A$ is \textbf{diagonalizable}.
+Since algebraic multiplicity $=$ geometric multiplicity for both eigenvalues, $A$ is \textnormal{diagonalizable}.
 
-\textbf{Eigenvectors:}
+\textnormal{Eigenvectors:}
 
 $\lambda = 3$: $x_1 = x_2$, $x_3$ free. Eigenvectors: $v_1 = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}$, $v_2 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}$.
 
@@ -283,16 +283,16 @@ Row 1 gives $x_1 = \tfrac{1}{2}x_2$; row 3 gives $6(\tfrac{1}{2}x_2) - 6x_2 + 4x
 \boxed{Q = \begin{pmatrix} 1 & 0 & 2 \\ 1 & 0 & 4 \\ 0 & 1 & 3 \end{pmatrix}, \qquad D = \begin{pmatrix} 3 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & -1 \end{pmatrix}.}
 \]
 
-\textbf{Check:} $\det A = 3 \cdot 3 \cdot (-1) = -9$. $\operatorname{tr} A = 7 + (-5) + 3 = 5 = 3 + 3 + (-1)$.\end{mdframed}
+\textnormal{Check:} $\det A = 3 \cdot 3 \cdot (-1) = -9$. $\operatorname{tr} A = 7 + (-5) + 3 = 5 = 3 + 3 + (-1)$.\end{mdframed}
 
 \bigskip
 
 %% (e)
-\noindent\textbf{(e)}
+\noindent\textnormal{(e)}
 $A = \begin{pmatrix} 0 & 0 & 1 \\ 1 & 0 & -1 \\ 0 & 1 & 1 \end{pmatrix}$.
 
 \begin{mdframed}[linewidth=1pt]
-\textbf{Characteristic polynomial:}
+\textnormal{Characteristic polynomial:}
 Expand along the first row:
 \begin{align*}
 \det(A - \lambda I) &= -\lambda \det\begin{pmatrix} -\lambda & -1 \\ 1 & 1-\lambda \end{pmatrix} - 0 + 1\cdot\det\begin{pmatrix} 1 & -\lambda \\ 0 & 1 \end{pmatrix} \\
@@ -307,36 +307,36 @@ Dividing: $-\lambda^3 + \lambda^2 - \lambda + 1 = -(\lambda - 1)(\lambda^2 - 1) 
 
 Factoring: $-\lambda^3 + \lambda^2 - \lambda + 1 = -(\lambda^3 - \lambda^2 + \lambda - 1) = -[\lambda^2(\lambda - 1) + (\lambda - 1)] = -(\lambda-1)(\lambda^2 + 1)$.
 
-Over $\mathbb{R}$, $\lambda^2 + 1 = 0$ has no real roots (the complex roots are $\pm i$). Since the characteristic polynomial does not split over $\mathbb{R}$, $A$ is \textbf{not diagonalizable} over $\mathbb{R}$.
+Over $\mathbb{R}$, $\lambda^2 + 1 = 0$ has no real roots (the complex roots are $\pm i$). Since the characteristic polynomial does not split over $\mathbb{R}$, $A$ is \textnormal{not diagonalizable} over $\mathbb{R}$.
 \end{mdframed}
 
 \bigskip
 
 %% (f)
-\noindent\textbf{(f)}
+\noindent\textnormal{(f)}
 $A = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 2 \\ 0 & 0 & 3 \end{pmatrix}$.
 
 \begin{mdframed}[linewidth=1pt]
-\textbf{Characteristic polynomial:}
+\textnormal{Characteristic polynomial:}
 $A$ is upper triangular, so the eigenvalues are the diagonal entries: $\lambda_1 = 1$ (algebraic multiplicity $2$), $\lambda_2 = 3$ (algebraic multiplicity $1$).
 
-\textbf{Geometric multiplicity of $\lambda = 1$:}
+\textnormal{Geometric multiplicity of $\lambda = 1$:}
 \[
 A - I = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 2 \\ 0 & 0 & 2 \end{pmatrix} \to \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 2 \\ 0 & 0 & 0 \end{pmatrix}.
 \]
 Rank $= 2$, geometric multiplicity $= 3 - 2 = 1 < 2$.
 
-Since geometric multiplicity $<$ algebraic multiplicity for $\lambda = 1$, $A$ is \textbf{not diagonalizable}.
+Since geometric multiplicity $<$ algebraic multiplicity for $\lambda = 1$, $A$ is \textnormal{not diagonalizable}.
 \end{mdframed}
 
 \bigskip
 
 %% (g)
-\noindent\textbf{(g)}
+\noindent\textnormal{(g)}
 $A = \begin{pmatrix} 3 & 1 & 1 \\ 2 & 4 & 2 \\ -1 & -1 & 1 \end{pmatrix}$.
 
 \begin{mdframed}[linewidth=1pt]
-\textbf{Characteristic polynomial:}
+\textnormal{Characteristic polynomial:}
 \begin{align*}
 \det(A - \lambda I) &= \det\begin{pmatrix} 3-\lambda & 1 & 1 \\ 2 & 4-\lambda & 2 \\ -1 & -1 & 1-\lambda \end{pmatrix}.
 \end{align*}
@@ -353,15 +353,15 @@ Factor: $-\lambda^3 + 8\lambda^2 - 20\lambda + 16 = -(\lambda - 2)(\lambda^2 - 6
 
 Eigenvalues: $\lambda_1 = 2$ (algebraic multiplicity $2$), $\lambda_2 = 4$ (algebraic multiplicity $1$).
 
-\textbf{Geometric multiplicity of $\lambda = 2$:}
+\textnormal{Geometric multiplicity of $\lambda = 2$:}
 \[
 A - 2I = \begin{pmatrix} 1 & 1 & 1 \\ 2 & 2 & 2 \\ -1 & -1 & -1 \end{pmatrix}.
 \]
 All rows are proportional to $(1,1,1)$. Rank $= 1$, geometric multiplicity $= 3 - 1 = 2$.
 
-Since algebraic $=$ geometric multiplicity for both eigenvalues, $A$ is \textbf{diagonalizable}.
+Since algebraic $=$ geometric multiplicity for both eigenvalues, $A$ is \textnormal{diagonalizable}.
 
-\textbf{Eigenvectors:}
+\textnormal{Eigenvectors:}
 
 $\lambda = 2$: $x_1 + x_2 + x_3 = 0$. Two free variables. Eigenvectors: $v_1 = \begin{pmatrix} -1 \\ 1 \\ 0 \end{pmatrix}$, $v_2 = \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix}$.
 
@@ -373,7 +373,7 @@ Row 2: $x_1 = -x_3$. Row 1: $-(-x_3) + x_2 + x_3 = 0 \Rightarrow x_2 = -2x_3$. E
 \boxed{Q = \begin{pmatrix} -1 & -1 & -1 \\ 1 & 0 & -2 \\ 0 & 1 & 1 \end{pmatrix}, \qquad D = \begin{pmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 4 \end{pmatrix}.}
 \]
 
-\textbf{Check:} $\operatorname{tr} A = 3 + 4 + 1 = 8 = 2 + 2 + 4$.\end{mdframed}
+\textnormal{Check:} $\operatorname{tr} A = 3 + 4 + 1 = 8 = 2 + 2 + 4$.\end{mdframed}
 
 \bigskip
 
@@ -385,13 +385,13 @@ Row 2: $x_1 = -x_3$. Row 1: $-(-x_3) + x_2 + x_3 = 0 \Rightarrow x_2 = -2x_3$. E
 
 \needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
-\textbf{Question 4.} (\S5.2, p.278 \#3)\\
+\textnormal{Question 4.} (\S5.2, p.278 \#3)\\
 For each of the following linear operators $T$ on a vector space $V$, test $T$ for diagonalizability, and if $T$ is diagonalizable, find a basis $\beta$ for $V$ such that $[T]_\beta$ is a diagonal matrix.
 
 \bigskip
 
 %% (a)
-\noindent\textbf{(a)} $V = P_3(\mathbb{R})$ and $T(f(x)) = f'(x) + f''(x)$.
+\noindent\textnormal{(a)} $V = P_3(\mathbb{R})$ and $T(f(x)) = f'(x) + f''(x)$.
 
 \begin{mdframed}[linewidth=1pt]
 Use the standard basis $\beta' = \{1, x, x^2, x^3\}$.
@@ -410,13 +410,13 @@ This is upper triangular with all diagonal entries $0$, so $\lambda = 0$ is the 
 
 Geometric multiplicity: $\ker([T]_{\beta'}) = \ker([T]_{\beta'})$. The matrix has rank $3$ (three pivots), so geometric multiplicity $= 4 - 3 = 1$.
 
-Since geometric multiplicity $< $ algebraic multiplicity, $T$ is \textbf{not diagonalizable}.
+Since geometric multiplicity $< $ algebraic multiplicity, $T$ is \textnormal{not diagonalizable}.
 \end{mdframed}
 
 \bigskip
 
 %% (b)
-\noindent\textbf{(b)} $V = P_2(\mathbb{R})$ and $T(ax^2 + bx + c) = cx^2 + bx + a$.
+\noindent\textnormal{(b)} $V = P_2(\mathbb{R})$ and $T(ax^2 + bx + c) = cx^2 + bx + a$.
 
 \begin{mdframed}[linewidth=1pt]
 $T$ swaps the constant and leading coefficients. Using $\beta' = \{1, x, x^2\}$:
@@ -428,20 +428,20 @@ T(1) &= x^2, \quad T(x) = x, \quad T(x^2) = 1.
 [T]_{\beta'} = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \end{pmatrix}.
 \]
 
-\textbf{Characteristic polynomial:}
+\textnormal{Characteristic polynomial:}
 \begin{align*}
 \det(A - \lambda I) &= \det\begin{pmatrix} -\lambda & 0 & 1 \\ 0 & 1-\lambda & 0 \\ 1 & 0 & -\lambda \end{pmatrix} = (1-\lambda)(\lambda^2 - 1) = -(1-\lambda)^2(1+\lambda).
 \end{align*}
 
 Eigenvalues: $\lambda_1 = 1$ (algebraic multiplicity $2$), $\lambda_2 = -1$ (algebraic multiplicity $1$).
 
-\textbf{Geometric multiplicity of $\lambda = 1$:}
+\textnormal{Geometric multiplicity of $\lambda = 1$:}
 \[
 A - I = \begin{pmatrix} -1 & 0 & 1 \\ 0 & 0 & 0 \\ 1 & 0 & -1 \end{pmatrix}.
 \]
-Rank $= 1$, so geometric multiplicity $= 3 - 1 = 2$. Since algebraic $=$ geometric for both eigenvalues, $T$ is \textbf{diagonalizable}.
+Rank $= 1$, so geometric multiplicity $= 3 - 1 = 2$. Since algebraic $=$ geometric for both eigenvalues, $T$ is \textnormal{diagonalizable}.
 
-\textbf{Eigenvectors:}
+\textnormal{Eigenvectors:}
 
 $\lambda = 1$: $x_1 = x_3$, $x_2$ free. Eigenvectors: $v_1 = \begin{pmatrix}1\\0\\1\end{pmatrix}$, $v_2 = \begin{pmatrix}0\\1\\0\end{pmatrix}$.
 
@@ -452,32 +452,32 @@ In polynomial form:
 \boxed{\beta = \{1 + x^2,\; x,\; 1 - x^2\}, \qquad [T]_\beta = \operatorname{diag}(1, 1, -1).}
 \]
 
-\textbf{Check:} $T(1 + x^2) = x^2 + 1 = 1(1+x^2)$. $T(x) = x$. $T(1 - x^2) = x^2 - 1 = -(1 - x^2)$.\end{mdframed}
+\textnormal{Check:} $T(1 + x^2) = x^2 + 1 = 1(1+x^2)$. $T(x) = x$. $T(1 - x^2) = x^2 - 1 = -(1 - x^2)$.\end{mdframed}
 
 \bigskip
 
 %% (c)
-\noindent\textbf{(c)} $V = \mathbb{R}^3$ and $T\begin{pmatrix}a_1\\a_2\\a_3\end{pmatrix} = \begin{pmatrix}a_2\\-a_1\\2a_3\end{pmatrix}$.
+\noindent\textnormal{(c)} $V = \mathbb{R}^3$ and $T\begin{pmatrix}a_1\\a_2\\a_3\end{pmatrix} = \begin{pmatrix}a_2\\-a_1\\2a_3\end{pmatrix}$.
 
 \begin{mdframed}[linewidth=1pt]
 \[
 [T]_{\beta'} = \begin{pmatrix} 0 & 1 & 0 \\ -1 & 0 & 0 \\ 0 & 0 & 2 \end{pmatrix}.
 \]
 
-\textbf{Characteristic polynomial:}
+\textnormal{Characteristic polynomial:}
 \[
 \det(A - \lambda I) = (2 - \lambda)(\lambda^2 + 1).
 \]
 
 Over $\mathbb{R}$, $\lambda^2 + 1 = 0$ has no real roots. The only real eigenvalue is $\lambda = 2$ with algebraic multiplicity $1$, but the characteristic polynomial does not split over $\mathbb{R}$.
 
-$T$ is \textbf{not diagonalizable} over $\mathbb{R}$ (the characteristic polynomial must split for diagonalizability).
+$T$ is \textnormal{not diagonalizable} over $\mathbb{R}$ (the characteristic polynomial must split for diagonalizability).
 \end{mdframed}
 
 \bigskip
 
 %% (d)
-\noindent\textbf{(d)} $V = P_2(\mathbb{R})$ and $T(f(x)) = f(0) + f(1)(x + x^2)$.
+\noindent\textnormal{(d)} $V = P_2(\mathbb{R})$ and $T(f(x)) = f(0) + f(1)(x + x^2)$.
 
 \begin{mdframed}[linewidth=1pt]
 Using $\beta' = \{1, x, x^2\}$:
@@ -491,7 +491,7 @@ T(x^2) &= 0 + 1 \cdot (x + x^2) = x + x^2.
 [T]_{\beta'} = \begin{pmatrix} 1 & 0 & 0 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}.
 \]
 
-\textbf{Characteristic polynomial:}
+\textnormal{Characteristic polynomial:}
 \begin{align*}
 \det(A - \lambda I) &= (1 - \lambda)\det\begin{pmatrix}1-\lambda & 1 \\ 1 & 1-\lambda\end{pmatrix} = (1-\lambda)[(1-\lambda)^2 - 1] \\
 &= (1-\lambda)(\lambda^2 - 2\lambda) = -\lambda(1-\lambda)(2-\lambda).
@@ -503,9 +503,9 @@ Expanding along the first row:
 &= (1-\lambda)[(1-\lambda)^2 - 1] = (1-\lambda)(\lambda^2 - 2\lambda) = \lambda(1-\lambda)(\lambda - 2).
 \end{align*}
 
-Eigenvalues: $\lambda_1 = 0$, $\lambda_2 = 1$, $\lambda_3 = 2$ (all distinct), so $T$ is \textbf{diagonalizable}.
+Eigenvalues: $\lambda_1 = 0$, $\lambda_2 = 1$, $\lambda_3 = 2$ (all distinct), so $T$ is \textnormal{diagonalizable}.
 
-\textbf{Eigenvectors:}
+\textnormal{Eigenvectors:}
 
 $\lambda = 0$: $Ax = 0$. $\begin{pmatrix}1&0&0\\1&1&1\\1&1&1\end{pmatrix} \to x_1 = 0$, $x_2 = -x_3$. Eigenvector: $v_1 = \begin{pmatrix}0\\1\\-1\end{pmatrix} \leftrightarrow x - x^2$.
 
@@ -517,28 +517,28 @@ $\lambda = 2$: $(A-2I)x = 0$. $\begin{pmatrix}-1&0&0\\1&-1&1\\1&1&-1\end{pmatrix
 \boxed{\beta = \{x - x^2,\; -1 + x + x^2,\; x + x^2\}, \qquad [T]_\beta = \operatorname{diag}(0, 1, 2).}
 \]
 
-\textbf{Check:} $T(x - x^2) = 0 + 0 \cdot (x+x^2) = 0$. $T(-1+x+x^2) = -1 + 1\cdot(x+x^2) = -1+x+x^2$. $T(x+x^2) = 0 + 2(x+x^2) = 2(x+x^2)$.\end{mdframed}
+\textnormal{Check:} $T(x - x^2) = 0 + 0 \cdot (x+x^2) = 0$. $T(-1+x+x^2) = -1 + 1\cdot(x+x^2) = -1+x+x^2$. $T(x+x^2) = 0 + 2(x+x^2) = 2(x+x^2)$.\end{mdframed}
 
 \bigskip
 
 %% (e)
-\noindent\textbf{(e)} $V = \mathbb{C}^2$ and $T(z,w) = (z + iw,\; iz + w)$.
+\noindent\textnormal{(e)} $V = \mathbb{C}^2$ and $T(z,w) = (z + iw,\; iz + w)$.
 
 \begin{mdframed}[linewidth=1pt]
 \[
 [T]_{\beta'} = \begin{pmatrix} 1 & i \\ i & 1 \end{pmatrix}.
 \]
 
-\textbf{Characteristic polynomial:}
+\textnormal{Characteristic polynomial:}
 \[
 \det(A - \lambda I) = (1-\lambda)^2 - i^2 = (1-\lambda)^2 + 1 = \lambda^2 - 2\lambda + 2.
 \]
 
 Using the quadratic formula: $\lambda = \frac{2 \pm \sqrt{4 - 8}}{2} = \frac{2 \pm 2i}{2} = 1 \pm i$.
 
-Eigenvalues: $\lambda_1 = 1+i$, $\lambda_2 = 1-i$ (distinct over $\mathbb{C}$), so $T$ is \textbf{diagonalizable}.
+Eigenvalues: $\lambda_1 = 1+i$, $\lambda_2 = 1-i$ (distinct over $\mathbb{C}$), so $T$ is \textnormal{diagonalizable}.
 
-\textbf{Eigenvectors:}
+\textnormal{Eigenvectors:}
 
 $\lambda = 1+i$: $(A - (1+i)I)x = 0$. $\begin{pmatrix}-i & i \\ i & -i\end{pmatrix} \to x_1 = x_2$. Eigenvector: $v_1 = \binom{1}{1}$.
 
@@ -548,12 +548,12 @@ $\lambda = 1-i$: $(A - (1-i)I)x = 0$. $\begin{pmatrix}i & i \\ i & i\end{pmatrix
 \boxed{\beta = \left\{\binom{1}{1},\; \binom{1}{-1}\right\}, \qquad [T]_\beta = \begin{pmatrix} 1+i & 0 \\ 0 & 1-i \end{pmatrix}.}
 \]
 
-\textbf{Check:} $T(1,1) = (1+i, i+1) = (1+i)(1,1)$. $T(1,-1) = (1-i, i-1) = (1-i)(1,-1)$.\end{mdframed}
+\textnormal{Check:} $T(1,1) = (1+i, i+1) = (1+i)(1,1)$. $T(1,-1) = (1-i, i-1) = (1-i)(1,-1)$.\end{mdframed}
 
 \bigskip
 
 %% (f)
-\noindent\textbf{(f)} $V = M_{2\times 2}(\mathbb{R})$ and $T(A) = A^t$.
+\noindent\textnormal{(f)} $V = M_{2\times 2}(\mathbb{R})$ and $T(A) = A^t$.
 
 \begin{mdframed}[linewidth=1pt]
 Use the standard basis $\beta' = \left\{E_{11}, E_{12}, E_{21}, E_{22}\right\}$ where $E_{ij}$ has a $1$ in position $(i,j)$ and $0$ elsewhere.
@@ -565,21 +565,21 @@ T(E_{11}) &= E_{11}, \quad T(E_{12}) = E_{21}, \quad T(E_{21}) = E_{12}, \quad T
 [T]_{\beta'} = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}.
 \]
 
-\textbf{Characteristic polynomial:}
+\textnormal{Characteristic polynomial:}
 \[
 \det(A-\lambda I) = (1-\lambda)^2 \det\begin{pmatrix}-\lambda & 1 \\ 1 & -\lambda\end{pmatrix} = (1-\lambda)^2(\lambda^2 - 1) = (1-\lambda)^3(1+\lambda).
 \]
 
 Eigenvalues: $\lambda_1 = 1$ (algebraic multiplicity $3$), $\lambda_2 = -1$ (algebraic multiplicity $1$).
 
-\textbf{Geometric multiplicity of $\lambda = 1$:}
+\textnormal{Geometric multiplicity of $\lambda = 1$:}
 \[
 A - I = \begin{pmatrix} 0&0&0&0 \\ 0&-1&1&0 \\ 0&1&-1&0 \\ 0&0&0&0 \end{pmatrix}.
 \]
 Rank $= 1$, geometric multiplicity $= 4 - 1 = 3$.
-Since algebraic $=$ geometric for both eigenvalues, $T$ is \textbf{diagonalizable}.
+Since algebraic $=$ geometric for both eigenvalues, $T$ is \textnormal{diagonalizable}.
 
-\textbf{Eigenvectors:}
+\textnormal{Eigenvectors:}
 
 $\lambda = 1$: $T(A) = A$, i.e., $A^t = A$ (symmetric matrices). A basis for the symmetric $2 \times 2$ matrices:
 \[
@@ -595,7 +595,7 @@ S_4 = \begin{pmatrix}0&1\\-1&0\end{pmatrix}.
 \boxed{\beta = \{S_1, S_2, S_3, S_4\}, \qquad [T]_\beta = \operatorname{diag}(1, 1, 1, -1).}
 \]
 
-\textbf{Check:} Each $S_i^t = S_i$ for $i=1,2,3$ and $S_4^t = -S_4$.\end{mdframed}
+\textnormal{Check:} Each $S_i^t = S_i$ for $i=1,2,3$ and $S_4^t = -S_4$.\end{mdframed}
 
 \newpage
 
@@ -605,27 +605,27 @@ S_4 = \begin{pmatrix}0&1\\-1&0\end{pmatrix}.
 
 \needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
-\textbf{Question 5.}\\
+\textnormal{Question 5.}\\
 Prove that the eigenspace $E_\lambda = \{x \in F^n : Ax = \lambda x\}$ is a subspace of $F^n$.
 
 \noindent\\
-\textbf{Solution.}\\
+\textnormal{Solution.}\\
 \quad\\
 \begin{mdframed}[linewidth=1pt]
 Note that $E_\lambda = \ker(A - \lambda I)$. We verify the subspace conditions directly.
 
 \medskip
-\textbf{Non-empty:} $A \cdot 0 = 0 = \lambda \cdot 0$, so $0 \in E_\lambda$.
+\textnormal{Non-empty:} $A \cdot 0 = 0 = \lambda \cdot 0$, so $0 \in E_\lambda$.
 
 \medskip
-\textbf{Closed under addition:} Let $x, y \in E_\lambda$, so $Ax = \lambda x$ and $Ay = \lambda y$. Then
+\textnormal{Closed under addition:} Let $x, y \in E_\lambda$, so $Ax = \lambda x$ and $Ay = \lambda y$. Then
 \[
 A(x + y) = Ax + Ay = \lambda x + \lambda y = \lambda(x + y),
 \]
 so $x + y \in E_\lambda$.
 
 \medskip
-\textbf{Closed under scalar multiplication:} Let $x \in E_\lambda$ and $c \in F$. Then
+\textnormal{Closed under scalar multiplication:} Let $x \in E_\lambda$ and $c \in F$. Then
 \[
 A(cx) = c(Ax) = c(\lambda x) = \lambda(cx),
 \]
@@ -646,11 +646,11 @@ Therefore $E_\lambda$ is a subspace of $F^n$. \qed
 
 \needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
-\textbf{Question 6.}\\
+\textnormal{Question 6.}\\
 Verify for a $3 \times 3$ matrix that $\det A = \lambda_1 \lambda_2 \lambda_3$ and $\operatorname{tr} A = \lambda_1 + \lambda_2 + \lambda_3$, where $\lambda_1, \lambda_2, \lambda_3$ are the eigenvalues of $A$ (counted with algebraic multiplicity).
 
 \noindent\\
-\textbf{Solution.}\\
+\textnormal{Solution.}\\
 \quad\\
 \begin{mdframed}[linewidth=1pt]
 Let $A$ be a $3 \times 3$ matrix with entries $a_{ij}$. The characteristic polynomial is
@@ -663,7 +663,7 @@ p(\lambda) = (\lambda_1 - \lambda)(\lambda_2 - \lambda)(\lambda_3 - \lambda).
 \]
 
 \medskip
-\textbf{Determinant:} Set $\lambda = 0$:
+\textnormal{Determinant:} Set $\lambda = 0$:
 \[
 p(0) = \det(A - 0 \cdot I) = \det A.
 \]
@@ -673,7 +673,7 @@ p(0) = (\lambda_1 - 0)(\lambda_2 - 0)(\lambda_3 - 0) = \lambda_1 \lambda_2 \lamb
 \]
 Therefore $\det A = \lambda_1 \lambda_2 \lambda_3$.
 \medskip
-\textbf{Trace:} Expand $p(\lambda) = (\lambda_1 - \lambda)(\lambda_2 - \lambda)(\lambda_3 - \lambda)$:
+\textnormal{Trace:} Expand $p(\lambda) = (\lambda_1 - \lambda)(\lambda_2 - \lambda)(\lambda_3 - \lambda)$:
 \[
 p(\lambda) = -\lambda^3 + (\lambda_1 + \lambda_2 + \lambda_3)\lambda^2 - (\lambda_1\lambda_2 + \lambda_1\lambda_3 + \lambda_2\lambda_3)\lambda + \lambda_1\lambda_2\lambda_3.
 \]
@@ -689,7 +689,7 @@ Comparing $\lambda^2$ coefficients:
 \operatorname{tr} A = a_{11} + a_{22} + a_{33} = \lambda_1 + \lambda_2 + \lambda_3. \quad\]
 
 \medskip
-\textbf{Numerical example:} Let $A = \begin{pmatrix} 3 & 1 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 4 \end{pmatrix}$.
+\textnormal{Numerical example:} Let $A = \begin{pmatrix} 3 & 1 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 4 \end{pmatrix}$.
 
 Eigenvalues: $\lambda = 3, 3, 4$ (upper triangular, so eigenvalues are diagonal entries).
 
@@ -712,17 +712,17 @@ Find the Jordan canonical form of each of the following matrices.
 
 \needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
-\textbf{Question 7(a).}\\
+\textnormal{Question 7(a).}\\
 Find the Jordan canonical form of
 \[
 A = \begin{pmatrix} 1 & 1 \\ -1 & 3 \end{pmatrix}.
 \]
 
 \noindent\\
-\textbf{Solution.}\\
+\textnormal{Solution.}\\
 \quad\\
 \begin{mdframed}[linewidth=1pt]
-\textbf{I begin by finding the characteristic polynomial.}
+\textnormal{I begin by finding the characteristic polynomial.}
 
 \begin{align*}
 \det(A - \lambda I) &= \det\begin{pmatrix} 1-\lambda & 1 \\ -1 & 3-\lambda \end{pmatrix} \\
@@ -735,7 +735,7 @@ A = \begin{pmatrix} 1 & 1 \\ -1 & 3 \end{pmatrix}.
 So $\lambda = 2$ is the only eigenvalue, with algebraic multiplicity $2$.
 
 \medskip
-\textbf{Next, I find the geometric multiplicity.}
+\textnormal{Next, I find the geometric multiplicity.}
 
 \[
 A - 2I = \begin{pmatrix} -1 & 1 \\ -1 & 1 \end{pmatrix}.
@@ -744,7 +744,7 @@ A - 2I = \begin{pmatrix} -1 & 1 \\ -1 & 1 \end{pmatrix}.
 This matrix has rank $1$, so $\nu_1(2) = \dim(\ker(A - 2I)) = 2 - 1 = 1$.
 
 \medskip
-\textbf{I can now determine the Jordan form.} Since the algebraic multiplicity is $2$ and the geometric multiplicity is $1$, $A$ is \emph{not} diagonalizable. There must be a single Jordan block of size $2$:
+\textnormal{I can now determine the Jordan form.} Since the algebraic multiplicity is $2$ and the geometric multiplicity is $1$, $A$ is \emph{not} diagonalizable. There must be a single Jordan block of size $2$:
 
 \[
 \boxed{J = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} = J_2(2).}
@@ -763,17 +763,17 @@ We can verify using the theorem from lecture: $2\nu_1 - \nu_2 - \nu_0 = 2(1) - 2
 
 \needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
-\textbf{Question 7(b).}\\
+\textnormal{Question 7(b).}\\
 Find the Jordan canonical form of
 \[
 A = \begin{pmatrix} 1 & 2 \\ 3 & 2 \end{pmatrix}.
 \]
 
 \noindent\\
-\textbf{Solution.}\\
+\textnormal{Solution.}\\
 \quad\\
 \begin{mdframed}[linewidth=1pt]
-\textbf{I begin by finding the characteristic polynomial.}
+\textnormal{I begin by finding the characteristic polynomial.}
 
 \begin{align*}
 \det(A - \lambda I) &= \det\begin{pmatrix} 1-\lambda & 2 \\ 3 & 2-\lambda \end{pmatrix} \\
@@ -786,14 +786,14 @@ A = \begin{pmatrix} 1 & 2 \\ 3 & 2 \end{pmatrix}.
 So the eigenvalues are $\lambda_1 = 4$ and $\lambda_2 = -1$, each with algebraic multiplicity $1$.
 
 \medskip
-\textbf{Since the eigenvalues are distinct, I can write down the Jordan form directly.} Since both eigenvalues are distinct and have algebraic multiplicity $1$, the geometric multiplicity of each is also $1$. The matrix is diagonalizable, and its Jordan form consists of two $1 \times 1$ blocks:
+\textnormal{Since the eigenvalues are distinct, I can write down the Jordan form directly.} Since both eigenvalues are distinct and have algebraic multiplicity $1$, the geometric multiplicity of each is also $1$. The matrix is diagonalizable, and its Jordan form consists of two $1 \times 1$ blocks:
 
 \[
 \boxed{J = \begin{pmatrix} 4 & 0 \\ 0 & -1 \end{pmatrix} = \operatorname{diag}\bigl(J_1(4),\, J_1(-1)\bigr).}
 \]
 
 \medskip
-\textbf{Verification:} $\det J = (4)(-1) = -4 = \det A = (1)(2) - (2)(3) = -4$. $\operatorname{tr} J = 4 + (-1) = 3 = \operatorname{tr} A = 1 + 2 = 3$.\end{mdframed}
+\textnormal{Verification:} $\det J = (4)(-1) = -4 = \det A = (1)(2) - (2)(3) = -4$. $\operatorname{tr} J = 4 + (-1) = 3 = \operatorname{tr} A = 1 + 2 = 3$.\end{mdframed}
 
 \bigskip
 
@@ -805,17 +805,17 @@ So the eigenvalues are $\lambda_1 = 4$ and $\lambda_2 = -1$, each with algebraic
 
 \needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
-\textbf{Question 7(c).}\\
+\textnormal{Question 7(c).}\\
 Find the Jordan canonical form of
 \[
 A = \begin{pmatrix} 11 & -4 & -5 \\ 21 & -8 & -11 \\ 3 & -1 & 0 \end{pmatrix}.
 \]
 
 \noindent\\
-\textbf{Solution.}\\
+\textnormal{Solution.}\\
 \quad\\
 \begin{mdframed}[linewidth=1pt]
-\textbf{I begin by finding the characteristic polynomial.}
+\textnormal{I begin by finding the characteristic polynomial.}
 
 We compute $\det(A - \lambda I)$. Expanding along the third row:
 
@@ -852,7 +852,7 @@ Performing polynomial division:
 Eigenvalues: $\lambda_1 = -1$ (algebraic multiplicity $1$), $\lambda_2 = 2$ (algebraic multiplicity $2$).
 
 \medskip
-\textbf{I now check the geometric multiplicity of $\lambda = 2$.}
+\textnormal{I now check the geometric multiplicity of $\lambda = 2$.}
 
 \[
 A - 2I = \begin{pmatrix} 9 & -4 & -5 \\ 21 & -10 & -11 \\ 3 & -1 & -2 \end{pmatrix}.
@@ -868,7 +868,7 @@ Row reduce using $R_1 \leftarrow R_1 - 3R_3$ and $R_2 \leftarrow R_2 - 7R_3$:
 Rank $= 2$, so $\nu_1(2) = 3 - 2 = 1$.
 
 \medskip
-\textbf{I can now assemble the Jordan form.} Since $\lambda = -1$ has algebraic multiplicity $1$, it contributes one $J_1(-1)$ block.
+\textnormal{I can now assemble the Jordan form.} Since $\lambda = -1$ has algebraic multiplicity $1$, it contributes one $J_1(-1)$ block.
 
 Since $\lambda = 2$ has algebraic multiplicity $2$ and geometric multiplicity $1$, it contributes one $J_2(2)$ block (not diagonalizable for this eigenvalue).
 
@@ -877,7 +877,7 @@ Since $\lambda = 2$ has algebraic multiplicity $2$ and geometric multiplicity $1
 \]
 
 \medskip
-\textbf{Verification:} $\det J = (-1)(2)(2) = -4$. $\det A = 11(-8 \cdot 0 - (-11)(-1)) - (-4)(21 \cdot 0 - (-11)(3)) + (-5)(21(-1) - (-8)(3)) = 11(-11) + 4(33) - 5(-21 + 24) = -121 + 132 - 15 = -4$.
+\textnormal{Verification:} $\det J = (-1)(2)(2) = -4$. $\det A = 11(-8 \cdot 0 - (-11)(-1)) - (-4)(21 \cdot 0 - (-11)(3)) + (-5)(21(-1) - (-8)(3)) = 11(-11) + 4(33) - 5(-21 + 24) = -121 + 132 - 15 = -4$.
 $\operatorname{tr} J = -1 + 2 + 2 = 3 = 11 + (-8) + 0 = \operatorname{tr} A$.\end{mdframed}
 
 \bigskip
@@ -890,17 +890,17 @@ $\operatorname{tr} J = -1 + 2 + 2 = 3 = 11 + (-8) + 0 = \operatorname{tr} A$.\en
 
 \needspace{4\baselineskip}
 \hfill \break  $~\!\!$ \dotfill \medskip \\
-\textbf{Question 7(d).}\\
+\textnormal{Question 7(d).}\\
 Find the Jordan canonical form of
 \[
 A = \begin{pmatrix} 2 & 1 & 0 & 0 \\ 0 & 2 & 1 & 0 \\ 0 & 0 & 3 & 0 \\ 0 & 1 & -1 & 3 \end{pmatrix}.
 \]
 
 \noindent\\
-\textbf{Solution.}\\
+\textnormal{Solution.}\\
 \quad\\
 \begin{mdframed}[linewidth=1pt]
-\textbf{I begin by finding the characteristic polynomial.}
+\textnormal{I begin by finding the characteristic polynomial.}
 
 \begin{align*}
 A - \lambda I = \begin{pmatrix} 2-\lambda & 1 & 0 & 0 \\ 0 & 2-\lambda & 1 & 0 \\ 0 & 0 & 3-\lambda & 0 \\ 0 & 1 & -1 & 3-\lambda \end{pmatrix}.
@@ -924,7 +924,7 @@ Therefore:
 Eigenvalues: $\lambda_1 = 2$ (algebraic multiplicity $2$), $\lambda_2 = 3$ (algebraic multiplicity $2$).
 
 \medskip
-\textbf{I check the geometric multiplicity of $\lambda = 2$.}
+\textnormal{I check the geometric multiplicity of $\lambda = 2$.}
 
 \[
 A - 2I = \begin{pmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & -1 & 1 \end{pmatrix}.
@@ -940,7 +940,7 @@ Rank $= 3$, so $\nu_1(2) = 4 - 3 = 1$.
 Since algebraic multiplicity $= 2$ and geometric multiplicity $= 1$, we get one $J_2(2)$ block.
 
 \medskip
-\textbf{I also check the geometric multiplicity of $\lambda = 3$.}
+\textnormal{I also check the geometric multiplicity of $\lambda = 3$.}
 
 \[
 A - 3I = \begin{pmatrix} -1 & 1 & 0 & 0 \\ 0 & -1 & 1 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 1 & -1 & 0 \end{pmatrix}.
@@ -956,14 +956,14 @@ Rank $= 2$, so $\nu_1(3) = 4 - 2 = 2$.
 Since algebraic multiplicity $= 2$ and geometric multiplicity $= 2$, $\lambda = 3$ is diagonalizable and contributes two $J_1(3)$ blocks.
 
 \medskip
-\textbf{Combining these, I obtain the Jordan form.}
+\textnormal{Combining these, I obtain the Jordan form.}
 
 \[
 \boxed{J = \begin{pmatrix} 2 & 1 & 0 & 0 \\ 0 & 2 & 0 & 0 \\ 0 & 0 & 3 & 0 \\ 0 & 0 & 0 & 3 \end{pmatrix} = \operatorname{diag}\bigl(J_2(2),\, J_1(3),\, J_1(3)\bigr).}
 \]
 
 \medskip
-\textbf{Verification:}
+\textnormal{Verification:}
 \begin{itemize}
     \item $\det J = 2 \cdot 2 \cdot 3 \cdot 3 = 36$. $\det A = 2 \cdot 2 \cdot 3 \cdot 3 = 36$ (expanding along column 1, then noting the upper triangular-like structure).    \item $\operatorname{tr} J = 2 + 2 + 3 + 3 = 10 = 2 + 2 + 3 + 3 = \operatorname{tr} A$.    \item Characteristic polynomial: $(2-\lambda)^2(3-\lambda)^2$.\end{itemize}
 \end{mdframed}
