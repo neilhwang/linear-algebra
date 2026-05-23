@@ -187,8 +187,11 @@ $\det(A - \lambda I) = (1-\lambda)^2$.
 
 Eigenvalue $\lambda = 1$ with algebraic multiplicity $2$.
 
-\textnormal{Geometric multiplicity:}
-$A - I = \begin{pmatrix} 0 & 2 \\ 0 & 0 \end{pmatrix}$, rank $= 1$, so geometric multiplicity $= 2 - 1 = 1$.
+Geometric multiplicity: To find the geometric multiplicity of $\lambda = 1$, I compute $A - I$ and find the dimension of its null space:
+\[
+A - I = \begin{pmatrix} 0 & 2 \\ 0 & 0 \end{pmatrix}.
+\]
+Row reduction is already done: there is one pivot (in the first row), so $\operatorname{rank}(A - I) = 1$. By the rank--nullity theorem, $\dim(\ker(A - I)) = n - \operatorname{rank}(A-I) = 2 - 1 = 1$. So the geometric multiplicity of $\lambda = 1$ is $1$.
 
 Since geometric multiplicity $< $ algebraic multiplicity, $A$ is \textnormal{not diagonalizable}.
 \end{mdframed}
